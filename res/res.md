@@ -1,0 +1,1 @@
+Put all resource files (images, icons, libraries/frameworks, etc) in this folder.
