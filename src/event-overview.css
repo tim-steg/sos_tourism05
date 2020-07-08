@@ -7,3 +7,8 @@
 .navlink {
     color: black;
 }
+
+#event-date-input {
+    font-size: 30px;
+    font-weight: 600;
+}
