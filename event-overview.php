@@ -1,1 +1,0 @@
-<?php header("Location: ./src/event-overview.html"); ?>
