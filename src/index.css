@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+body{
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.home-bg{
+    background: url(res/background.jpg);
+    background-position: 42% 27%;
+    color: white;
+    height: 40em;
+}
+
+.home-bg img{
+    height: 3.5em;
+    margin: 1em 0 0 1.3em;
+    cursor: pointer;
+}
+/*In order: top, right, bottom, left*/
+/*Img means the logo.*/
+
+nav{
+    float: right;
+    margin: 0 1em 0 0;
+}
+
+nav ul{
+    list-style: none;
+}
+
+nav li{
+    display: inline;
+    font-size: 1.1rem;
+    margin-left: 1em; 
+}
+/*margin-left changes the space inbetween the words*/
+
+nav a{
+    text-decoration: none;
+    color: white;
+}
+
+.event-bg{
+    text-align: center;
+}
+
+.event-bg h1{
+    font-size: 2.3rem;
+    line-height: 1.4em;
+    margin: 1em 1em 0 1em;
+}
+/*In order: top, right, bottom, left*/
+
+.event-bg p{
+    font-size: 1.1rem;
+    margin: 2em 3em 2.4em 3em;
+}
+
+form{
+    padding: 0 3.9em 0 3.9em;
+}
+
+input[type=text]{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1em;
+    border: 1px solid #727272;
+    outline: none;
+}
+/*In order: top, right, bottom, left*/
+/*outline: none removes the default black border around a form box.*/
+
+input[value="What event are you looking for?"]{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: rgb(196, 196, 196);
+}
+
+.search-box input[type=button]{
+    background-color: #3B0F7D;
+    border: none;
+    color: white;
+    border-radius: 1.5em;
+    font-size: 1.5em;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0.5em 1.5em 0.5em 1.5em ;
+    margin: 1.3em 0 0 0;
+}
+/*In order: top, right, bottom, left*/
+
+.search-box input[type=button]:hover{
+    background-color: #310c69;
+}
+
+.circle-box{
+    padding: 4em;
+    text-align: center;
+}
+
+.circle-1 h2{
+    font-size: 3rem;
+    color: black;
+}
+
+.circle-1 p{
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(102, 102, 102);
+    line-height: 1.9em;
+    margin-bottom: 3em;
+}
+/*In order: top, right, bottom, left*/
+
+.circle-1 img{
+    height: 19em;
+}
+
+.circle-2 img{
+    height: 19em;
+}
+
+.circle-3 img{
+    height: 19em;
+}
+
+.circle-box input[type=button]{
+    background-color: #1E9FB7;
+    border: none;
+    color: white;
+    box-sizing: border-box;
+    border-radius: 1.5em;
+    font-size: 1.6em;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0.5em 1.6em 0.5em 1.6em ;
+    margin: 1.8em 0 1.5em 0;
+}
+/*In order: top, right, bottom, left*/
+
+.circle-box input[type=button]:hover{
+    background-color: #198a9e;
+}
+
+.circle-1{
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+.circle-2{
+    margin-top: 6em;
+    margin-bottom: 7em;
+}
+
+.circle-3{
+    margin-top: 8em;
+    margin-bottom: 6em;
+}
+
+.circle-2 h2{
+    font-size: 3rem;
+    color: black;
+}
+
+.circle-2 p{
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(102, 102, 102);
+    line-height: 1.9em;
+    margin-bottom: 3em;
+}
+/*In order: top, right, bottom, left*/
+
+.circle-3 h2{
+    font-size: 3rem;
+    color: black;
+}
+
+.circle-3 p{
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(102, 102, 102);
+    line-height: 1.9em;
+    margin-bottom: 3em;
+}
+/*In order: top, right, bottom, left*/
+
+.start-bg{
+    padding: 3em;
+    background: url(res/smile.jpg);
+    background-position: 44% 37%;
+    text-align: center;
+    color: white;
+    height: 27em;
+}
+
+.start-bg h1{
+    font-size: 2.8rem;
+}
+
+.start-bg p{
+    font-size: 1.2rem;
+    line-height: 1.9em;
+    margin: 0 1em 0 1em;
+}
+/*In order: top, right, bottom, left*/
+
+.start-bg input[type=button]{
+    background-color: #F1003B;
+    border: none;
+    color: white;
+    border-radius: 1.5em;
+    font-size: 1.3em;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    padding: 0.5em 1.6em 0.5em 1.6em ;
+    margin: 1.8em 0 1.5em 0;
+}
+
+.start-bg input[type=button]:hover{
+    background-color: #d30035;
+}
+
+footer{
+    background-color: #3B0F7D;
+    height: 33em;
+    text-align: center;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    overflow: hidden;
+    
+}
+
+footer ul{
+    list-style: none;
+    margin: 5em 1em 0 0;
+    cursor: pointer;
+    color: white;
+}
+/*In order: top, right, bottom, left*/
+
+footer li{
+    font-size: 1.5rem;
+    line-height: 1.9em;
+}
+
+footer li:hover{
+    text-decoration: underline;
+}
+
+footer a{
+    text-decoration: none;
+    color: white;
+}
+
+footer #login{
+    display: inline;
+}
+
+.ada::after{
+    content: ' ';
+    border-left: 2px;
+    width: 3px;
+    height: 30px;
+    margin-top: 0.4em;
+    position: absolute;
+    background-color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+footer img{
+    height: 5em;
+    margin: 2em 0 0 0;
+    cursor: pointer;
+}
+/*In order: top, right, bottom, left*/
+/*Img means the logo.*/
