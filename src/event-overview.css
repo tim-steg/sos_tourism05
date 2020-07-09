@@ -8,9 +8,8 @@
     color: black;
 }
 
-#event-date-input {
-    font-size: 30px;
-    font-weight: 600;
+.event-labels {
+    font-size: 20px;
 }
 
 #safety-features {
