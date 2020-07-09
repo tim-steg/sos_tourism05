@@ -11,3 +11,7 @@
 .event-labels {
     font-size: 20px;
 }
+
+.requirement-table {
+    border: 1px solid black;
+}
