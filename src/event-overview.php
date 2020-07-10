@@ -1,3 +1,15 @@
+<?php 
+    $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+    $server = $url["host"];
+    $username = $url["user"];
+    $password = $url["pass"];
+    $db = substr($url["path"], 1);
+    
+    $conn = new mysqli($server, $username, $password, $db);
+
+    $conn->query("SELECT * FROM ");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,7 +62,7 @@
                 <div class="event-labels" id="safety-features">Recommended Safety Features:</div>
                 <div class="event-labels" id="event-requirements">
                     <table class="requirement-table">
-                        
+                        <?php echo $event_reqs; ?>
                     </table>
                 </div>
 
