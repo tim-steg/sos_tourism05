@@ -12,7 +12,7 @@
         die("Connection failed.");
     }
 
-    $search = $_POST['search'];
+    $search = $_GET['name'];
 
     $searchquery = $conn->query("SELECT * FROM events WHERE eventname LIKE %".$search."% BY ASC");
 

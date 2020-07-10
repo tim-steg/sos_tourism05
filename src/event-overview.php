@@ -28,7 +28,7 @@
         <img src="../res/logo.png" alt="" class="logo">
         <ul>
             <li>
-                <div><input class="form-control input-lg" style="border-radius: 5px;" type="text" id="search-input" placeholder="Search for an event here!"></div>
+                <div><form action="searchevents.php" method="POST"><input class="form-control input-lg" style="border-radius: 5px;" type="text" id="search-input" placeholder="Search for an event here!"></form></div>
                 <div class="create">
                     <p style="margin-bottom: 4px;"><img style="height: 10%; width: 10%; margin-right: 10px;" src="../res/searchicon.png">Search</p>
                 </div>
@@ -90,12 +90,13 @@
 
         function autocomplete(ev) {
             let data = ev.target.value;
-            fetch("https://sostourism05.herokuapp.com/src/eventsearch.php", {
+            fetch("searchevents.php", {
                 method: "POST", 
-                body: JSON.stringify(data)
-            }).then(res => {
-                console.log("Request complete! response:", res.json());
-            });
+                body: new URLSearchParams('name=' + data)
+            })
+            .then(res => res.text())
+            .then(res => console.log(res))
+            .catch(error => console.log("Error: " + error));
         }
         /*$(function() {
             $("#search-input").autocomplete({
