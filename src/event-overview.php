@@ -8,7 +8,7 @@
     
     $conn = new mysqli($server, $username, $password, $db);
 
-    $conn->query("SELECT * FROM ");
+    $conn->query("SELECT * FROM events WHERE eventid == 1");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +27,7 @@
         <img src="../res/logo.png" alt="" class="logo">
         <ul>
             <li>
-                <div><input class="form-control input-lg" style="border-radius: 5px;" type="text" placeholder="Search for an event here!"></div>
+                <div><input class="form-control input-lg" style="border-radius: 5px;" type="text" id="search-input" placeholder="Search for an event here!"></div>
                 <div class="create">
                     <p style="margin-bottom: 4px;"><img style="height: 10%; width: 10%; margin-right: 10px;" src="../res/searchicon.png">Search</p>
                 </div>
@@ -82,5 +82,24 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="create-event.js"></script>
+    <script src="event-overview.js"></script>
+    <script>
+        let searchinput = document.getElementById("search-input");
+        searchinput.addEventListener("input", autocomplete);
+
+        function autocomplete(ev) {
+            console.log(ev.value);
+        }
+        /*$(function() {
+            $("#search-input").autocomplete({
+                minLength: 2;
+                source: "searchevents.php",
+                select: function(event, ui) {
+                    event.preventDefault();
+                    $("#search-input").val(ui.item.id);
+                }
+            });
+        });*/
+    </script>
 </body>
 </html>
