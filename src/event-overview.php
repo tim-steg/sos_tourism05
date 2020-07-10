@@ -8,7 +8,8 @@
     
     $conn = new mysqli($server, $username, $password, $db);
 
-    $conn->query("SELECT * FROM events WHERE eventid == 1");
+    //$conn->query("SELECT * FROM events WHERE eventid == 1");
+    $conn->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
