@@ -26,5 +26,4 @@
     }
 
     echo json_encode($data);
-    echo "Test";
 ?>
