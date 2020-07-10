@@ -340,7 +340,7 @@ footer img{
     /*In order: top, right, bottom, left*/
 
     nav li :hover, .active{
-        color: #9cdde9;
+        color: #6d18ec;
     }
 
     nav #login{
