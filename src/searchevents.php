@@ -14,12 +14,13 @@
 
     $search = $_GET['name'];
 
-    $queryresult = $conn->query("SELECT eventname FROM events WHERE eventname LIKE %".$search."% BY ASC");
+    //$queryresult = $conn->query("SELECT eventname FROM events WHERE eventname LIKE %".$search."% BY ASC");
     
-    $data = array();
-    while ($name = mysql_fetch_array($queryresult)) {
-        array_push($data, $name);
-    }
+    //$data = array();
+    //while ($name = mysql_fetch_array($queryresult)) {
+    //    array_push($data, $name);
+    //}
 
-    echo json_encode($data);
+    //echo json_encode($data);
+    echo "Test";
 ?>
