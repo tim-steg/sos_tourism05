@@ -1,6 +1,7 @@
 
 
 (function() {
+
     var new_session=`<div class="event-session">
                         <button class="collapsible">
                             <div class="editable" contenteditable data-placeholder="Enter Session Name"></div>
@@ -51,6 +52,17 @@
        //console.log("trash");
        var session=$(this).parent().parent();
        session.remove();
+
+       //traverse and update number
+       var number=1;
+       //console.log("deleting");
+       $('.event-session').each(function(){
+        //console.log(number);
+        $(this).attr('id', 'session'+number);
+        number++;
+        
+    });
+
        
    });
 
@@ -60,6 +72,15 @@
     var pre_session=$('.add-session').prev();
     //console.log(pre_session);
     pre_session.after(new_session);
+    //traverse and assign number
+    //console.log("adding");
+    var number=1;
+    $('.event-session').each(function(){
+        //console.log(number);
+        $(this).attr('id', 'session'+number);
+        number++;
+        
+    });
    })
    
 })();
