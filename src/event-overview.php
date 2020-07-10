@@ -89,7 +89,7 @@
         searchinput.addEventListener("input", autocomplete);
 
         function autocomplete(ev) {
-            console.log(ev.value);
+            console.log(ev.target.value);
         }
         /*$(function() {
             $("#search-input").autocomplete({
