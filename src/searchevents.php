@@ -14,18 +14,21 @@
 
     $search = $_GET['name'];
 
-    $searchquery = $conn->query("SELECT * FROM events WHERE eventname LIKE %".$search."% BY ASC");
-
-    $result = array();
-
-    if ($searchquery->num_rows > 0) {
-        while($row = $searchquery->fetch_assoc()) {
-            array_push($result, $row['eventname']);
+    $searchquery = "SELECT eventname FROM events WHERE eventname LIKE :search BY ASC";
+    $stmt = $this->$conn->prepare($searchquery);
+    $stmt->execute(["eventname" => "%" . $search . "%"]);
+    $result = $stmt->get_result();
+    
+    $data = $resdata->fetch_all(MYSQLI_ASSOC);
+    $array = array();
+    if ($data) {
+        foreach ($data as $eventname) {
+            array_push($array, $eventname);
         }
-    } else if ($searchquery->num_rows <= 0) {
-        array_push($result, "No results found.");
+    } else {
+        array_push($array, "No results found.");
     }
 
     $conn->close();
-    echo json_encode($result);
+    echo json_encode($array);
 ?>
