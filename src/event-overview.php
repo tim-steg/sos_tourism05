@@ -89,7 +89,13 @@
         searchinput.addEventListener("input", autocomplete);
 
         function autocomplete(ev) {
-            console.log(ev.target.value);
+            let data = ev.target.value;
+            fetch("https://sostourism05.herokuapp.com/src/eventsearch.php", {
+                method: "POST", 
+                body: JSON.stringify(data)
+            }).then(res => {
+                console.log("Request complete! response:", res.json());
+            });
         }
         /*$(function() {
             $("#search-input").autocomplete({
