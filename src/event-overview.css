@@ -1,0 +1,18 @@
+.searchbar {
+    font-size: 0;
+    width: 0px;
+    height: 40px;
+}
+
+.navlink {
+    color: black;
+}
+
+.event-labels {
+    font-size: 20px;
+}
+
+.requirement-table {
+    border-collapse: collapse;
+    border: 1px solid black;
+}
