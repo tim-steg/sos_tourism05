@@ -13,7 +13,7 @@
     }
 
     $search = $_GET['name'];
-
+    echo $search."\n";
     $queryresult = $conn->query('SELECT * FROM events WHERE eventname LIKE %'.$search.'%');
     
     $data = array();
