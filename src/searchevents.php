@@ -14,7 +14,7 @@
 
     $search = $_GET['name'];
 
-    $queryresult = $conn->query("SELECT * FROM events WHERE eventname LIKE %".$search."% BY ASC");
+    $queryresult = $conn->query('SELECT * FROM events WHERE eventname LIKE %'.$search.'%');
     
     $data = array();
     if ($queryresult->num_rows > 0) {
