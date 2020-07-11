@@ -14,23 +14,19 @@
 
         // Funtion that creates a new mysqli connection and returns it.
         function connectToDB() {
-            $this->conn = new mysqli($this->server, $this->username, $this->password, $this->db) or die("Couldn't connect to server.");
-            return $this->conn;
+            $conn = new mysqli($this->server, $this->username, $this->password, $this->db) or die("Couldn't connect to server.");
+            return $conn;
         }
 
         // grabs event data based on the event id.
-        function grabEventData($eventid) {
-            $res = $this->conn->query("SELECT * FROM events WHERE eventid=$eventid");
+        function grabEventData($conn, $eventid) {
+            $res = $conn->query("SELECT * FROM events WHERE eventid=$eventid");
             if ($res) {
                 return $res->fetch_array(MYSQLI_ASSOC);
             } else {
                 // return false on error.
                 return false;
             }
-        }
-        
-        function closeConn() {
-            $this->conn->close();
         }
     }
 ?>

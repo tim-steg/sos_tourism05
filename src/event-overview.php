@@ -4,18 +4,18 @@
     error_reporting(E_ALL);
     require("db.php");
 
-    $dbc = new dbConnect();
-    $dbc->connectToDB();
+    $db = new dbConnect();
+    $con = $db->connectToDB();
 
     $eventid = $_GET['eventid'];
 
     // Grabs the event info that pertains to the eventid in the url.
-    $evdata = $dbc->grabEventData($eventid);
+    $evdata = $db->grabEventData($con, $eventid);
     if ($evdata == false) {
         die("404: Page Not Found.");
     }
 
-    $dbc->closeConn();
+    $con->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
