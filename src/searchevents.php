@@ -13,7 +13,7 @@
     }
 
     $search = $_GET['name'];
-
+    echo $search;
     $stmt = $conn->prepare("SELECT `eventname` FROM events WHERE `eventname` LIKE ?");
     $stmt->bind_param("s", "'%".$search."%'");
     
@@ -21,6 +21,7 @@
     if ($stmt->execute()) {
         $stmt->bind_result($name);
         while($stmt->fetch()) {
+            echo $name;
             array_push($data, $name);
         }
     } else {
