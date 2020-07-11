@@ -74,8 +74,8 @@
                 </div>
 
                 <div id="event-description-input">
-                    <h1>Description: <?php echo $data['descr']; ?></h1>
-                    <p id="event-description-text"></p>
+                    <h1>Description:</h1>
+                    <p id="event-description-text"><?php echo $data['descr']; ?></p>
                 </div>
             </div>
             
