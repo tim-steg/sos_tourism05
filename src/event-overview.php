@@ -6,6 +6,7 @@
     $password = $url["pass"];
     $db = substr($url["path"], 1);
     
+    echo "test";
     $conn = new mysqli($server, $username, $password, $db);
     
     $eventid = $_GET['eventid'];
