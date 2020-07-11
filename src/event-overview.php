@@ -1,21 +1,18 @@
-<?php 
-    $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+<?php
+    require("db.php");
 
-    $server = $url["host"];
-    $username = $url["user"];
-    $password = $url["pass"];
-    $db = substr($url["path"], 1);
-    
-    $conn = new mysqli($server, $username, $password, $db);
-    
+    $dbc = new dbConnect();
+    $dbc->connectToDB();
+
     $eventid = $_GET['eventid'];
-    $res = $conn->query("SELECT * FROM events WHERE eventid=$eventid");
-
-    if ($res) {
-        $data = $res->fetch_array(MYSQLI_ASSOC);
+    
+    // Grabs the event info that pertains to the eventid in the url.
+    $evdata = $dbc->grabEventData($eventid);
+    if ($evdata == false) {
+        die("404: Page Not Found.");
     }
 
-    $conn->close();
+    $dbc->close();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -57,10 +54,10 @@
 
         <div class="event-wrapper">
             <div class="event-info">
-                <div class="event-labels" id="name-info">Event Name: <?php echo $data['eventname']; ?></div>
-                <div class="event-labels" id="date-info"><div style="font-style: bolder;">Date: <div class="event-text"></div><?php echo $data['startdate']." - ".$data['enddate']; ?></div></div>
-                <div class="event-labels" id="organizer-info">Event Organizer: <div class="event-text"><?php echo $data['organizer']; ?></div></div>
-                <div class="event-labels" id="location-info">Location: <div class="event-text"><?php echo $data['location']; ?></div></div>
+                <div class="event-labels" id="name-info">Event Name: <?php echo $evdata['eventname']; ?></div>
+                <div class="event-labels" id="date-info"><div style="font-style: bolder;">Date: <div class="event-text"></div><?php echo $evdata['startdate']." - ".$evdata['enddate']; ?></div></div>
+                <div class="event-labels" id="organizer-info">Event Organizer: <div class="event-text"><?php echo $evdata['organizer']; ?></div></div>
+                <div class="event-labels" id="location-info">Location: <div class="event-text"><?php echo $evdata['location']; ?></div></div>
                 <div class="event-labels" id="contact-info">
                     Telephone: <div id="tel"></div>
                     Email: <div id="email"></div>
@@ -75,7 +72,7 @@
 
                 <div id="event-description-input">
                     <h1>Description:</h1>
-                    <p id="event-description-text"><?php echo $data['descr']; ?></p>
+                    <p id="event-description-text"><?php echo $evdata['descr']; ?></p>
                 </div>
             </div>
             
