@@ -13,8 +13,8 @@
     }
 
     $search = $_GET['name'];
-    echo $search;
-    $stmt = $conn->prepare("SELECT `eventname` FROM events WHERE `eventname` LIKE '%?%'");
+    //echo $search;
+    /*$stmt = $conn->prepare("SELECT `eventname` FROM events WHERE `eventname` LIKE '%?%'");
     $stmt->bind_param("s", $search);
     
     $data = array();
@@ -25,7 +25,16 @@
         }
     } else {
         array_push($data, "Results not found.");
-    }
+    }*/
 
-    echo json_encode($data);
+    $res = $conn->query("SELECT `eventname` FROM events WHERE `eventname` LIKE '%$search%'");
+
+    if ($res->num_rows > 0) {
+        while($row = $res->fetch_assoc()) {
+            echo $row;
+        }
+    } else {
+        echo "0 results";
+    }
+    //echo json_encode($data);
 ?>
