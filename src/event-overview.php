@@ -45,18 +45,18 @@
 
     <div class="mobile-toggle"><i class="fas fa-bars"></i></div>
     <div class="content">
-       <div class="top-menu">
-            <a class="navlink" href="index.html" id="home">Home</a>
-            <a class="navlink" href="">About</a>
-            <a class="navlink" href="">Safety</a>
-            <a class="navlink" href="">My Events</a>
-            <a class="navlink" href=""><span></span>Log Out</a>
-       </div>
+        <div class="top-menu">
+                <a class="navlink" href="index.html" id="home">Home</a>
+                <a class="navlink" href="">About</a>
+                <a class="navlink" href="">Safety</a>
+                <a class="navlink" href="">My Events</a>
+                <a class="navlink" href=""><span></span>Log Out</a>
+        </div>
 
-       <hr>
+        <hr>
 
-       <div class="event-wrapper">
-           <div class="event-info">
+        <div class="event-wrapper">
+            <div class="event-info">
                 <div class="event-labels" id="name-info">Event Name: <?php echo $data['eventname']; ?></div>
                 <div class="event-labels" id="date-info"><div style="font-style: bolder;">Date: </div><?php echo $data['startdate']." - ".$data['enddate']; ?></div>
                 <div class="event-labels" id="organizer-info">Event Organizer: <?php echo $data['organizer']; ?></div>
@@ -74,10 +74,10 @@
                 </div>
 
                 <div id="event-description-input">
-                    <h1>Description: </h1>
+                    <h1>Description: <?php echo $data['descr']; ?></h1>
                     <p id="event-description-text"></p>
                 </div>
-           </div>
+            </div>
             
         </div>
 
@@ -89,7 +89,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="create-event.js"></script>
-    <!--<script src="event-overview.js"></script>-->
+    <script src="event-overview.js"></script>
     <script>
         let searchinput = document.getElementById("search-input");
         searchinput.addEventListener("input", autoSearch);
