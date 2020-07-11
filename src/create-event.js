@@ -84,3 +84,8 @@
    })
    
 })();
+
+// sets minimum date for date inputs.
+var todaydate = new Date().toISOString().split('T')[0];
+document.getElementById("date1").setAttribute('min', todaydate);
+document.getElementById("date2").setAttribute('min', todaydate);

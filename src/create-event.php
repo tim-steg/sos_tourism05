@@ -59,7 +59,7 @@
         <div class="event-wrapper">
             <div class="event-info">
                     <div id="event-name-input">Event Name: <input type="text" placeholder="Add event name here"></div>
-                    <div id="event-date-input" class="col-xs-2">Date: <input type="date" class="date-input" name="" id="date1"> - <input type="date" class="date-input" name="" id="date2"></div>
+                    <div id="event-date-input" class="col-xs-2">Date: <input type="date" class="date-input" name="" id="date1" placeholder="mm-dd-yyyy"> - <input type="date" class="date-input" name="" id="date2" placeholder="mm-dd-yyyy"></div>
                     <div id="event-organizer-input">Event Organizer: <input type="text" placeholder="Add organizer name here"></div>
                     <div id="event-location-input">Location: <input type="text" placeholder="Add location here"></div>
                     <div id="event-contact-input">
