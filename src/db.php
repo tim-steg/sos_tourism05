@@ -15,7 +15,7 @@
         // Funtion that creates a new mysqli connection and returns it.
         function connectToDB() {
             $this->conn = new mysqli($this->server, $this->username, $this->password, $this->db) or die("Couldn't connect to server.");
-            return $conn;
+            return $this->conn;
         }
 
         // grabs event data based on the event id.
