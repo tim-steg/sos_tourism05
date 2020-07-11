@@ -15,7 +15,6 @@
 
     $eventdata = array();
     $stmt->bind_result($eventdata);
-    echo $eventdata;
 
     $conn->close();
 ?>
@@ -59,7 +58,7 @@
 
        <div class="event-wrapper">
            <div class="event-info">
-                <div class="event-labels" id="name-info">Event Name: </div>
+                <div class="event-labels" id="name-info">Event Name: <?php echo $eventdata[0]; ?></div>
                 <div class="event-labels" id="date-info">Date: </div>
                 <div class="event-labels" id="organizer-info">Event Organizer: </div>
                 <div class="event-labels" id="location-info">Location: </div>
