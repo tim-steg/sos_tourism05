@@ -8,7 +8,11 @@
         $dbcon = new dbConnect();
         $dbcon->connectToDB();
 
+        echo '<script>'.print_r($_POST).'</script>';
+
         $dbcon->close();
+    } else if (isset($_POST['delete_submission'])) {
+        header("Location: ./index.php");
     }
 ?>
 <!DOCTYPE html>
