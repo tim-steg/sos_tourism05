@@ -93,7 +93,7 @@
             console.log(data);
             fetch("searchevents.php", {
                 method: "POST", 
-                body: new URLSearchParams('name=' + data)
+                body: new URLSearchParams('name='+data)
             })
             .then(res => res.text())
             .then(res => console.log(res))
