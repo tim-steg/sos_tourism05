@@ -6,7 +6,6 @@
     $password = $url["pass"];
     $db = substr($url["path"], 1);
     
-    echo "test";
     $conn = new mysqli($server, $username, $password, $db);
     
     $eventid = $_GET['eventid'];
@@ -17,6 +16,7 @@
     }
 
     $conn->close();
+    var_dump($data);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +58,7 @@
 
        <div class="event-wrapper">
            <div class="event-info">
-                <div class="event-labels" id="name-info">Event Name: <?php echo $data['eventname']; ?></div>
+                <div class="event-labels" id="name-info">Event Name: </div>
                 <div class="event-labels" id="date-info">Date: </div>
                 <div class="event-labels" id="organizer-info">Event Organizer: </div>
                 <div class="event-labels" id="location-info">Location: </div>
