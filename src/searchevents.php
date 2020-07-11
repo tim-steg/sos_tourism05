@@ -13,9 +13,11 @@
     }
 
     $search = $_POST['name'];
-    $res = $conn->query("SELECT `eventname` FROM events WHERE `eventname` LIKE '%{$search}%'");
-    $data = array();
+    if ($search != "") {
+        $res = $conn->query("SELECT `eventname` FROM events WHERE `eventname` LIKE '%{$search}%'");
+    }
 
+    $data = array();
     if ($res->num_rows > 0) {
         while($row = $res->fetch_assoc()) {
             foreach ($row as $key => $name) {
