@@ -8,7 +8,15 @@
     
     $conn = new mysqli($server, $username, $password, $db);
 
-    //$conn->query("SELECT * FROM events WHERE eventid == 1");
+    $eventid = $_GET['eventid'];
+    $stmt = $conn->prepare("SELECT * FROM `events` WHERE eventid == ?");
+    $stmt->bind_param("i", $eventid);
+    $stmt->execute();
+
+    $eventdata = array();
+    $stmt->bind_result($eventdata);
+    echo $eventdata;
+
     $conn->close();
 ?>
 <!DOCTYPE html>
@@ -86,9 +94,9 @@
     <!--<script src="event-overview.js"></script>-->
     <script>
         let searchinput = document.getElementById("search-input");
-        searchinput.addEventListener("input", autocomplete);
+        searchinput.addEventListener("input", autoSearch);
 
-        function autocomplete(ev) {
+        function autoSearch(ev) {
             let data = ev.target.value;
             console.log(data);
             fetch("searchevents.php", {
