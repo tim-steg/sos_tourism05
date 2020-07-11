@@ -58,7 +58,7 @@
        <div class="event-wrapper">
            <div class="event-info">
                 <div class="event-labels" id="name-info">Event Name: <?php echo $data['eventname']; ?></div>
-                <div class="event-labels" id="date-info">Date: <?php echo $data['startdate']." - ".$data['enddate']; ?></div>
+                <div class="event-labels" id="date-info"><div style="font-style: bolder;">Date: </div><?php echo $data['startdate']." - ".$data['enddate']; ?></div>
                 <div class="event-labels" id="organizer-info">Event Organizer: <?php echo $data['organizer']; ?></div>
                 <div class="event-labels" id="location-info">Location: <?php echo $data['location']; ?></div>
                 <div class="event-labels" id="contact-info">
