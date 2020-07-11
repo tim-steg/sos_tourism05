@@ -5,28 +5,32 @@
         private $url, $server, $username, $password, $db, $conn;
 
         function __construct() {
-            $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
-            $server = $url["host"];
-            $username = $url["user"];
-            $password = $url["pass"];
-            $db = substr($url["path"], 1);
+            $this->url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+            $this->server = $url["host"];
+            $this->username = $url["user"];
+            $this->password = $url["pass"];
+            $this->db = substr($url["path"], 1);
+            $this->conn = NULL;
         }
 
         // Funtion that creates a new mysqli connection and returns it.
         function connectToDB() {
-            $conn = new mysqli($this->server, $this->username, $this->password, $this->db) or die("Couldn't connect to server.");
-            return $conn;
+            $this->conn = new mysqli($this->server, $this->username, $this->password, $this->db) or die("Couldn't connect to server.");
         }
 
         // grabs event data based on the event id.
-        function grabEventData($conn, $eventid) {
-            $res = $conn->query("SELECT * FROM events WHERE eventid=$eventid");
+        function grabEventData($eventid) {
+            $res = $this->conn->query("SELECT * FROM events WHERE eventid=$eventid");
             if ($res) {
                 return $res->fetch_array(MYSQLI_ASSOC);
             } else {
                 // return false on error.
                 return false;
             }
+        }
+
+        function closeConn() {
+            $this->conn->close();
         }
     }
 ?>

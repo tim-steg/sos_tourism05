@@ -5,17 +5,17 @@
     require("db.php");
 
     $db = new dbConnect();
-    $con = $db->connectToDB();
+    $db->connectToDB();
 
     $eventid = $_GET['eventid'];
 
     // Grabs the event info that pertains to the eventid in the url.
-    $evdata = $db->grabEventData($con, $eventid);
+    $evdata = $db->grabEventData($eventid);
     if ($evdata == false) {
         die("404: Page Not Found.");
     }
 
-    $con->close();
+    $db->closeConn();
 ?>
 <!DOCTYPE html>
 <html lang="en">
