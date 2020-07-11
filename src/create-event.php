@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="create-event.css">
-    <title>Event</title>
+    <title>Create A New Event</title>
 </head>
 <body>
     <form action="create-event.php" method="POST" name="event-submission">
@@ -59,7 +59,7 @@
         <div class="event-wrapper">
             <div class="event-info">
                     <div id="event-name-input">Event Name: <input type="text" placeholder="Add event name here"></div>
-                    <div id="event-date-input">Date: <input type="date" class="form-control date-input" name="" id="date1"> - <input type="date" class="form-control date-input" name="" id="date2"></div>
+                    <div id="event-date-input" class="col-xs-2">Date: <input type="date" class="form-control date-input" name="" id="date1"> - <input type="date" class="form-control date-input" name="" id="date2"></div>
                     <div id="event-organizer-input">Event Organizer: <input type="text" placeholder="Add organizer name here"></div>
                     <div id="event-location-input">Location: <input type="text" placeholder="Add location here"></div>
                     <div id="event-contact-input">
