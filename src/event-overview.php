@@ -13,6 +13,8 @@
 
     if ($res) {
         $data = $res->fetch_array(MYSQLI_ASSOC);
+    } else {
+        echo "Test";
     }
 
     $conn->close();
