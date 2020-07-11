@@ -132,7 +132,8 @@
                         <textarea type="text" placeholder="enter session info" class="session-info" required></textarea>
                     </div>
             </div>
-
+            
+            <button type="button" class="add-session">Add Session</button>
         </div>
     </form>
     <script src="https://kit.fontawesome.com/2f39226221.js" crossorigin="anonymous"></script>
