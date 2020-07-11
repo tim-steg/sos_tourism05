@@ -2,7 +2,12 @@
     
     // Class to connect to our service's database.
     class dbConnect {
-        private $url, $server, $username, $password, $db, $conn;
+        private $url;
+        private $server;
+        private $username;
+        private $password;
+        private $db;
+        private $conn;
 
         function __construct() {
             $this->url = parse_url(getenv("CLEARDB_DATABASE_URL"));
