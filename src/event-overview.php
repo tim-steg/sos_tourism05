@@ -9,14 +9,13 @@
     $conn = new mysqli($server, $username, $password, $db);
     
     $eventid = $_GET['eventid'];
-    $res = $conn->query("SELECT * FROM events WHERE eventid=={$eventid}");
+    $res = $conn->query("SELECT * FROM events WHERE eventid=$eventid");
 
     if ($res) {
         $data = $res->fetch_array(MYSQLI_ASSOC);
     }
 
     $conn->close();
-    var_dump($data);
 ?>
 <!DOCTYPE html>
 <html lang="en">
