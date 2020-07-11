@@ -90,6 +90,7 @@
 
         function autocomplete(ev) {
             let data = ev.target.value;
+            console.log(data);
             fetch("searchevents.php", {
                 method: "POST", 
                 body: new URLSearchParams('name=' + data)
@@ -98,16 +99,6 @@
             .then(res => console.log(res))
             .catch(error => console.log("Error: " + error));
         }
-        /*$(function() {
-            $("#search-input").autocomplete({
-                minLength: 2;
-                source: "searchevents.php",
-                select: function(event, ui) {
-                    event.preventDefault();
-                    $("#search-input").val(ui.item.id);
-                }
-            });
-        });*/
     </script>
 </body>
 </html>
