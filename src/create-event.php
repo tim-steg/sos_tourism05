@@ -133,7 +133,8 @@
                     </div>
             </div>
             
-            <button type="button" class="add-session">Add Session</button>
+            <button type="button" class="add-session" style="margin-bottom: 40px;">Add Session</button>
+
         </div>
     </form>
     <script src="https://kit.fontawesome.com/2f39226221.js" crossorigin="anonymous"></script>
