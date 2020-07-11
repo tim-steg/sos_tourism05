@@ -12,7 +12,7 @@
     
     $conn = new mysqli($server, $username, $password, $db);
     
-    $stmt = $conn->prepare("SELECT * FROM `events` WHERE eventid=?");
+    /*$stmt = $conn->prepare("SELECT * FROM `events` WHERE eventid=?");
     $stmt->bind_param("i", $eventid);
 
     $eventid = $_GET['eventid'];
@@ -21,7 +21,7 @@
     $eventdata = array();
     $stmt->bind_result($eventdata);
 
-    $stmt->close();
+    $stmt->close();*/
     $conn->close();
 ?>
 <!DOCTYPE html>
