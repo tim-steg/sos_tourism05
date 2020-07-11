@@ -33,16 +33,16 @@
         
             <ul>
                 <li>
-                    <button type="submit" class="create">
+                    <div class="create">
                         <p>Create</p>
                         <i class="fa fa-plus" aria-hidden="true"></i>
-                    </button>
+                    </div>
                 </li>
                 <li>
-                    <button type="button" onclick="deleteEvent();" class="delete">
+                    <div type="button" onclick="deleteEvent();" class="delete">
                         <p>Delete</p>
                         <i class="fa fa-minus" aria-hidden="true"></i>
-                    </button>
+                    </div>
                 </li>
             </ul>
             
@@ -122,12 +122,12 @@
             </div>
 
             <div class="event-session" id="session1">
-                    <button type="button" class="collapsible">
+                    <div type="button" class="collapsible">
                         <div class="editable" contenteditable data-placeholder="Add Session Name"></div>
                         <i class="fa fa-caret-down" aria-hidden="true"></i>
                         <i class="fa fa-caret-up" aria-hidden="true"></i>
                         <i class="far fa-trash-alt"></i>
-                    </button>
+                    </div>
                     <div class="session-content">
                         <textarea type="text" placeholder="enter session info" class="session-info" required></textarea>
                     </div>
