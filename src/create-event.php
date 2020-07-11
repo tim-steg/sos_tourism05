@@ -26,23 +26,23 @@
     <title>Create A New Event</title>
 </head>
 <body>
-    <form action="create-event.php" method="POST" name="event-submission">
+    <form action="create-event.php" method="POST" name="event_submission">
         <nav>
             
             <img src="../res/logo.png" alt="" class="logo">
         
             <ul>
                 <li>
-                    <div class="create">
+                    <button type="submit" class="create">
                         <p>Create</p>
                         <i class="fa fa-plus" aria-hidden="true"></i>
-                    </div>
+                    </button>
                 </li>
                 <li>
-                    <div class="delete">
+                    <button type="button" onclick="deleteEvent();" class="delete">
                         <p>Delete</p>
                         <i class="fa fa-minus" aria-hidden="true"></i>
-                    </div>
+                    </button>
                 </li>
             </ul>
             
@@ -122,7 +122,7 @@
             </div>
 
             <div class="event-session" id="session1">
-                    <button class="collapsible">
+                    <button type="button" class="collapsible">
                         <div class="editable" contenteditable data-placeholder="Add Session Name"></div>
                         <i class="fa fa-caret-down" aria-hidden="true"></i>
                         <i class="fa fa-caret-up" aria-hidden="true"></i>
@@ -140,5 +140,10 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>  
     <script src="create-event.js"></script>
+    <script>
+        function deleteEvent() {
+            console.log("delete button clicked.");
+        }
+    </script>
 </body>
 </html>
