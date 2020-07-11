@@ -564,9 +564,11 @@ i.fa-trash-alt:hover{
         height: 30px;
         font-size: 15px;
     }
-
-    .date-input {
-        display: inline-block;
-        font-size: 18px;
-    }
 }
+
+#submitbutton {
+    background: none;
+    border: none;
+    font-size: 1em;
+}
+  

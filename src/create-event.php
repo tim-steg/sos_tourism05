@@ -12,7 +12,7 @@
 
         $dbcon->close();
     } else if (isset($_POST['delete_submission'])) {
-        header("Location: ./index.php");
+        header("Location: ./index.html");
     }
 ?>
 <!DOCTYPE html>
@@ -33,10 +33,12 @@
         
             <ul>
                 <li>
-                    <div class="create">
-                        <p>Create</p>
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                    </div>
+                    <button id="submitbutton">
+                        <div class="create">
+                            <p>Create</p>
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                        </div>
+                    </button>
                 </li>
                 <li>
                     <div type="button" onclick="deleteEvent();" class="delete">
