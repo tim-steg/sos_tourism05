@@ -15,6 +15,8 @@
         die("404: Page Not Found.");
     }
 
+    $event_reqs = "";
+
     $db->closeConn();
 ?>
 <!DOCTYPE html>
