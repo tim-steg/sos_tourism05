@@ -15,7 +15,7 @@
     $search = $_GET['name'];
     $res = $conn->query("SELECT `eventname` FROM events WHERE `eventname` LIKE '%{$search}%'");
     $data = array();
-
+    echo $search;
     if ($res->num_rows > 0) {
         while($row = $res->fetch_assoc()) {
             foreach ($row as $key => $name) {
@@ -26,5 +26,5 @@
         array_push($data, "No results found.");
     }
 
-    echo json_encode($data);
+    //echo json_encode($data);
 ?>
