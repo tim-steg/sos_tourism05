@@ -58,14 +58,14 @@
 
         <div class="event-wrapper">
             <div class="event-info">
-                    <div id="event-name-input">Event Name: <input type="text" placeholder="Add event name here"></div>
-                    <div id="event-date-input" class="col-xs-2">Date: <input type="date" class="date-input" name="" id="date1" placeholder="mm-dd-yyyy"> - <input type="date" class="date-input" name="" id="date2" placeholder="mm-dd-yyyy"></div>
-                    <div id="event-organizer-input">Event Organizer: <input type="text" placeholder="Add organizer name here"></div>
-                    <div id="event-location-input">Location: <input type="text" placeholder="Add location here"></div>
+                    <div id="event-name-input">Event Name: <input type="text" placeholder="Add event name here" required></div>
+                    <div id="event-date-input" class="col-xs-2">Date: <input type="date" class="date-input" name="" id="date1" placeholder="mm-dd-yyyy" required> - <input type="date" class="date-input" name="" id="date2" placeholder="mm-dd-yyyy" required></div>
+                    <div id="event-organizer-input">Event Organizer: <input type="text" placeholder="Add organizer name here" required></div>
+                    <div id="event-location-input">Location: <input type="text" placeholder="Add location here" required></div>
                     <div id="event-contact-input">
-                        Tel: <input type="text" placeholder="Add telephone number here"> 
-                        Email: <input type="text" placeholder="Add email address here">
-                        Website: <input type="text" placeholder="Add link here">
+                        Tel: <input type="text" placeholder="Add telephone #"> 
+                        Email: <input type="text" placeholder="Add email here">
+                        Website: <input type="text" placeholder="Add your website">
                     </div>
                     <p id="safety">Safety Features:</p>
                     <div id="event-requirements">
@@ -100,7 +100,7 @@
 
                         <div>
                             <label for="capacity">Capacity Limit:</label>
-                            <select id="capacity">
+                            <select id="capacity" required>
                                 <option value="small">&lt50</option>
                                 <option value="mediem">50-100</option>
                                 <option value="large">&gt100</option>
@@ -112,7 +112,7 @@
 
                     <div id="event-description-input">
                         <h1>Description: </h1>
-                        <textarea type="text" placeholder="Add description here"></textarea>
+                        <textarea type="text" placeholder="Add description here" required></textarea>
                     </div>
             </div>
 
@@ -124,25 +124,8 @@
                         <i class="far fa-trash-alt"></i>
                     </button>
                     <div class="session-content">
-                        <textarea type="text" placeholder="enter session info" class="session-info"></textarea>
+                        <textarea type="text" placeholder="enter session info" class="session-info" required></textarea>
                     </div>
-            </div>
-
-
-            <div class="event-session" id="session2">
-                    <button class="collapsible">
-                        <div class="editable" contenteditable data-placeholder="Add Session Name"></div>
-                        <i class="fa fa-caret-down" aria-hidden="true"></i>
-                        <i class="fa fa-caret-up" aria-hidden="true"></i>
-                        <i class="far fa-trash-alt"></i>
-                    </button>
-                    <div class="session-content">
-                        <textarea type="text" placeholder="enter session info" class="session-info"></textarea>
-                    </div>
-                </div>
-
-                <button class="add-session">Add Session</button>
-                
             </div>
 
         </div>

@@ -10,7 +10,7 @@
                             <i class="far fa-trash-alt"></i>
                         </button>
                         <div class="session-content">
-                            <textarea type="text" placeholder="enter session info" class="session-info"></textarea>
+                            <textarea type="text" placeholder="enter session info" class="session-info" required></textarea>
                         </div>
                     </div>`   
                     
