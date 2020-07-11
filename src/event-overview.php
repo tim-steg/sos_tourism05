@@ -2,6 +2,7 @@
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
+
     $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
     $server = $url["host"];
@@ -10,15 +11,17 @@
     $db = substr($url["path"], 1);
     
     $conn = new mysqli($server, $username, $password, $db);
+    
+    $stmt = $conn->prepare("SELECT * FROM `events` WHERE eventid=?");
+    $stmt->bind_param("i", $eventid);
 
     $eventid = $_GET['eventid'];
-    $stmt = $conn->prepare("SELECT * FROM `events` WHERE eventid == ?");
-    $stmt->bind_param("i", $eventid);
     $stmt->execute();
 
     $eventdata = array();
     $stmt->bind_result($eventdata);
 
+    $stmt->close();
     $conn->close();
 ?>
 <!DOCTYPE html>
@@ -61,7 +64,7 @@
 
        <div class="event-wrapper">
            <div class="event-info">
-                <div class="event-labels" id="name-info">Event Name: <?php echo $eventdata[0]; ?></div>
+                <div class="event-labels" id="name-info">Event Name: <?php echo $eventdata; ?></div>
                 <div class="event-labels" id="date-info">Date: </div>
                 <div class="event-labels" id="organizer-info">Event Organizer: </div>
                 <div class="event-labels" id="location-info">Location: </div>
