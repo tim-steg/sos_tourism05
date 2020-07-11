@@ -14,8 +14,8 @@
 
     $search = $_GET['name'];
 
-    $stmt = $conn->prepare("SELECT * FROM events WHERE eventname LIKE SOS");
-    $stmt->bind_param("s", "%".$search."%");
+    $stmt = $conn->prepare("SELECT `eventname` FROM events WHERE `eventname` LIKE '%?%'");
+    $stmt->bind_param("s", $search);
     
     $data = array();
     if ($stmt->execute()) {
