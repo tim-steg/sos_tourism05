@@ -31,7 +31,9 @@
 
     if ($res->num_rows > 0) {
         while($row = $res->fetch_assoc()) {
-            echo $row;
+            foreach ($row as $key => $val) {
+                echo $val;
+            }
         }
     } else {
         echo "0 results";
