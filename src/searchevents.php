@@ -15,18 +15,20 @@
     $search = $_POST['name'];
     if ($search != "") {
         $res = $conn->query("SELECT `eventname` FROM events WHERE `eventname` LIKE '%{$search}%'");
-    }
 
-    $data = array();
-    if ($res->num_rows > 0) {
-        while($row = $res->fetch_assoc()) {
-            foreach ($row as $key => $name) {
-                array_push($data, $name);
+        $data = array();
+        if ($res->num_rows > 0) {
+            while($row = $res->fetch_assoc()) {
+                foreach ($row as $key => $name) {
+                    array_push($data, $name);
+                }
             }
+        } else {
+            array_push($data, "No results found.");
         }
-    } else {
-        array_push($data, "No results found.");
-    }
 
-    echo json_encode($data);
+        echo json_encode($data);
+    } else {
+        echo "";
+    }
 ?>
