@@ -1,11 +1,14 @@
 <?php
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
     require("db.php");
 
     $dbc = new dbConnect();
     $dbc->connectToDB();
 
     $eventid = $_GET['eventid'];
-    
+
     // Grabs the event info that pertains to the eventid in the url.
     $evdata = $dbc->grabEventData($eventid);
     if ($evdata == false) {
