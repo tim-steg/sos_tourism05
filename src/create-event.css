@@ -567,7 +567,6 @@ i.fa-trash-alt:hover{
 
     .date-input {
         display: inline-block;
-        height: 24px;
-        font-size: 20px;
+        font-size: 18px;
     }
 }
