@@ -104,8 +104,6 @@
             .then(res => res.text())
             .then(res => console.log(res))
             .catch(error => console.log("Error: " + error));
-
-            searchinput.placeholder = res;
         }
     </script>
 </body>
