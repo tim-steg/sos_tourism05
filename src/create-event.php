@@ -124,7 +124,7 @@
             </div>
 
             <div class="event-session" id="session1">
-                    <div type="button" class="collapsible">
+                    <div class="collapsible">
                         <div class="editable" contenteditable data-placeholder="Add Session Name"></div>
                         <i class="fa fa-caret-down" aria-hidden="true"></i>
                         <i class="fa fa-caret-up" aria-hidden="true"></i>
