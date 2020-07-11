@@ -57,7 +57,7 @@
 
        <div class="event-wrapper">
            <div class="event-info">
-                <div class="event-labels" id="name-info">Event Name: <?php echo $data; ?></div>
+                <div class="event-labels" id="name-info">Event Name: <?php echo $data['eventname']; ?></div>
                 <div class="event-labels" id="date-info">Date: </div>
                 <div class="event-labels" id="organizer-info">Event Organizer: </div>
                 <div class="event-labels" id="location-info">Location: </div>
