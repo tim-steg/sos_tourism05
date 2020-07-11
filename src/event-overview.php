@@ -15,7 +15,7 @@
         die("404: Page Not Found.");
     }
 
-    $dbc->close();
+    $dbc->closeConn();
 ?>
 <!DOCTYPE html>
 <html lang="en">
