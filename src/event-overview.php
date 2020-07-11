@@ -1,3 +1,23 @@
+<?php 
+    $url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+
+    $server = $url["host"];
+    $username = $url["user"];
+    $password = $url["pass"];
+    $db = substr($url["path"], 1);
+    
+    $conn = new mysqli($server, $username, $password, $db);
+
+    $eventid = $_GET['eventid'];
+    $stmt = $conn->prepare("SELECT * FROM `events` WHERE eventid == ?");
+    $stmt->bind_param("i", $eventid);
+    $stmt->execute();
+
+    $eventdata = array();
+    $stmt->bind_result($eventdata);
+
+    $conn->close();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +35,7 @@
         <img src="../res/logo.png" alt="" class="logo">
         <ul>
             <li>
-                <div><input class="form-control input-lg" style="border-radius: 5px;" type="text" placeholder="Search for an event here!"></div>
+                <div><form action="searchevents.php" method="POST"><input class="form-control input-lg" style="border-radius: 5px;" type="text" id="search-input" placeholder="Search for an event here!"></form></div>
                 <div class="create">
                     <p style="margin-bottom: 4px;"><img style="height: 10%; width: 10%; margin-right: 10px;" src="../res/searchicon.png">Search</p>
                 </div>
@@ -38,7 +58,7 @@
 
        <div class="event-wrapper">
            <div class="event-info">
-                <div class="event-labels" id="name-info">Event Name: </div>
+                <div class="event-labels" id="name-info">Event Name: <?php echo $eventdata[0]; ?></div>
                 <div class="event-labels" id="date-info">Date: </div>
                 <div class="event-labels" id="organizer-info">Event Organizer: </div>
                 <div class="event-labels" id="location-info">Location: </div>
@@ -50,9 +70,7 @@
                 <div class="event-labels" id="safety-features">Recommended Safety Features:</div>
                 <div class="event-labels" id="event-requirements">
                     <table class="requirement-table">
-                        <tr>
-                            <td>Face Masks Required</td>
-                        </tr>
+                        <?php echo $event_reqs; ?>
                     </table>
                 </div>
 
@@ -61,33 +79,6 @@
                     <p id="event-description-text"></p>
                 </div>
            </div>
-
-           <div class="event-session">
-                <button class="collapsible">
-                    <div></div>
-                    <i class="fa fa-caret-down" aria-hidden="true"></i>
-                    <i class="fa fa-caret-up" aria-hidden="true"></i>
-                    <i class="far fa-trash-alt"></i>
-                </button>
-                <div class="session-content">
-                    <textarea type="text" placeholder="enter session info" class="session-info"></textarea>
-                </div>
-           </div>
-
-
-           <div class="event-session">
-                <button class="collapsible">
-                    <div class="editable" contenteditable data-placeholder="Add Session Name"></div>
-                    <i class="fa fa-caret-down" aria-hidden="true"></i>
-                    <i class="fa fa-caret-up" aria-hidden="true"></i>
-                    <i class="far fa-trash-alt"></i>
-                </button>
-                <div class="session-content">
-                    <textarea type="text" placeholder="enter session info" class="session-info"></textarea>
-                </div>
-            </div>
-
-            <button class="add-session">Add Session</button>
             
         </div>
 
@@ -99,5 +90,22 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="create-event.js"></script>
+    <!--<script src="event-overview.js"></script>-->
+    <script>
+        let searchinput = document.getElementById("search-input");
+        searchinput.addEventListener("input", autoSearch);
+
+        function autoSearch(ev) {
+            let data = ev.target.value;
+            console.log(data);
+            fetch("searchevents.php", {
+                method: "POST", 
+                body: new URLSearchParams('name='+data)
+            })
+            .then(res => res.text())
+            .then(res => console.log(res))
+            .catch(error => console.log("Error: " + error));
+        }
+    </script>
 </body>
 </html>
