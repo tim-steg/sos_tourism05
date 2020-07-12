@@ -86,23 +86,23 @@
                     </div>
                     <p id="safety">Safety Features:</p>
                     <div id="event-requirements">
-                        <div id="face-mask">
-                            <input type="checkbox" class="form-control-lg" id="mask">
+                        <div class="form-control-lg" id="face-mask">
+                            <input type="checkbox" id="mask">
                             <label for="mask">Require Face Masks On</label>
                         </div>
                         
-                        <div>
-                            <input type="checkbox" class="form-control-lg" id="sanitizer">
+                        <div class="form-control-lg">
+                            <input type="checkbox" id="sanitizer">
                             <label for="sanitizer">Hand Sanitizer Stations</label>
                         </div>
 
-                        <div>
-                            <input type="checkbox" class="form-control-lg" id="temp">
+                        <div class="form-control-lg">
+                            <input type="checkbox" id="temp">
                             <label for="temp">Body Temperature Check</label>
                         </div>
 
 
-                        <div>
+                        <div class="form-control-lg">
                             <label for="door">Indoor/Outdoor:</label>
                             <select class="form-control" style="width: auto; display: inline-block;" id="door">
                                 <option value="indoor">Indoor</option>
@@ -110,8 +110,8 @@
                             </select>
                         </div>
 
-                        <div>
-                            <input type="checkbox" class="form-control-lg" id="age">
+                        <div class="form-control-lg">
+                            <input type="checkbox" id="age">
                             <label for="age">Not Recommended For Age &gt 65</label>
                         </div>
 
