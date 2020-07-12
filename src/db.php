@@ -46,7 +46,7 @@
             try {
                 $list = array_combine($sessionName, $sessionDesc);
 
-                $stmt = $this->conn->prepare("INSERT INTO sessions (?, ?, ?)");
+                $stmt = $this->conn->prepare("INSERT INTO sessions (eventid, eventname, eventdesc) VALUES (?, ?, ?)");
                 $stmt->bind_param("iss", $eventid, $eventname, $eventdesc);
 
                 foreach ($list as $session) {
