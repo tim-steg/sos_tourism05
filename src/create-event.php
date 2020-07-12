@@ -14,7 +14,7 @@
                                     $_POST['descr'], $_POST['timezone'], $_POST['site'], $_POST['tele'], $_POST['email']);
 
         $dbcon->closeConn();
-        header("Location ./index.html");
+        header("Location: ./index.html");
     } else if (isset($_POST['delete_submission'])) {
         header("Location: ./index.html");
     }
