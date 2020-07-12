@@ -150,7 +150,7 @@
                     </div>
             </div>
             
-            <button type="button" class="add-session" style="margin-bottom: 40px;">Add Session</button>
+            <input type="button" class="add-session" style="margin-bottom: 40px;" value="Add Session">
 
         </div>
     </form>
