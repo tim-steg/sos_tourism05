@@ -45,11 +45,16 @@
         private function insertSessions($eventid, $sessionName, $sessionDesc) {
             try {
                 $i = 0;
+
+                $name = "";
+                $desc = "";
+
                 $stmt = $this->conn->prepare("INSERT INTO sessions (`eventid`, `sessname`, `sessdesc`) VALUES (?, ?, ?)");
-                $stmt->bind_param("iss", $eventid, $sessionName[$i], $sessionDesc[$i]);
+                $stmt->bind_param("iss", $eventid, $name, $desc);
 
                 for ($i = 0; $i < count($sessionName); $i++) {
-                    $i++;
+                    $name = $sessionName[$i];
+                    $desc = $sessionDesc[$i];
                     $stmt->execute();
                 }
 
