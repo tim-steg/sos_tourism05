@@ -37,7 +37,8 @@
 
         // function to insert the core data for an event.
         function insertNewEvent($userid, $eventname, $organizer, $startdate, 
-                                $enddate, $location, $descr, $timezone, $website, $tele, $email, $reqs) {
+                                $enddate, $location, $descr, $timezone, $website, $tele, 
+                                $email, $reqs, $sessName, $sessDesc) {
             
             try {
                 $stmt = $this->conn->prepare("INSERT INTO events (`userid`, `eventname`, `organizer`, `startdate`,
@@ -49,29 +50,32 @@
 
                 $stmt->execute();
 
-                insertReqs($reqs);
+                $eventid = $this->conn->insert_id;
+                insertReqs($eventid, $reqs);
+                insertSessions($eventid, $sessName, $sessDesc);
             } catch (Exception $err) {
                 return $err;
             }
         }
 
-        function insertReqs($reqs) {
+        function insertReqs($eventid, $reqs) {
             // inserts the recommended precautions into its own table.
             $stmt = $this->conn->prepare("INSERT INTO reqs (`eventid`, `facemasks`, `sanitizer`, `tempcheck`, `inoroutdoor`, `notrecage`, `caplimit`) VALUES (?, ?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("iiiiiii", $reqs[0], $reqs[1], $reqs[2], $reqs[3], $reqs[4], $reqs[5], $reqs[6]);
+            $stmt->bind_param("iiiiiii", $eventid, $reqs[0], $reqs[1], $reqs[2], $reqs[3], $reqs[4], $reqs[5]);
         }
 
         // inserts all the various session data into a cross-reference table.
-        function insertSessions($sessionName, $sessionDesc) {
+        function insertSessions($eventid, $sessionName, $sessionDesc) {
             try {
-                $i = 0;
-                foreach($sessionName as $name) {
-                    //$this->conn->query("INSERT INTO sessions");
+                $list = array_combine($sessionName, $sessionDesc);
+
+                $stmt = $this->conn->prepare("INSERT INTO sessions (?, ?, ?)");
+                $stmt->bind_param("iss", $eventid, $eventname, $eventdesc);
+
+                foreach ($list as $session) {
+                    $stmt->execute();
                 }
 
-                foreach($sessionDesc as $desc) {
-
-                }
             } catch (Exception $err) {
                 return $err;
             }

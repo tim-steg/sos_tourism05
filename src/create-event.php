@@ -9,12 +9,12 @@
         $dbcon->connectToDB();
 
         $reqs = $_REQUEST['reqs'];
+        $sName = $_REQUEST['sessname'];
+        $sDesc = $_REQUEST['sessdesc'];
 
-        $dbcon->insertNewEvent(100, $_POST['eventname'], $_POST['organizer'], $_POST['startdate'], $_POST['enddate'], $_POST['location'], 
-                                    $_POST['descr'], $_POST['timezone'], $_POST['site'], $_POST['tele'], $_POST['email'], $reqs);
+        $eventid = $dbcon->insertNewEvent(100, $_POST['eventname'], $_POST['organizer'], $_POST['startdate'], $_POST['enddate'], $_POST['location'], 
+                                        $_POST['descr'], $_POST['timezone'], $_POST['site'], $_POST['tele'], $_POST['email'], $reqs, $sName, $sDesc);
 
-
-        
         $dbcon->closeConn();
         header("Location: ./index.html");
     } else if (isset($_POST['delete_submission'])) {
