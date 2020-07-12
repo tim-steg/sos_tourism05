@@ -37,7 +37,7 @@
 
         // function to insert the core data for an event.
         function insertNewEvent($userid, $eventname, $organizer, $startdate, 
-                                $enddate, $location, $descr, $timezone, $website, $tele, $email) {
+                                $enddate, $location, $descr, $timezone, $website, $tele, $email, $reqs) {
             
             try {
                 $stmt = $this->conn->prepare("INSERT INTO events (`userid`, `eventname`, `organizer`, `startdate`,
@@ -48,9 +48,17 @@
                                                 $timezone, $website, $tele, $email);
 
                 $stmt->execute();
+
+                insertReqs($reqs);
             } catch (Exception $err) {
                 return $err;
             }
+        }
+
+        function insertReqs($reqs) {
+            // inserts the recommended precautions into its own table.
+            $stmt = $this->conn->prepare("INSERT INTO reqs (`eventid`, `facemasks`, `sanitizer`, `tempcheck`, `inoroutdoor`, `notrecage`, `caplimit`) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("iiiiiii", $reqs[0], $reqs[1], $reqs[2], $reqs[3], $reqs[4], $reqs[5], $reqs[6]);
         }
 
         // inserts all the various session data into a cross-reference table.

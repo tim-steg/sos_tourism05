@@ -8,9 +8,13 @@
         $dbcon = new dbConnect();
         $dbcon->connectToDB();
 
-        $dbcon->insertNewEvent(100, $_POST['eventname'], $_POST['organizer'], $_POST['startdate'], $_POST['enddate'], $_POST['location'], 
-                                    $_POST['descr'], $_POST['timezone'], $_POST['site'], $_POST['tele'], $_POST['email']);
+        $reqs = $_REQUEST['reqs'];
 
+        $dbcon->insertNewEvent(100, $_POST['eventname'], $_POST['organizer'], $_POST['startdate'], $_POST['enddate'], $_POST['location'], 
+                                    $_POST['descr'], $_POST['timezone'], $_POST['site'], $_POST['tele'], $_POST['email'], $reqs);
+
+
+        
         $dbcon->closeConn();
         header("Location: ./index.html");
     } else if (isset($_POST['delete_submission'])) {
@@ -87,40 +91,41 @@
                     <p id="safety">Safety Features:</p>
                     <div id="event-requirements">
                         <div id="face-mask">
-                            <input type="checkbox" id="mask">
+                            <input type="checkbox" value="1" name="reqs[]" id="mask">
                             <label for="mask">Require Face Masks On</label>
                         </div>
                         
                         <div>
-                            <input type="checkbox" id="sanitizer">
+                            <input type="checkbox" value="1" name="reqs[]" id="sanitizer">
                             <label for="sanitizer">Hand Sanitizer Stations</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" id="temp">
+                            <input type="checkbox" value="1" name="reqs[]" id="temp">
                             <label for="temp">Body Temperature Check</label>
                         </div>
 
 
                         <div>
                             <label for="door">Indoor/Outdoor:</label>
-                            <select class="form-control" style="width: auto; display: inline-block;" id="door">
-                                <option value="indoor">Indoor</option>
-                                <option value="outdoor">Outdoor</option>
+                            <select class="form-control" name="reqs[]" style="width: auto; display: inline-block;" id="door">
+                                <option value="indoor" value="1">Indoor</option>
+                                <option value="outdoor" value="2">Outdoor</option>
+                                <option value="mixed" value="3">Mixed</option>
                             </select>
                         </div>
 
                         <div>
-                            <input type="checkbox" id="age">
-                            <label for="age">Not Recommended For Age &gt 65</label>
+                            <input type="checkbox" name="reqs[]" id="age">
+                            <label for="age" value="1">Not Recommended For Age &gt 65</label>
                         </div>
 
                         <div>
                             <label for="capacity">Capacity Limit:</label>
-                            <select class="form-control" style="width: auto; display: inline-block;" id="capacity" required>
-                                <option value="small">&lt50</option>
-                                <option value="mediem">50-100</option>
-                                <option value="large">&gt100</option>
+                            <select class="form-control"name="reqs[]" style="width: auto; display: inline-block;" id="capacity" required>
+                                <option value="small" value="1">&lt50</option>
+                                <option value="mediem" value="2">50-100</option>
+                                <option value="large" value="3">&gt100</option>
                             </select>
                         </div>
 
