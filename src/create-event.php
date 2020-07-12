@@ -8,7 +8,8 @@
         $dbcon = new dbConnect();
         $dbcon->connectToDB();
 
-        $dbcon->insertNewEvent($_POST['eventname'], );
+        $dbcon->insertNewEvent(100, $_POST['eventname'], $_POST['organizer'], $_POST['startdate'], $_POST['enddate'], $_POST['location'], 
+                                    $_POST['descr'], $_POST['timezone'], $_POST['site'], $_POST['tele'], $_POST['email']);
 
         $dbcon->close();
     } else if (isset($_POST['delete_submission'])) {
@@ -67,12 +68,12 @@
                     <div id="event-name-input">Event Name: <input type="text" name="eventname" placeholder="Add event name here" required></div>
                     <div id="event-date-input" class="col-xs-2">Date: <input type="date" class="date-input" name="startdate" id="date1" placeholder="mm-dd-yyyy" required> - <input type="date" class="date-input" name="enddate" id="date2" placeholder="mm-dd-yyyy" required></div>
                     <div id="event-date-input"></div>
-                    <div id="event-organizer-input">Event Organizer: <input type="text" name="" placeholder="Add organizer name here" required></div>
-                    <div id="event-location-input">Location: <input type="text" placeholder="Add location here" required></div>
+                    <div id="event-organizer-input">Event Organizer: <input type="text" name="organizer" placeholder="Add organizer name here" required></div>
+                    <div id="event-location-input">Location: <input type="text" name="location" placeholder="Add location here" required></div>
                     <div id="event-contact-input">
-                        Tel: <input type="text" placeholder="Add telephone #"> 
-                        Email: <input type="text" placeholder="Add email here">
-                        Website: <input type="text" placeholder="Add your website">
+                        Tel: <input type="text" name="tele" placeholder="Add telephone #"> 
+                        Email: <input type="text" name="email" placeholder="Add email here">
+                        Website: <input type="text" name="site" placeholder="Add your website">
                     </div>
                     <p id="safety">Safety Features:</p>
                     <div id="event-requirements">
@@ -119,7 +120,7 @@
 
                     <div id="event-description-input">
                         <h1>Description: </h1>
-                        <textarea type="text" placeholder="Add description here" required></textarea>
+                        <textarea type="text" name="descr" placeholder="Add description here" required></textarea>
                     </div>
             </div>
 

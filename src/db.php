@@ -37,14 +37,36 @@
 
         // function to insert the core data for an event.
         function insertNewEvent($userid, $eventname, $organizer, $startdate, 
-                                $enddate, $starttime, $endtime, $location, $descr, 
-                                $timezone, $website, $tele, $email) {
+                                $enddate, $location, $descr, $timezone, $website, $tele, $email) {
             
+            try {
+                $stmt = $this->conn->prepare("INSERT INTO events (`userid`, `eventname`, `organizer`, `startdate`,
+                `enddate`, `location`, `descr`, `timezone`, `website`, `tele`, `email`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+
+                $stmt->bind_param("issssssssssss", $userid, $eventname, $organizer, $startdate, 
+                                                $enddate, $location, $descr, 
+                                                $timezone, $website, $tele, $email);
+
+                $stmt->execute();
+            } catch (Exception $err) {
+                return $err;
+            }
         }
 
         // inserts all the various session data into a cross-reference table.
-        function insertSessions($sessionArray) {
-            
+        function insertSessions($sessionName, $sessionDesc) {
+            try {
+                $i = 0;
+                foreach($sessionName as $name) {
+                    //$this->conn->query("INSERT INTO sessions");
+                }
+
+                foreach($sessionDesc as $desc) {
+
+                }
+            } catch (Exception $err) {
+                return $err;
+            }
         }
 
         function closeConn() {
