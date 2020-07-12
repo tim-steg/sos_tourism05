@@ -46,7 +46,7 @@
             try {
                 $i = 0;
                 $stmt = $this->conn->prepare("INSERT INTO sessions (`eventid`, `sessname`, `sessdesc`) VALUES (?, ?, ?)");
-                $stmt->bind_param("iss", $eventid, $eventname[$i], $eventdesc[$i]);
+                $stmt->bind_param("iss", $eventid, $sessionName[$i], $sessionDesc[$i]);
 
                 for ($i = 0; $i < count($sessionName); $i++) {
                     $i++;
