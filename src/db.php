@@ -34,6 +34,29 @@
                 return false;
             }
         }
+        
+        function insertReqs($eventid, $reqs) {
+            // inserts the recommended precautions into its own table.
+            $stmt = $this->conn->prepare("INSERT INTO reqs (`eventid`, `facemasks`, `sanitizer`, `tempcheck`, `inoroutdoor`, `notrecage`, `caplimit`) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("iiiiiii", $eventid, $reqs[0], $reqs[1], $reqs[2], $reqs[3], $reqs[4], $reqs[5]);
+        }
+
+        // inserts all the various session data into a cross-reference table.
+        function insertSessions($eventid, $sessionName, $sessionDesc) {
+            try {
+                $list = array_combine($sessionName, $sessionDesc);
+
+                $stmt = $this->conn->prepare("INSERT INTO sessions (?, ?, ?)");
+                $stmt->bind_param("iss", $eventid, $eventname, $eventdesc);
+
+                foreach ($list as $session) {
+                    $stmt->execute();
+                }
+
+            } catch (Exception $err) {
+                return $err;
+            }
+        }
 
         // function to insert the core data for an event.
         function insertNewEvent($userid, $eventname, $organizer, $startdate, 
@@ -53,29 +76,6 @@
                 $eventid = $this->conn->insert_id;
                 insertReqs($eventid, $reqs);
                 insertSessions($eventid, $sessName, $sessDesc);
-            } catch (Exception $err) {
-                return $err;
-            }
-        }
-
-        function insertReqs($eventid, $reqs) {
-            // inserts the recommended precautions into its own table.
-            $stmt = $this->conn->prepare("INSERT INTO reqs (`eventid`, `facemasks`, `sanitizer`, `tempcheck`, `inoroutdoor`, `notrecage`, `caplimit`) VALUES (?, ?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("iiiiiii", $eventid, $reqs[0], $reqs[1], $reqs[2], $reqs[3], $reqs[4], $reqs[5]);
-        }
-
-        // inserts all the various session data into a cross-reference table.
-        function insertSessions($eventid, $sessionName, $sessionDesc) {
-            try {
-                $list = array_combine($sessionName, $sessionDesc);
-
-                $stmt = $this->conn->prepare("INSERT INTO sessions (?, ?, ?)");
-                $stmt->bind_param("iss", $eventid, $eventname, $eventdesc);
-
-                foreach ($list as $session) {
-                    $stmt->execute();
-                }
-
             } catch (Exception $err) {
                 return $err;
             }
