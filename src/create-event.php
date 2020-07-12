@@ -140,7 +140,7 @@
 
             <div class="event-session" id="session1">
                     <div class="collapsible">
-                        <input type="text" class="editable" name="sessname[]" contenteditable data-placeholder="Add Session Name">
+                        <input type="text" class="editable" name="sessname[]" contenteditable placeholder="Add Session Name">
                         <i class="fa fa-caret-down" aria-hidden="true"></i>
                         <i class="fa fa-caret-up" aria-hidden="true"></i>
                         <i class="far fa-trash-alt"></i>
