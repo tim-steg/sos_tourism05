@@ -10,6 +10,7 @@
         private $conn;
 
         function __construct() {
+            // sets connection parameters
             $this->url = parse_url(getenv("CLEARDB_DATABASE_URL"));
             $this->server = $this->url["host"];
             $this->username = $this->url["user"];
@@ -32,6 +33,18 @@
                 // return false on error.
                 return false;
             }
+        }
+
+        // function to insert the core data for an event.
+        function insertNewEvent($userid, $eventname, $organizer, $startdate, 
+                                $enddate, $starttime, $endtime, $location, $descr, 
+                                $timezone, $website, $tele, $email) {
+            
+        }
+
+        // inserts all the various session data into a cross-reference table.
+        function insertSessions($sessionArray) {
+            
         }
 
         function closeConn() {

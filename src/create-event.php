@@ -8,7 +8,7 @@
         $dbcon = new dbConnect();
         $dbcon->connectToDB();
 
-        echo '<script>'.print_r($_POST).'</script>';
+        $dbcon->insertNewEvent($_POST['eventname'], );
 
         $dbcon->close();
     } else if (isset($_POST['delete_submission'])) {
@@ -64,10 +64,10 @@
 
         <div class="event-wrapper">
             <div class="event-info">
-                    <div id="event-name-input">Event Name: <input type="text" placeholder="Add event name here" required></div>
-                    <div id="event-date-input" class="col-xs-2">Date: <input type="date" class="date-input" name="" id="date1" placeholder="mm-dd-yyyy" required> - <input type="date" class="date-input" name="" id="date2" placeholder="mm-dd-yyyy" required></div>
+                    <div id="event-name-input">Event Name: <input type="text" name="eventname" placeholder="Add event name here" required></div>
+                    <div id="event-date-input" class="col-xs-2">Date: <input type="date" class="date-input" name="startdate" id="date1" placeholder="mm-dd-yyyy" required> - <input type="date" class="date-input" name="enddate" id="date2" placeholder="mm-dd-yyyy" required></div>
                     <div id="event-date-input"></div>
-                    <div id="event-organizer-input">Event Organizer: <input type="text" placeholder="Add organizer name here" required></div>
+                    <div id="event-organizer-input">Event Organizer: <input type="text" name="" placeholder="Add organizer name here" required></div>
                     <div id="event-location-input">Location: <input type="text" placeholder="Add location here" required></div>
                     <div id="event-contact-input">
                         Tel: <input type="text" placeholder="Add telephone #"> 
@@ -125,13 +125,13 @@
 
             <div class="event-session" id="session1">
                     <div class="collapsible">
-                        <div class="editable" contenteditable data-placeholder="Add Session Name"></div>
+                        <div class="editable" name="sessname[]" contenteditable data-placeholder="Add Session Name"></div>
                         <i class="fa fa-caret-down" aria-hidden="true"></i>
                         <i class="fa fa-caret-up" aria-hidden="true"></i>
                         <i class="far fa-trash-alt"></i>
                     </div>
                     <div class="session-content">
-                        <textarea type="text" placeholder="enter session info" class="session-info" required></textarea>
+                        <textarea type="text" name="sessdesc[]" placeholder="enter session info" class="session-info"></textarea>
                     </div>
             </div>
             
