@@ -41,7 +41,7 @@
             
             try {
                 $stmt = $this->conn->prepare("INSERT INTO events (`userid`, `eventname`, `organizer`, `startdate`,
-                `enddate`, `location`, `descr`, `timezone`, `website`, `tele`, `email`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                `enddate`, `location`, `descr`, `timezone`, `website`, `telephone`, `email`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 
                 $stmt->bind_param("issssssssssss", $userid, $eventname, $organizer, $startdate, 
                                                 $enddate, $location, $descr, 
