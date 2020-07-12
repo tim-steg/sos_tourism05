@@ -104,7 +104,7 @@
 
                         <div>
                             <label for="door">Indoor/Outdoor:</label>
-                            <select id="door">
+                            <select class="form-control" id="door">
                                 <option value="indoor">Indoor</option>
                                 <option value="outdoor">Outdoor</option>
                             </select>
@@ -117,7 +117,7 @@
 
                         <div>
                             <label for="capacity">Capacity Limit:</label>
-                            <select id="capacity" required>
+                            <select class="form-control" id="capacity" required>
                                 <option value="small">&lt50</option>
                                 <option value="mediem">50-100</option>
                                 <option value="large">&gt100</option>
