@@ -11,7 +11,7 @@
         $dbcon->insertNewEvent(100, $_POST['eventname'], $_POST['organizer'], $_POST['startdate'], $_POST['enddate'], $_POST['location'], 
                                     $_POST['descr'], $_POST['timezone'], $_POST['site'], $_POST['tele'], $_POST['email']);
 
-        $dbcon->close();
+        $dbcon->closeConn();
         header("Location ./index.html");
     } else if (isset($_POST['delete_submission'])) {
         header("Location: ./index.html");
