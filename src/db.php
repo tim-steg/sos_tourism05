@@ -46,10 +46,12 @@
             try {
                 $list = array_combine($sessionName, $sessionDesc);
 
-                $stmt = $this->conn->prepare("INSERT INTO sessions (eventid, eventname, eventdesc) VALUES (?, ?, ?)");
-                $stmt->bind_param("iss", $eventid, $eventname, $eventdesc);
+                $i = 0;
+                $stmt = $this->conn->prepare("INSERT INTO sessions (`eventid`, `sessname`, `sessdesc`) VALUES (?, ?, ?)");
+                $stmt->bind_param("iss", $eventid, $eventname[$i], $eventdesc[$i]);
 
-                foreach ($list as $session) {
+                for ($i = 0; $i < count($sessionName); $i++) {
+                    $i++;
                     $stmt->execute();
                 }
 
