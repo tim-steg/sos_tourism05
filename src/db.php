@@ -44,8 +44,6 @@
         // inserts all the various session data into a cross-reference table.
         private function insertSessions($eventid, $sessionName, $sessionDesc) {
             try {
-                $list = array_combine($sessionName, $sessionDesc);
-
                 $i = 0;
                 $stmt = $this->conn->prepare("INSERT INTO sessions (`eventid`, `sessname`, `sessdesc`) VALUES (?, ?, ?)");
                 $stmt->bind_param("iss", $eventid, $eventname[$i], $eventdesc[$i]);
