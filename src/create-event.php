@@ -87,17 +87,17 @@
                     <p id="safety">Safety Features:</p>
                     <div id="event-requirements">
                         <div id="face-mask">
-                            <input type="checkbox" id="mask">
+                            <input type="checkbox" class="form-control-lg" id="mask">
                             <label for="mask">Require Face Masks On</label>
                         </div>
                         
                         <div>
-                            <input type="checkbox" id="sanitizer">
+                            <input type="checkbox" class="form-control-lg" id="sanitizer">
                             <label for="sanitizer">Hand Sanitizer Stations</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" id="temp">
+                            <input type="checkbox" class="form-control-lg" id="temp">
                             <label for="temp">Body Temperature Check</label>
                         </div>
 
@@ -111,7 +111,7 @@
                         </div>
 
                         <div>
-                            <input type="checkbox" id="age">
+                            <input type="checkbox" class="form-control-lg" id="age">
                             <label for="age">Not Recommended For Age &gt 65</label>
                         </div>
 
