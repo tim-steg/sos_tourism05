@@ -8,8 +8,6 @@
         $dbcon = new dbConnect();
         $dbcon->connectToDB();
 
-        $_POST['timezone'] = "EST";
-
         $dbcon->insertNewEvent(100, $_POST['eventname'], $_POST['organizer'], $_POST['startdate'], $_POST['enddate'], $_POST['location'], 
                                     $_POST['descr'], $_POST['timezone'], $_POST['site'], $_POST['tele'], $_POST['email']);
 
@@ -70,7 +68,15 @@
             <div class="event-info">
                     <div id="event-name-input">Event Name: <input type="text" name="eventname" placeholder="Add event name here" required></div>
                     <div id="event-date-input" class="col-xs-2">Date: <input type="date" class="date-input" name="startdate" id="date1" placeholder="mm-dd-yyyy" required> - <input type="date" class="date-input" name="enddate" id="date2" placeholder="mm-dd-yyyy" required></div>
-                    <div id="event-date-input"></div>
+                    <div id="event-date-input">Timezone: 
+                    <select name="timezone" id="">
+                        <option value="AST">AST (Atlantic Standard Time)</option>
+                        <option value="EST">EST (Eastern Standard Time)</option>
+                        <option value="CST">CST (Central Standard Time)</option>
+                        <option value="MST">MST (Mountain Standard Time)</option>
+                        <option value="PST">PST (Pacific Standard Time)</option>
+                        <option value="AKST">AKST (Alaska Time)</option>
+                    </select></div>
                     <div id="event-organizer-input">Event Organizer: <input type="text" name="organizer" placeholder="Add organizer name here" required></div>
                     <div id="event-location-input">Location: <input type="text" name="location" placeholder="Add location here" required></div>
                     <div id="event-contact-input">
