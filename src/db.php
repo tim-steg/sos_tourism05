@@ -35,14 +35,14 @@
             }
         }
         
-        function insertReqs($eventid, $reqs) {
+        private function insertReqs($eventid, $reqs) {
             // inserts the recommended precautions into its own table.
             $stmt = $this->conn->prepare("INSERT INTO reqs (`eventid`, `facemasks`, `sanitizer`, `tempcheck`, `inoroutdoor`, `notrecage`, `caplimit`) VALUES (?, ?, ?, ?, ?, ?, ?)");
             $stmt->bind_param("iiiiiii", $eventid, $reqs[0], $reqs[1], $reqs[2], $reqs[3], $reqs[4], $reqs[5]);
         }
 
         // inserts all the various session data into a cross-reference table.
-        function insertSessions($eventid, $sessionName, $sessionDesc) {
+        private function insertSessions($eventid, $sessionName, $sessionDesc) {
             try {
                 $list = array_combine($sessionName, $sessionDesc);
 
