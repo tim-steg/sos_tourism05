@@ -69,7 +69,7 @@
                     <div id="event-name-input">Event Name: <input type="text" name="eventname" placeholder="Add event name here" required></div>
                     <div id="event-date-input" class="col-xs-2">Date: <input type="date" class="date-input" name="startdate" id="date1" placeholder="mm-dd-yyyy" required> - <input type="date" class="date-input" name="enddate" id="date2" placeholder="mm-dd-yyyy" required></div>
                     <div id="event-date-input" class="col-xs-2">Timezone: 
-                    <select class="form-control" name="timezone" id="">
+                    <select class="form-control" style="width:auto;" name="timezone" id="">
                         <option value="AST">AST (Atlantic Standard Time)</option>
                         <option value="EST">EST (Eastern Standard Time)</option>
                         <option value="CST">CST (Central Standard Time)</option>
