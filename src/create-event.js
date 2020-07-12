@@ -4,7 +4,7 @@
 
     var new_session=`<div class="event-session">
                         <div class="collapsible">
-                            <div class="editable" name="sessname[]" contenteditable data-placeholder="Enter Session Name"></div>
+                            <button type="button" class="editable" name="sessname[]" contenteditable data-placeholder="Enter Session Name"></button>
                             <i class="fa fa-caret-down" aria-hidden="true"></i>
                             <i class="fa fa-caret-up" aria-hidden="true"></i>
                             <i class="far fa-trash-alt"></i>
