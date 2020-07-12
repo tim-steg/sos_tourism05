@@ -74,8 +74,8 @@
                 $stmt->execute();
 
                 $eventid = $this->conn->insert_id;
-                insertReqs($eventid, $reqs);
-                insertSessions($eventid, $sessName, $sessDesc);
+                $this->insertReqs($eventid, $reqs);
+                $this->insertSessions($eventid, $sessName, $sessDesc);
             } catch (Exception $err) {
                 return $err;
             }
