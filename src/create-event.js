@@ -3,12 +3,12 @@
 (function() {
 
     var new_session=`<div class="event-session">
-                        <button class="collapsible">
+                        <div class="collapsible">
                             <div class="editable" name="sessname[]" contenteditable data-placeholder="Enter Session Name"></div>
                             <i class="fa fa-caret-down" aria-hidden="true"></i>
                             <i class="fa fa-caret-up" aria-hidden="true"></i>
                             <i class="far fa-trash-alt"></i>
-                        </button>
+                        </div>
                         <div class="session-content">
                             <textarea type="text" name="sessdesc[]" placeholder="enter session info" class="session-info"></textarea>
                         </div>
