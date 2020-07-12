@@ -12,6 +12,7 @@
                                     $_POST['descr'], $_POST['timezone'], $_POST['site'], $_POST['tele'], $_POST['email']);
 
         $dbcon->close();
+        header("Location ./index.html");
     } else if (isset($_POST['delete_submission'])) {
         header("Location: ./index.html");
     }
@@ -27,7 +28,7 @@
     <title>Create A New Event</title>
 </head>
 <body>
-    <form action="create-event.php" method="POST" name="event_submission">
+    <form method="POST" name="event_submission">
         <nav>
             
             <img src="../res/logo.png" alt="" class="logo">
