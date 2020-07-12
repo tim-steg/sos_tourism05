@@ -28,14 +28,14 @@
     <title>Create A New Event</title>
 </head>
 <body>
-    <form method="POST" name="event_submission">
+    <form method="POST">
         <nav>
             
             <img src="../res/logo.png" alt="" class="logo">
         
             <ul>
                 <li>
-                    <button id="submitbutton">
+                    <button type="submit" name="event_submission" id="submitbutton">
                         <div class="create">
                             <p>Create</p>
                             <i class="fa fa-plus" aria-hidden="true"></i>
