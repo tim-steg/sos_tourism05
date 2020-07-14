@@ -45,7 +45,7 @@
             <button type="submit" name="signup">Sign up</button>
             <p style="color: red; margin-top: 0px; font-style: italic;
                      margin-bottom: 10px; font-size: 22px; font-weight: 700;"><?php echo $msg; ?></p>
-            <p class="hint2">Already have an account? <a href="log-in.html">Sign in</a></p>
+            <p class="hint2">Already have an account? <a href="log-in.html">Log in</a></p>
           
         </form>
     </div>
