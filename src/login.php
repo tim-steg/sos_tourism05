@@ -1,4 +1,7 @@
 <?php 
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
     require_once("db.php");
     session_start();
     $msg = "";
@@ -9,7 +12,7 @@
 
         if (isset($_POST['username']) && isset($_POST['password']) 
             && $dbcon->checkLogin($_POST['username'], $_POST['password']) == true) {
-                
+
             $_SESSION['userid'] = $dbcon->getUserID($_POST['username']);
             header("Location: ./create-event.php");
         } else {
