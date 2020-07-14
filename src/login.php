@@ -7,7 +7,9 @@
         $dbcon = new dbConnect();
         $dbcon->connectToDB();
 
-        if ($dbcon->checkLogin($_POST['username'], $_POST['password']) == true) {
+        if (isset($_POST['username']) && isset($_POST['password']) 
+            && $dbcon->checkLogin($_POST['username'], $_POST['password']) == true) {
+                
             $_SESSION['userid'] = $dbcon->getUserID($_POST['username']);
             header("Location: ./create-event.php");
         } else {
