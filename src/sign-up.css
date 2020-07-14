@@ -17,7 +17,7 @@ body {
 
 .left h1 {
     font-size: 50px;
-    padding-top: 120px;
+    padding-top: 100px;
     color: #d51042;
 }
 
@@ -33,7 +33,7 @@ form input {
     border: none;
     outline: none;
     height: 50px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     width: 100%;
 }
 
