@@ -42,7 +42,7 @@
     <div class="left">
         <h1>Sign Up</h1>
         <p class="hint1">Enter your information below</p>
-        <form action="">
+        <form method="POST" action="./sign-up.php">
             <input type="text" name="email" placeholder="Email" required>
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
