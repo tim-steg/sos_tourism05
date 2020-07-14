@@ -42,8 +42,9 @@
             <input type="text" name="email" placeholder="Email">
             <input type="text" name="username" placeholder="Username">
             <input type="text" name="password" placeholder="Password">
-            <p style="color: red; font-style: italic;"><?php echo $msg; ?></p>
             <button type="submit" name="signup">Sign up</button>
+            <p style="color: red; margin-top: 0px; font-style: italic;
+                     margin-bottom: 10px; font-size: 22px; font-weight: 700;"><?php echo $msg; ?></p>
             <p class="hint2">Already have an account? <a href="log-in.html">Sign in</a></p>
           
         </form>
