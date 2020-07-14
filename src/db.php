@@ -113,9 +113,11 @@
         function createUser($email, $username, $password) {
             try {
                 $hash = password_hash($password);
-                $stmt = $this->conn->prepare("INSERT INTO users (`email`, `password`, `username`, `status`) VALUES ?, ?, ?, ?");
-                $stmt->bind_param("sssi", $email, $hash, $username, 1);
-                $stmt->execute();
+                $stmt = $this->conn->prepare("INSERT INTO users (`email`, `password`, `username`, `status`) VALUES (?, ?, ?, ?)");
+                if ($stmt) {
+                    $stmt->bind_param("sssi", $email, $hash, $username, 1);
+                    $stmt->execute();
+                }
             } catch (Exception $e) {
                 die("Exception Error: " .$e->getMessage()."\n");
             }
