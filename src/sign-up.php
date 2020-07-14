@@ -13,7 +13,7 @@
     }
 
     if (isset($_POST['signup'])) {
-        if ($_POST['password'] == $_POST['passwordconfirm']) {
+        if (strcmp($_POST['password'], $_POST['passwordconfirm']) == 0) {
             $dbcon = new dbConnect();
             $dbcon->connectToDB();
 
