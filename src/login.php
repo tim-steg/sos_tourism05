@@ -37,7 +37,7 @@
         <form method="POST" action="./login.php">
             <input type="text" name="username" placeholder="Username">
             <input type="password" name="password" placeholder="Password">
-            <button type="submit" style="margin-bottom: 5px;" name="loginattempt">Login</button>
+            <button type="submit" style="margin-bottom: 10px;" name="loginattempt">Login</button>
             <p style="color: red; margin-top: 0px; margin-bottom: 10px; font-size: 18px;"><?php echo $msg; ?></p> 
             <p class="hint2">Don't have an account? <a href="sign-up.php">Sign up</a></p>
           
