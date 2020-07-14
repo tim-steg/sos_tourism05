@@ -13,14 +13,18 @@
     }
 
     if (isset($_POST['signup'])) {
-        $dbcon = new dbConnect();
-        $dbcon->connectToDB();
+        if ($_POST['password'] == $_POST['passwordconfirm']) {
+            $dbcon = new dbConnect();
+            $dbcon->connectToDB();
 
-        if ($dbcon->accAlExists($_POST['email'], $_POST['username']) == true) {
-            $msg = "Error: An account already exists with that email and/or username.";
-        } else if ($dbcon->accAlExists($_POST['email'], $_POST['username']) == false) {
-            $dbcon->createUser($_POST['email'], $_POST['username'], $_POST['password']);
-            header("Location: ./create-events.php");
+            if ($dbcon->accAlExists($_POST['email'], $_POST['username']) == true) {
+                $msg = "Error: An account already exists with that email and/or username.";
+            } else if ($dbcon->accAlExists($_POST['email'], $_POST['username']) == false) {
+                $dbcon->createUser($_POST['email'], $_POST['username'], $_POST['password']);
+                header("Location: ./create-events.php");
+            }
+        } else {
+            $msg = "Password fields do not match. Please reenter your password.";
         }
     }
 ?>
@@ -39,9 +43,10 @@
         <h1>Sign Up</h1>
         <p class="hint1">Enter your information below</p>
         <form action="">
-            <input type="text" name="email" placeholder="Email">
-            <input type="text" name="username" placeholder="Username">
-            <input type="text" name="password" placeholder="Password">
+            <input type="text" name="email" placeholder="Email" required>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="passwordconfirm" placeholder="Confirm your password" required>
             <button type="submit" name="signup">Sign up</button>
             <p style="color: red; margin-top: 0px; font-style: italic;
                      margin-bottom: 10px; font-size: 22px; font-weight: 700;"><?php echo $msg; ?></p>

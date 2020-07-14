@@ -35,8 +35,8 @@
         <h1>Login</h1>
         <p class="hint1">Enter your information below</p>
         <form method="POST" action="./login.php">
-            <input type="text" name="username" placeholder="Username">
-            <input type="password" name="password" placeholder="Password">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
             <button type="submit" style="margin-bottom: 10px;" name="loginattempt">Login</button>
             <p style="color: red; margin-top: 0px; font-style: italic;
                     margin-bottom: 10px; font-size: 22px; font-weight: 700;"><?php echo $msg; ?></p> 
