@@ -130,19 +130,20 @@
             $dbusername = ""; $dbhash = "";
 
             $stmt = $this->conn->prepare("SELECT `username`, `password` FROM events WHERE username=?");
-            $stmt->bind_param("s",$username);
-            $stmt->execute();
-            $stmt->bind_result($dbusername, $pwhash);
-            $stmt->fetch();
+            if ($stmt == true) {
+                $stmt->bind_param("s",$username);
+                $stmt->execute();
+                $stmt->bind_result($dbusername, $pwhash);
+                $stmt->fetch();
 
-            $verify = password_verify($password, $pwhash);
-            if ($verify == true) {
-                // user credentials match
-                return true;
-            } else if ($verify == false) {
-                // user credentials don't match
-                return false;
+                $verify = password_verify($password, $pwhash);
+                if ($verify == true) {
+                    // user credentials match
+                    return true;
+                }
             }
+            // user credentials don't match, or there is an error.
+            return false;
         }
     }
 ?>
