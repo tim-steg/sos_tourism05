@@ -58,8 +58,8 @@
                     $stmt->execute();
                 }
 
-            } catch (Exception $err) {
-                return $err;
+            } catch (Exception $e) {
+                die("Exception Error: ".$e->getMessage()."\n");
             }
         }
 
@@ -81,13 +81,68 @@
                 $eventid = $this->conn->insert_id;
                 $this->insertReqs($eventid, $reqs);
                 $this->insertSessions($eventid, $sessName, $sessDesc);
-            } catch (Exception $err) {
-                return $err;
+            } catch (Exception $e) {
+                die("Exception Error: ".$e->getMessage()."\n");
+            }
+        }
+
+        // checks if an account already exists on-signup with the same username or email.
+        function accAlExists($email, $username) {
+            try {
+                $exists = -1;
+                $stmt = $this->conn->prepare("SELECT EXISTS(SELECT 1 FROM TABLE users WHERE email = ?)");
+                $stmt->bind_param("s", $email);
+                $stmt->execute();
+
+                $stmt->bind_result($exists);
+                $stmt->fetch();
+
+                if ($exists == 1) {
+                    // account exists.
+                    return true;
+                } else if ($exists == 0) {
+                    // account doesn't exist.
+                    return false;
+                }
+            } catch (Exception $e) {
+                die("Exception Error: ".$e->getMessage()."\n");
+            }
+        }
+
+        // creates a new user entry on the database.
+        function createUser($email, $username, $password) {
+            try {
+                $hash = password_hash($password);
+                $stmt = $this->conn->prepare("INSERT INTO users (`email`, `password`, `username`, `status`) VALUES ?, ?, ?, ?");
+                $stmt->bind_param("sssi", $email, $hash, $username, 1);
+                $stmt->execute();
+            } catch (Exception $e) {
+                die("Exception Error: " .$e->getMessage()."\n");
             }
         }
 
         function closeConn() {
             $this->conn->close();
+        }
+
+        // checks the user credentials against the database, and returns true if they match.
+        function checkLogin($username, $password) {
+            $dbusername = ""; $dbhash = "";
+
+            $stmt = $this->conn->prepare("SELECT `username`, `password` FROM events WHERE username=?");
+            $stmt->bind_param("s",$username);
+            $stmt->execute();
+            $stmt->bind_result($dbusername, $pwhash);
+            $stmt->fetch();
+
+            $verify = password_verify($password, $pwhash);
+            if ($verify == true) {
+                // user credentials match
+                return true;
+            } else if ($verify == false) {
+                // user credentials don't match
+                return false;
+            }
         }
     }
 ?>

@@ -12,7 +12,7 @@
         $sName = $_REQUEST['sessname'];
         $sDesc = $_REQUEST['sessdesc'];
 
-        $eventid = $dbcon->insertNewEvent(100, $_POST['eventname'], $_POST['organizer'], $_POST['startdate'], $_POST['enddate'], $_POST['location'], 
+        $eventid = $dbcon->insertNewEvent($_SESSION['userid'], $_POST['eventname'], $_POST['organizer'], $_POST['startdate'], $_POST['enddate'], $_POST['location'], 
                                         $_POST['descr'], $_POST['timezone'], $_POST['site'], $_POST['tele'], $_POST['email'], $reqs, $sName, $sDesc);
 
         $dbcon->closeConn();
