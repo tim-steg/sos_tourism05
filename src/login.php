@@ -38,7 +38,7 @@
             <input type="text" name="username" placeholder="Username">
             <input type="password" name="password" placeholder="Password">
             <button type="submit" name="loginattempt">Login</button>
-            <p style="color: red;"><?php echo $msg; ?></p> 
+            <div style="color: red; font-size: 18px;"><?php echo $msg; ?></div> 
             <p class="hint2">Don't have an account? <a href="sign-up.php">Sign up</a></p>
           
         </form>
