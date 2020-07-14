@@ -32,12 +32,12 @@
 </head>
 <body>
     <div class="right">
-        <h1>Login</h1>
+        <h1>Log in</h1>
         <p class="hint1">Enter your information below</p>
         <form method="POST" action="./login.php">
             <input type="text" name="username" placeholder="Username">
             <input type="password" name="password" placeholder="Password">
-            <button type="submit" style="margin-bottom: 10px;" name="loginattempt">Login</button>
+            <button type="submit" style="margin-bottom: 10px;" name="loginattempt">Log in</button>
             <p style="color: red; margin-top: 0px; margin-bottom: 10px; font-size: 22px; font-weight: 700;"><?php echo $msg; ?></p> 
             <p class="hint2">Don't have an account? <a href="sign-up.php">Sign up</a></p>
           
