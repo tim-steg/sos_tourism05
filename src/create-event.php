@@ -129,9 +129,9 @@
                         <div>
                             <label for="capacity">Capacity Limit:</label>
                             <select class="form-control"name="reqs[]" style="width: auto; display: inline-block;" id="capacity" required>
-                                <option value="small" value="1">&lt50</option>
-                                <option value="mediem" value="2">50-100</option>
-                                <option value="large" value="3">&gt100</option>
+                                <option value="small" value="0">&lt50</option>
+                                <option value="mediem" value="1">50-100</option>
+                                <option value="large" value="2">&gt100</option>
                             </select>
                         </div>
 
