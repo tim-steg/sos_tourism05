@@ -103,17 +103,17 @@
                     <p id="safety">Safety Features:</p>
                     <div id="event-requirements">
                         <div id="face-mask">
-                            <input type="checkbox" value="1" name="reqs[]" id="mask">
+                            <input type="checkbox" value="yes" name="reqs[]" id="mask">
                             <label for="mask">Require Face Masks On</label>
                         </div>
                         
                         <div>
-                            <input type="checkbox" value="1" name="reqs[]" id="sanitizer">
+                            <input type="checkbox" value="yes" name="reqs[]" id="sanitizer">
                             <label for="sanitizer">Hand Sanitizer Stations</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" value="1" name="reqs[]" id="temp">
+                            <input type="checkbox" value="yes" name="reqs[]" id="temp">
                             <label for="temp">Body Temperature Check</label>
                         </div>
 
@@ -128,8 +128,8 @@
                         </div>
 
                         <div>
-                            <input type="checkbox" value="1" name="reqs[]" id="age">
-                            <label for="age" value="1">Not Recommended For Age &gt 65</label>
+                            <input type="checkbox" value="yes" name="reqs[]" id="age">
+                            <label for="age">Not Recommended For Age &gt 65</label>
                         </div>
 
                         <div>
