@@ -175,7 +175,7 @@
             $events = [];
             if ($stmt && ($stmt->num_rows >= 1)) {
                 while ($stmt->fetch()) {
-                    $events[] = ["eventid" => $a, "name" => $c, "org" => $d, "sdate" => $e, "edate" => $f];
+                    $events[] = ["id" => $a, "name" => $c, "org" => $d, "sdate" => $e, "edate" => $f];
                 }
             }
 

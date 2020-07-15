@@ -75,7 +75,7 @@
                                     <div class='event-labels' id='date-info'>Organizer: ".$ev['org']."</div>
                                 </div>
                                 <div>
-                                    <a href='' class='link'><i class='fas fa-edit'>Click to edit this event</a>
+                                    <a href='event-overview.php?eventid=".$ev['id']."' class='link'><i class='fas fa-edit'>Click to edit this event</a>
                                 </div>
                              </div>";
                     }
