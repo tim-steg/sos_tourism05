@@ -21,6 +21,7 @@
                 $msg = "Error: An account already exists with that email and/or username.";
             } else if ($dbcon->accAlExists($_POST['email'], $_POST['username']) == false) {
                 $dbcon->createUser($_POST['email'], $_POST['username'], $_POST['password']);
+                $_SESSION['userid'] = $dbcon->getUserID($_POST['username']);
                 header("Location: ./create-event.php");
             }
         } else {
