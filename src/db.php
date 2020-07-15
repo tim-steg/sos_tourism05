@@ -46,9 +46,8 @@
         function insertSessions($eventid, $sessions) {
             try {
                 $i = 0;
-
-                for ($i = 0; $i < count($sessions[0]); $i++) {
-                    $stmt = $this->conn->prepare("INSERT INTO `sessions` VALUES (?, ?, ?)");
+                $stmt = $this->conn->prepare("INSERT INTO `sessions` VALUES (?, ?, ?)");
+                for ($i = 0; $i < count($sessions[1]); $i++) {
                     $stmt->bind_param("iss", $eventid, $sessions[0][$i], $sessions[1][$i]);
                     $stmt->execute();
                 }
