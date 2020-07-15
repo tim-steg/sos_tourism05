@@ -145,7 +145,7 @@
 
             $stmt = $this->conn->prepare("SELECT `password` FROM users WHERE username = ?");
             if ($stmt == true) {
-                $stmt->bind_param("s",$username);
+                $stmt->bind_param("s", $username);
                 $stmt->execute();
                 $stmt->bind_result($pwhash);
                 $stmt->fetch();
@@ -158,6 +158,20 @@
             }
             // user credentials don't match, or there is an error.
             return false;
+        }
+
+        // gets the userid based on the username parameter, returns -1 on error.
+        function getUserID($username) {
+            $userid = -1;
+            $stmt = $this->conn->prepare("SELECT `userid` FROM users WHERE username = ?");
+            if ($stmt == true) {
+                $stmt->bind_param("s", $username);
+                $stmt->execute();
+                $stmt->bind_result($userid);
+                $stmt->fetch();
+            }
+
+            return $userid;
         }
     }
 ?>
