@@ -5,20 +5,24 @@
     require_once("db.php");
     session_start();
 
-    if (isset($_POST['event_submission'])) {
-        $dbcon = new dbConnect();
-        $dbcon->connectToDB();
+    if ($_SESSION['authuser'] == true) {
+        if (isset($_POST['event_submission'])) {
+            $dbcon = new dbConnect();
+            $dbcon->connectToDB();
 
-        $reqs = $_REQUEST['reqs'];
-        $sName = $_REQUEST['sessname'];
-        $sDesc = $_REQUEST['sessdesc'];
+            $reqs = $_REQUEST['reqs'];
+            $sName = $_REQUEST['sessname'];
+            $sDesc = $_REQUEST['sessdesc'];
 
-        $eventid = $dbcon->insertNewEvent($_SESSION['userid'], $_POST['eventname'], $_POST['organizer'], $_POST['startdate'], $_POST['enddate'], $_POST['location'], 
-                                        $_POST['descr'], $_POST['timezone'], $_POST['site'], $_POST['tele'], $_POST['email'], $reqs, $sName, $sDesc);
+            $eventid = $dbcon->insertNewEvent($_SESSION['userid'], $_POST['eventname'], $_POST['organizer'], $_POST['startdate'], $_POST['enddate'], $_POST['location'], 
+                                            $_POST['descr'], $_POST['timezone'], $_POST['site'], $_POST['tele'], $_POST['email'], $reqs, $sName, $sDesc);
 
-        $dbcon->closeConn();
-        header("Location: ./index.html");
-    } else if (isset($_POST['delete_submission'])) {
+            $dbcon->closeConn();
+            header("Location: ./index.html");
+        } else if (isset($_POST['delete_submission'])) {
+            header("Location: ./index.html");
+        }
+    } else {
         header("Location: ./index.html");
     }
 ?>
@@ -63,8 +67,8 @@
                 <a href="index.html" id="home">Home</a>
                 <a href="">About</a>
                 <a href="">Safety</a>
-                <a href="">My Events</a>
-                <a href=""><span></span>Log Out</a>
+                <a href="./my-events.php">My Events</a>
+                <a href="./logout.php"><span></span>Log Out</a>
         </div>
 
         <hr>
