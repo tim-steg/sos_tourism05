@@ -8,7 +8,7 @@
     if (isset($_SESSION['userauth'])) {
         $dbcon = new dbConnect();
         $dbcon->connectToDB();
-        
+
         $events = $dbcon->getUserEvents($userid);
     } else {
         header("Location: ./login.php");
@@ -46,30 +46,57 @@
     </nav>
 
     <div class="content">
-       <div class="top-menu">
+        <div class="top-menu">
             <a class="navlink" href="index.html" id="home">Home</a>
             <a class="navlink" href="">About</a>
             <a class="navlink" href="">Safety</a>
             <a class="navlink" href="">My Events</a>
             <a class="navlink" href=""><span></span>Log Out</a>
-       </div>
+        </div>
 
-       <hr>
+        <hr>
 
-       <div class="event-wrapper">
-           <h2><i class="fas fa-bookmark"></i> My Events:</h2>
-           <div class="event-info">
-               <div>
+        <div class="event-wrapper">
+            <h2><i class="fas fa-bookmark"></i> My Events:</h2>
+            <?php 
+                if (count($events) > 0) {
+                    foreach ($events as $ev) {
+                        echo "<div class='event-info'>
+                                <div>
+                                    <i class='fas fa-exclamantion-circle'><i>
+                                    <div class='event-labels' id='name-info'>Event Name: ".$ev['name'].
+                             "  </div>
+                                <div>
+                                    <i class='far fa-calendar-alt'></i>
+                                    <div class='event-labels' id='date-info'>Date: ".$ev['sdate']." - ".$ev['edate']."</div>
+                                </div>
+                                <div>
+                                    <i class='far fa-calendar-alt'></i>
+                                    <div class='event-labels' id='date-info'>Organizer: ".$ev['org']."</div>
+                                </div>
+                                <div>
+                                    <a href='' class='link'><i class='fas fa-edit'>Click to edit this event</a>
+                                </div>
+                             </div>";
+                    }
+                } else {
+                    echo "<div><a href='create-event.php?userid=".$_SESSION['userid']."'>Click here to create an event!</a></div>";
+                }
+                
+            ?>
+
+        <!--<div class="event-info">
+                <div>
                 <i class="fas fa-exclamation-circle"></i>
                 <div class="event-labels" id="name-info">Event Name: Sample test event</div>
-               </div>
+                </div>
                 
 
                 <div>
                     <i class="far fa-calendar-alt"></i>
                     <div class="event-labels" id="date-info">Date: 2020-07-15 00:00:00 - 2020-07-24 00:00:00</div>
                 </div>
-               
+                
 
                 <div>
                     <i class="fas fa-user-alt"></i>
@@ -79,30 +106,7 @@
                 <div>
                     <a href="" class="link"><i class="fas fa-edit"></i>Click to edit or see more</a>
                 </div>
-           </div>
-
-           <div class="event-info">
-                <div>
-                <i class="fas fa-exclamation-circle"></i>
-                <div class="event-labels" id="name-info">Event Name: Sample test event</div>
-                </div>
-                
-
-                <div>
-                    <i class="far fa-calendar-alt"></i>
-                    <div class="event-labels" id="date-info">Date: 2020-07-15 00:00:00 - 2020-07-24 00:00:00</div>
-                </div>
-                
-
-                <div>
-                    <i class="fas fa-user-alt"></i>
-                    <div class="event-labels" id="organizer-info"></i>Event Organizer: Cindy</div>
-                </div>
-
-                <div>
-                    <a href="" class="link"><i class="fas fa-edit"></i>Click to edit or see more</a>
-                </div>
-         </div>
+        </div>-->
 
 
            
