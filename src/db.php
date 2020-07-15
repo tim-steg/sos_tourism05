@@ -38,7 +38,7 @@
         function insertReqs($eventid, $reqs, $attnd1, $attnd2) {
             // inserts the recommended precautions into its own table.
             $stmt = $this->conn->prepare("INSERT INTO `reqs` VALUES (?, ?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("iiiiiii", $eventid, $reqs[0], $reqs[1], $reqs[2], $attnd1, $reqs[3], $attnd2);
+            $stmt->bind_param("isssisi", $eventid, $reqs[0], $reqs[1], $reqs[2], $attnd1, $reqs[3], $attnd2);
             $stmt->execute();
         }
 
