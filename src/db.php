@@ -126,7 +126,8 @@
                 $hash = password_hash($password, PASSWORD_DEFAULT);
                 $stmt = $this->conn->prepare("INSERT INTO users (`email`, `password`, `username`, `status`) VALUES (?, ?, ?, ?)");
                 if ($stmt) {
-                    $stmt->bind_param("sssi", $email, $hash, $username, 1);
+                    $num = 1;
+                    $stmt->bind_param("sssi", $email, $hash, $username, $num);
                     $stmt->execute();
                 }
             } catch (Exception $e) {
