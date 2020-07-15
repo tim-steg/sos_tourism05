@@ -89,26 +89,25 @@
         // checks if an account already exists on-signup with the same username or email.
         function accAlExists($email, $username) {
             try {
-                $exists = -1;
-                $stmt = $this->conn->prepare("SELECT EXISTS(SELECT 1 FROM users WHERE email = ?)");
+                $numrows = -1;
+                $stmt = $this->conn->prepare("SELECT * FROM users WHERE email = ?)");
                 $stmt->bind_param("s", $email);
                 $stmt->execute();
+                $stmt->store_result();
+                $numrows = $stmt->num_rows();
 
-                $stmt->bind_result($exists);
-                $stmt->fetch();
-
-                if ($exists == 1) {
+                if ($numrows >= 1) {
                     // account exists, has the same email.
                     return true;
-                } else if ($exists == 0) {
-                    $exists = -1;
-                    $stmt = $this->conn->prepare("SELECT EXISTS(SELECT 1 FROM users WHERE username = ?)");
+                } else if ($numrows <= 0) {
+                    $numrows = -1;
+                    $stmt = $this->conn->prepare("SELECT * FROM users WHERE username = ?)");
                     $stmt->bind_param("s", $username);
                     $stmt->execute();
-                    $stmt->bind_result($exists);
-                    $stmt->fetch();
+                    $stmt->store_result();
+                    $numrows = $stmt->num_rows();
 
-                    if ($exists = 1) {
+                    if ($numrows >= 1) {
                         // has same username
                         return true;
                     }
