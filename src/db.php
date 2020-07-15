@@ -47,17 +47,10 @@
             try {
                 $i = 0;
 
-                $name = "";
-                $desc = "";
-
-                $stmt = $this->conn->prepare("INSERT INTO `sessions` VALUES (?, ?, ?)");
-                $stmt->bind_param("iss", $eventid, $name, $desc);
-
                 $len = count($sessions[0]);
                 for ($i = 0; $i <= $len; $i++) {
-
-                    $name = $sessions[0][$i]; 
-                    $desc = $sessions[1][$i];
+                    $stmt = $this->conn->prepare("INSERT INTO `sessions` VALUES (?, ?, ?)");
+                    $stmt->bind_param("iss", $eventid, $sessions[0][$i], $sessions[1][$i]);
                     $stmt->execute();
                     $i++;
                 }
