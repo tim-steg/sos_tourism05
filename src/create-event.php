@@ -10,10 +10,10 @@
             $dbcon = new dbConnect();
             $dbcon->connectToDB();
 
-            $reqs = $_REQUEST['reqs'];
-            $attnd = $_REQUEST['attendance'];
-            $sName = $_REQUEST['sessname'];
-            $sDesc = $_REQUEST['sessdesc'];
+            $reqs = $_POST['reqs'];
+            //$attnd = $_POST['attendance'];
+            $sName = $_POST['sessname'];
+            $sDesc = $_POST['sessdesc'];
             $userid = $_SESSION['userid'];
 
             $eventid = $dbcon->insertNewEvent($userid, $_POST['eventname'], $_POST['organizer'], $_POST['startdate'], $_POST['enddate'], $_POST['location'], 
