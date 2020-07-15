@@ -37,8 +37,8 @@
         
         function insertReqs($eventid, $reqs, $attnd1, $attnd2) {
             // inserts the recommended precautions into its own table.
-            $stmt = $this->conn->prepare("INSERT INTO reqs VALUES (?, ?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("iiiiiii", $eventid, $reqs[0], $reqs[1], $reqs[2], $attnd1, $reqs[4], $attnd2);
+            $stmt = $this->conn->prepare("INSERT INTO `reqs` VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $stmt->bind_param("iiiiiii", $eventid, $reqs[0], $reqs[1], $reqs[2], $attnd1, $reqs[3], $attnd2);
             $stmt->execute();
         }
 
@@ -50,7 +50,7 @@
                 $name = "";
                 $desc = "";
 
-                $stmt = $this->conn->prepare("INSERT INTO sessions (`eventid`, `sessname`, `sessdesc`) VALUES (?, ?, ?)");
+                $stmt = $this->conn->prepare("INSERT INTO `sessions` VALUES (?, ?, ?)");
                 $stmt->bind_param("iss", $eventid, $name, $desc);
 
                 foreach ($sessionName as $sname) {
