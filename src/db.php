@@ -141,7 +141,7 @@
 
         // checks the user credentials against the database, and returns true if they match.
         function checkLogin($username, $password) {
-            $dbusername = ""; $dbhash = "";
+            $dbusername = ""; $pwhash = "";
 
             $stmt = $this->conn->prepare("SELECT `username`, `password` FROM events WHERE username=?");
             if ($stmt == true) {
@@ -151,7 +151,7 @@
                 $stmt->fetch();
 
                 $verify = password_verify($password, $pwhash);
-                if ($verify == true) {
+                if ($verify == true && $dbusername == $username) {
                     // user credentials match
                     return true;
                 }
