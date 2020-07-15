@@ -47,8 +47,9 @@
             try {
                 $i = 0;
                 $stmt = $this->conn->prepare("INSERT INTO `sessions` VALUES (?, ?, ?)");
-                for ($i = 0; $i < count($sessions[1]); $i++) {
-                    $stmt->bind_param("iss", $eventid, $sessions[0][$i], $sessions[1][$i]);
+                for ($i = 0; $i < count($sessions[1]); $i+=2) {
+                    $sess1 = $sessions[$i]; $sess2 = $sessions[$i+1];
+                    $stmt->bind_param("iss", $eventid, $sess1, $sess2);
                     $stmt->execute();
                 }
             } catch (Exception $e) {
@@ -97,7 +98,7 @@
                     $stmt->bind_param("s", $username);
                     $stmt->execute();
                     $stmt->store_result();
-                    $numrows = $stmt->num_rows();
+                    $numrows = $stmt->num_rows;
 
                     if ($numrows >= 1) {
                         // has same username
@@ -162,6 +163,23 @@
             $stmt->fetch();
 
             return $userid;
+        }
+
+        // gets an array of the user's events that they have created.
+        function getUserEvents($userid) {
+            $stmt = $this->conn->prepare("SELECT * FROM events WHERE userid=?");
+            $stmt->bind_param("s", $userid);
+            $stmt->execute();
+            $stmt->store_result();
+            $stmt->bind_result($a,$b,$c,$d,$e,$f,$g,$h,$i,$j,$k,$l);
+            $events = [];
+            if ($stmt && ($stmt->num_rows >= 1)) {
+                while ($stmt->fetch()) {
+                    $events[] = ["eventid" => $a, "name" => $c, "organizer" => $d, "sdate" => $e, "edate" => $f];
+                }
+            }
+
+            return $events;
         }
     }
 ?>

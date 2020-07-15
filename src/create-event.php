@@ -10,7 +10,6 @@
             $dbcon = new dbConnect();
             $dbcon->connectToDB();
 
-            $reqs = $_POST['reqs'];
             //$attnd = $_POST['attendance'];
             $sess = $_POST['sessions'];
             //$sDesc = $_POST['sessdesc'];
@@ -19,11 +18,20 @@
             $eventid = $dbcon->insertNewEvent($userid, $_POST['eventname'], $_POST['organizer'], $_POST['startdate'], $_POST['enddate'], $_POST['location'], 
                                             $_POST['descr'], $_POST['timezone'], $_POST['site'], $_POST['tele'], $_POST['email']);
             
-            $dbcon->insertReqs($eventid, $reqs, $_POST['attend1'], $_POST['attend2']);
+            if (isset($_POST['reqs'])) {
+                $reqs = $_POST['reqs'];
+                $dbcon->insertReqs($eventid, $reqs, $_POST['attend1'], $_POST['attend2']);
+            } else {
+                $reqs = [
+                    ["off", "off"],
+                    ["off", "off"],
+                ];
+                $dbcon->insertReqs($eventid, $reqs, $_POST['attend1'], $_POST['attend2']);
+            }
             $dbcon->insertSessions($eventid, $sess);
 
             $dbcon->closeConn();
-            header("Location: ./event-overview.php?eventid=".$eventid);
+            header("Location: ./my-events.php?id=".$userid);
         } else if (isset($_POST['delete_submission'])) {
             header("Location: ./index.html");
         }
@@ -150,13 +158,13 @@
 
             <div class="event-session" id="session1">
                     <div class="collapsible">
-                        <input type="text" class="editable" name="sessions[0][]" contenteditable placeholder="Add Session Name" required>
+                        <input type="text" class="editable" name="sessions[]" contenteditable placeholder="Add Session Name" required>
                         <i class="fa fa-caret-down" aria-hidden="true"></i>
                         <i class="fa fa-caret-up" aria-hidden="true"></i>
                         <i class="far fa-trash-alt"></i>
                     </div>
                     <div class="session-content">
-                        <textarea type="text" name="sessions[1][]" placeholder="Enter session info" class="session-info" required></textarea>
+                        <textarea type="text" name="sessions[]" placeholder="Enter session info" class="session-info" required></textarea>
                     </div>
             </div>
             

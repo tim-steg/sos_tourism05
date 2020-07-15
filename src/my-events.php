@@ -1,3 +1,19 @@
+<?php 
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+    require_once("db.php");
+    session_start();
+
+    if (isset($_SESSION['userauth'])) {
+        $dbcon = new dbConnect();
+        $dbcon->connectToDB();
+        
+        $events = $dbcon->getUserEvents($userid);
+    } else {
+        header("Location: ./login.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
