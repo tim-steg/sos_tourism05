@@ -1,0 +1,149 @@
+.create {
+    text-align: center;
+    padding-top: 10px ;
+}
+
+.search {
+    background-color: #1db76e;
+    margin-top:20px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding-top: 10px;
+}
+i.fa-plus {
+    position: relative;
+    left: 0;
+    font-size: 25px;
+    top: 0;
+}
+
+.search:hover {
+    background-color: #4fe39e ;
+}
+
+
+.navlink {
+    color: black;
+}
+
+.event-labels {
+    font-size: 25px;
+}
+
+.event-info {
+    margin-top: 30px;
+    padding: 20px;
+    border: 2px dotted #3b0f7e;
+    border-radius: 10px;
+}
+
+
+
+.link {
+    color: #3b0f7e;
+    font-size: 25px;
+    text-decoration: none;
+    
+}
+
+.fa-exclamation-circle, #name-info {
+    display: inline;
+}
+.far-calendar, #date-info {
+    display: inline;
+}
+
+.fa-user-alt, #organizer-info {
+    display: inline;
+}
+
+.fa-link {
+    margin-right: 10px;
+}
+
+.fa-link:hover {
+    cursor: pointer;
+    color: #3b0f7e;
+   
+}
+
+
+@media(max-width:400px){
+    .top-menu {   
+        grid-template-columns: 10px 1fr 1fr 1fr 1fr 1fr 10px;
+        margin-left: 0;
+        height: 50px;
+        width: 100%;
+        align-items: center;
+        padding-bottom: 0;
+        position: fixed;
+    }
+    .event-wrapper h2 {
+        font-size: 25px;
+        margin-top: 90px;
+        margin-left: 10px;
+    }
+
+    .event-info {
+        margin-top: 20px;
+    }
+
+    
+    .event-labels {
+        font-size: 20px;
+    }
+
+    nav ul {
+        margin-top: 0;
+    }
+
+    nav ul li {
+        display: inline;
+    }
+
+    .search {
+        width: 45px;
+        height: 45px;
+    }
+
+    #search-icon {
+        right: -250px;
+        top: -22px;
+    }
+
+    #create-icon {
+        position: absolute;
+        top: 28px;
+        right: -360px;
+    }
+
+    #plus {
+        font-size: 25px;
+        padding: 0;
+        display: block;
+        overflow: hidden;
+    }
+
+    .fa-search {
+        font-size: 25px;
+        
+        left: 100px;
+        color: white;
+        overflow: hidden;
+    }
+    #search-input {
+        margin-top: 5px;
+        margin-left: 10px;
+        width: 60%;
+        position: fixed;
+        top: 40px;
+    }
+
+    .link {
+        font-size: 20px;
+    }
+
+
+
+    
+}
