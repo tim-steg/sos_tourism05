@@ -5,7 +5,7 @@
     require_once("db.php");
     session_start();
 
-    if ($_SESSION['authuser'] == true) {
+    if (isset($_SESSION['authuser'])) {
         if (isset($_POST['event_submission'])) {
             $dbcon = new dbConnect();
             $dbcon->connectToDB();
