@@ -4,13 +4,13 @@
 
     var new_session=`<div class="event-session">
                         <div class="collapsible">
-                            <input type="text" class="editable" name="sessname[]" contenteditable data-placeholder="Enter Session Name">
+                            <input type="text" class="editable" name="sessions[0][]" contenteditable placeholder="Add Session Name" required>
                             <i class="fa fa-caret-down" aria-hidden="true"></i>
                             <i class="fa fa-caret-up" aria-hidden="true"></i>
                             <i class="far fa-trash-alt"></i>
                         </div>
                         <div class="session-content">
-                            <textarea type="text" name="sessdesc[]" placeholder="enter session info" class="session-info"></textarea>
+                            <textarea type="text" name="sessions[1][]" placeholder="Enter session info" class="session-info" required></textarea>
                         </div>
                     </div>`   
                     

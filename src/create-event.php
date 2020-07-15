@@ -3,21 +3,31 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
     require_once("db.php");
+    session_start();
 
-    if (isset($_POST['event_submission'])) {
-        $dbcon = new dbConnect();
-        $dbcon->connectToDB();
+    if (isset($_SESSION['authuser'])) {
+        if (isset($_POST['event_submission'])) {
+            $dbcon = new dbConnect();
+            $dbcon->connectToDB();
 
-        $reqs = $_REQUEST['reqs'];
-        $sName = $_REQUEST['sessname'];
-        $sDesc = $_REQUEST['sessdesc'];
+            $reqs = $_POST['reqs'];
+            //$attnd = $_POST['attendance'];
+            $sess = $_POST['sessions'];
+            //$sDesc = $_POST['sessdesc'];
+            $userid = $_SESSION['userid'];
 
-        $eventid = $dbcon->insertNewEvent(100, $_POST['eventname'], $_POST['organizer'], $_POST['startdate'], $_POST['enddate'], $_POST['location'], 
-                                        $_POST['descr'], $_POST['timezone'], $_POST['site'], $_POST['tele'], $_POST['email'], $reqs, $sName, $sDesc);
+            $eventid = $dbcon->insertNewEvent($userid, $_POST['eventname'], $_POST['organizer'], $_POST['startdate'], $_POST['enddate'], $_POST['location'], 
+                                            $_POST['descr'], $_POST['timezone'], $_POST['site'], $_POST['tele'], $_POST['email']);
+            
+            $dbcon->insertReqs($eventid, $reqs, $_POST['attend1'], $_POST['attend2']);
+            $dbcon->insertSessions($eventid, $sess);
 
-        $dbcon->closeConn();
-        header("Location: ./index.html");
-    } else if (isset($_POST['delete_submission'])) {
+            $dbcon->closeConn();
+            header("Location: ./event-overview.php?eventid=".$eventid);
+        } else if (isset($_POST['delete_submission'])) {
+            header("Location: ./index.html");
+        }
+    } else {
         header("Location: ./index.html");
     }
 ?>
@@ -62,8 +72,8 @@
                 <a href="index.html" id="home">Home</a>
                 <a href="">About</a>
                 <a href="">Safety</a>
-                <a href="">My Events</a>
-                <a href=""><span></span>Log Out</a>
+                <a href="./my-events.php">My Events</a>
+                <a href="./logout.php"><span></span>Log Out</a>
         </div>
 
         <hr>
@@ -91,41 +101,41 @@
                     <p id="safety">Safety Features:</p>
                     <div id="event-requirements">
                         <div id="face-mask">
-                            <input type="checkbox" value="1" name="reqs[]" id="mask">
+                            <input type="checkbox" value="yes" name="reqs[]" id="mask">
                             <label for="mask">Require Face Masks On</label>
                         </div>
                         
                         <div>
-                            <input type="checkbox" value="1" name="reqs[]" id="sanitizer">
+                            <input type="checkbox" value="yes" name="reqs[]" id="sanitizer">
                             <label for="sanitizer">Hand Sanitizer Stations</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" value="1" name="reqs[]" id="temp">
+                            <input type="checkbox" value="yes" name="reqs[]" id="temp">
                             <label for="temp">Body Temperature Check</label>
                         </div>
 
 
                         <div>
                             <label for="door">Indoor/Outdoor:</label>
-                            <select class="form-control" name="reqs[]" style="width: auto; display: inline-block;" id="door">
-                                <option value="indoor" value="1">Indoor</option>
-                                <option value="outdoor" value="2">Outdoor</option>
-                                <option value="mixed" value="3">Mixed</option>
+                            <select class="form-control" name="attend1" style="width: auto; display: inline-block;" id="door">
+                                <option value="indoor" value="0">Indoor</option>
+                                <option value="outdoor" value="1">Outdoor</option>
+                                <option value="mixed" value="2">Mixed</option>
                             </select>
                         </div>
 
                         <div>
-                            <input type="checkbox" name="reqs[]" id="age">
-                            <label for="age" value="1">Not Recommended For Age &gt 65</label>
+                            <input type="checkbox" value="yes" name="reqs[]" id="age">
+                            <label for="age">Not Recommended For Age &gt 65</label>
                         </div>
 
                         <div>
                             <label for="capacity">Capacity Limit:</label>
-                            <select class="form-control"name="reqs[]" style="width: auto; display: inline-block;" id="capacity" required>
-                                <option value="small" value="1">&lt50</option>
-                                <option value="mediem" value="2">50-100</option>
-                                <option value="large" value="3">&gt100</option>
+                            <select class="form-control"name="attend2" style="width: auto; display: inline-block;" id="capacity" required>
+                                <option value="small" value="0">&lt50</option>
+                                <option value="mediem" value="1">50-100</option>
+                                <option value="large" value="2">&gt100</option>
                             </select>
                         </div>
 
@@ -140,13 +150,13 @@
 
             <div class="event-session" id="session1">
                     <div class="collapsible">
-                        <input type="text" class="editable" name="sessname[]" contenteditable placeholder="Add Session Name">
+                        <input type="text" class="editable" name="sessions[0][]" contenteditable placeholder="Add Session Name" required>
                         <i class="fa fa-caret-down" aria-hidden="true"></i>
                         <i class="fa fa-caret-up" aria-hidden="true"></i>
                         <i class="far fa-trash-alt"></i>
                     </div>
                     <div class="session-content">
-                        <textarea type="text" name="sessdesc[]" placeholder="enter session info" class="session-info"></textarea>
+                        <textarea type="text" name="sessions[1][]" placeholder="Enter session info" class="session-info" required></textarea>
                     </div>
             </div>
             
