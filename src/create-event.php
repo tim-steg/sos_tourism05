@@ -23,7 +23,7 @@
             $dbcon->insertSessions($eventid, $sName, $sDesc);
 
             $dbcon->closeConn();
-            die(var_dump($reqs));
+            die(print_r($reqs)."\n".print_r($sName)."\n".print_r($sDesc));
             //header("Location: ./event-overview.php?eventid=".$eventid);
         } else if (isset($_POST['delete_submission'])) {
             header("Location: ./index.html");
