@@ -54,8 +54,8 @@
                 $stmt->bind_param("iss", $eventid, $name, $desc);
 
                 $len = count($sessions[0]);
-                for ($i = 0; $i < $len; $i++) {
-                    
+                for ($i = 0; $i <= $len; $i++) {
+
                     $name = $sessions[0][$i]; 
                     $desc = $sessions[1][$i];
                     $stmt->execute();
