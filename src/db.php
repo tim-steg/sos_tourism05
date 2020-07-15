@@ -123,7 +123,7 @@
         // creates a new user entry on the database.
         function createUser($email, $username, $password) {
             try {
-                $hash = password_hash($password);
+                $hash = password_hash($password, PASSWORD_DEFAULT);
                 $stmt = $this->conn->prepare("INSERT INTO users (`email`, `password`, `username`, `status`) VALUES (?, ?, ?, ?)");
                 if ($stmt) {
                     $stmt->bind_param("sssi", $email, $hash, $username, 1);
