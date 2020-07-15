@@ -127,7 +127,7 @@
                         </div>
 
                         <div>
-                            <input type="checkbox" name="reqs[]" id="age">
+                            <input type="checkbox" value="1" name="reqs[]" id="age">
                             <label for="age" value="1">Not Recommended For Age &gt 65</label>
                         </div>
 
