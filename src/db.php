@@ -90,7 +90,7 @@
         function accAlExists($email, $username) {
             try {
                 $exists = -1;
-                $stmt = $this->conn->prepare("SELECT EXISTS(SELECT 1 FROM TABLE users WHERE email = ?)");
+                $stmt = $this->conn->prepare("SELECT EXISTS(SELECT 1 FROM users WHERE username = ?)");
                 $stmt->bind_param("s", $email);
                 $stmt->execute();
 
