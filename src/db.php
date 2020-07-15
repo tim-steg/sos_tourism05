@@ -53,9 +53,9 @@
                 $stmt = $this->conn->prepare("INSERT INTO `sessions` VALUES (?, ?, ?)");
                 $stmt->bind_param("iss", $eventid, $name, $desc);
 
-                foreach ($sessionName as $sname) {
-                    $name = $sname;
-                    $desc = $sessionDesc[$i];
+                foreach ($sessionName as $key => $nm) {
+                    $name = $nm;
+                    $desc = $sessionDesc[$key];
                     $stmt->execute();
                     $i++;
                 }
