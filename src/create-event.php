@@ -115,9 +115,9 @@
                         <div>
                             <label for="door">Indoor/Outdoor:</label>
                             <select class="form-control" name="reqs[]" style="width: auto; display: inline-block;" id="door">
-                                <option value="indoor" value="1">Indoor</option>
-                                <option value="outdoor" value="2">Outdoor</option>
-                                <option value="mixed" value="3">Mixed</option>
+                                <option value="indoor" value="0">Indoor</option>
+                                <option value="outdoor" value="1">Outdoor</option>
+                                <option value="mixed" value="2">Mixed</option>
                             </select>
                         </div>
 
