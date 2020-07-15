@@ -37,8 +37,9 @@
         
         private function insertReqs($eventid, $reqs) {
             // inserts the recommended precautions into its own table.
-            $stmt = $this->conn->prepare("INSERT INTO reqs (`eventid`, `facemasks`, `sanitizer`, `tempcheck`, `inoroutdoor`, `notrecage`, `caplimit`) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $stmt = $this->conn->prepare("INSERT INTO reqs VALUES (?, ?, ?, ?, ?, ?, ?)");
             $stmt->bind_param("iiiiiii", $eventid, $reqs[0], $reqs[1], $reqs[2], $reqs[3], $reqs[4], $reqs[5]);
+            $stmt->execute();
         }
 
         // inserts all the various session data into a cross-reference table.
