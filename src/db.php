@@ -143,11 +143,11 @@
         function checkLogin($username, $password) {
             $dbusername = ""; $pwhash = "";
 
-            $stmt = $this->conn->prepare("SELECT `username`, `password` FROM events WHERE username=?");
+            $stmt = $this->conn->prepare("SELECT `password` FROM events WHERE username=?");
             if ($stmt == true) {
                 $stmt->bind_param("s",$username);
                 $stmt->execute();
-                $stmt->bind_result($dbusername, $pwhash);
+                $stmt->bind_result($pwhash);
                 $stmt->fetch();
 
                 $verify = password_verify($password, $pwhash);
