@@ -53,10 +53,11 @@
                 $stmt = $this->conn->prepare("INSERT INTO sessions (`eventid`, `sessname`, `sessdesc`) VALUES (?, ?, ?)");
                 $stmt->bind_param("iss", $eventid, $name, $desc);
 
-                for ($i = 0; $i < count($sessionName); $i++) {
-                    $name = $sessionName[$i];
+                foreach ($sessionName as $sname) {
+                    $name = $sname;
                     $desc = $sessionDesc[$i];
                     $stmt->execute();
+                    $i++
                 }
 
             } catch (Exception $e) {
