@@ -163,13 +163,11 @@
         // gets the userid based on the username parameter, returns -1 on error.
         function getUserID($username) {
             $userid = -1;
-            $stmt = $this->conn->prepare("SELECT `userid` FROM users WHERE username = ?");
-            if ($stmt == true) {
-                $stmt->bind_param("s", $username);
-                $stmt->execute();
-                $stmt->bind_result($userid);
-                $stmt->fetch();
-            }
+            $stmt = $this->conn->prepare("SELECT `id` FROM users WHERE username = ?");
+            $stmt->bind_param("s", $username);
+            $stmt->execute();
+            $stmt->bind_result($userid);
+            $stmt->fetch();
 
             return $userid;
         }
