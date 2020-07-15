@@ -57,7 +57,7 @@
                     $name = $sname;
                     $desc = $sessionDesc[$i];
                     $stmt->execute();
-                    $i++
+                    $i++;
                 }
 
             } catch (Exception $e) {
