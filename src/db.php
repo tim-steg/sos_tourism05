@@ -35,10 +35,10 @@
             }
         }
         
-        private function insertReqs($eventid, $reqs) {
+        private function insertReqs($eventid, $reqs, $attnd) {
             // inserts the recommended precautions into its own table.
             $stmt = $this->conn->prepare("INSERT INTO reqs VALUES (?, ?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("iiiiiii", $eventid, $reqs[0], $reqs[1], $reqs[2], $reqs[3], $reqs[4], $reqs[5]);
+            $stmt->bind_param("iiiiiii", $eventid, $reqs[0], $reqs[1], $reqs[2], $attnd[0], $reqs[4], $attnd[1]);
             $stmt->execute();
         }
 
@@ -67,7 +67,7 @@
         // function to insert the core data for an event.
         function insertNewEvent($userid, $eventname, $organizer, $startdate, 
                                 $enddate, $location, $descr, $timezone, $website, $tele, 
-                                $email, $reqs, $sessName, $sessDesc) {
+                                $email) {
             
             try {
                 $stmt = $this->conn->prepare("INSERT INTO events (`userid`, `eventname`, `organizer`, `startdate`,
@@ -80,8 +80,7 @@
                 $stmt->execute();
 
                 $eventid = $this->conn->insert_id;
-                $this->insertReqs($eventid, $reqs);
-                $this->insertSessions($eventid, $sessName, $sessDesc);
+                return $eventid;
             } catch (Exception $e) {
                 die("Exception Error: ".$e->getMessage()."\n");
             }

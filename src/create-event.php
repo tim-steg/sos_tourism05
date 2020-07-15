@@ -11,15 +11,19 @@
             $dbcon->connectToDB();
 
             $reqs = $_REQUEST['reqs'];
+            $attnd = $_REQUEST['attendance'];
             $sName = $_REQUEST['sessname'];
             $sDesc = $_REQUEST['sessdesc'];
             $userid = $_SESSION['userid'];
 
             $eventid = $dbcon->insertNewEvent($userid, $_POST['eventname'], $_POST['organizer'], $_POST['startdate'], $_POST['enddate'], $_POST['location'], 
-                                            $_POST['descr'], $_POST['timezone'], $_POST['site'], $_POST['tele'], $_POST['email'], $reqs, $sName, $sDesc);
+                                            $_POST['descr'], $_POST['timezone'], $_POST['site'], $_POST['tele'], $_POST['email']);
+            
+            $dbcon->insertReqs($eventid, $reqs, $attnd);
+            $dbcon->insertSessions($eventid, $sName, $sDesc);
 
             $dbcon->closeConn();
-            header("Location: ./index.html");
+            header("Location: ./event-overview.php?eventid=".$eventid);
         } else if (isset($_POST['delete_submission'])) {
             header("Location: ./index.html");
         }
@@ -114,7 +118,7 @@
 
                         <div>
                             <label for="door">Indoor/Outdoor:</label>
-                            <select class="form-control" name="reqs[]" style="width: auto; display: inline-block;" id="door">
+                            <select class="form-control" name="attendance[]" style="width: auto; display: inline-block;" id="door">
                                 <option value="indoor" value="0">Indoor</option>
                                 <option value="outdoor" value="1">Outdoor</option>
                                 <option value="mixed" value="2">Mixed</option>
@@ -128,7 +132,7 @@
 
                         <div>
                             <label for="capacity">Capacity Limit:</label>
-                            <select class="form-control"name="reqs[]" style="width: auto; display: inline-block;" id="capacity" required>
+                            <select class="form-control"name="attendance[]" style="width: auto; display: inline-block;" id="capacity" required>
                                 <option value="small" value="0">&lt50</option>
                                 <option value="mediem" value="1">50-100</option>
                                 <option value="large" value="2">&gt100</option>
