@@ -80,7 +80,7 @@
                              </div>";
                     }
                 } else {
-                    echo "<div><a href='create-event.php?userid=".$_SESSION['userid']."'>Click here to create an event!</a></div>";
+                    echo "<div><a href='create-event.php?userid=".$_SESSION['userid']."'>Click here to create an event.</a></div>";
                 }
                 
             ?>
