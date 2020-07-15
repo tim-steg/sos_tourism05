@@ -151,7 +151,7 @@
                 $stmt->fetch();
 
                 $verify = password_verify($password, $pwhash);
-                if ($verify == true && $dbusername == $username) {
+                if ($verify == true) {
                     // user credentials match
                     return true;
                 }
