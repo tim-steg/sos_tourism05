@@ -47,14 +47,11 @@
             try {
                 $i = 0;
 
-                $len = count($sessions[0]);
-                for ($i = 0; $i <= $len; $i++) {
+                for ($i = 0; $i < count($sessions[0]); $i++) {
                     $stmt = $this->conn->prepare("INSERT INTO `sessions` VALUES (?, ?, ?)");
                     $stmt->bind_param("iss", $eventid, $sessions[0][$i], $sessions[1][$i]);
                     $stmt->execute();
-                    $i++;
                 }
-
             } catch (Exception $e) {
                 die("Exception Error: ".$e->getMessage()."\n");
             }
