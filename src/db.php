@@ -143,7 +143,7 @@
         function checkLogin($username, $password) {
             $dbusername = ""; $pwhash = "";
 
-            $stmt = $this->conn->prepare("SELECT `password` FROM events WHERE username=?");
+            $stmt = $this->conn->prepare("SELECT `password` FROM users WHERE username = ?");
             if ($stmt == true) {
                 $stmt->bind_param("s",$username);
                 $stmt->execute();
