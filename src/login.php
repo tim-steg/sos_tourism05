@@ -16,7 +16,7 @@
 
             $_SESSION['userid'] = $dbcon->getUserID($_POST['username']);
             $_SESSION['authuser'] = true;
-            header("Location: ./my-events.php?id=".$userid);
+            header("Location: ./my-events.php?id=".$_SESSION['userid']);
         } else {
             $msg = "Error: Invalid Login Credentials.";
         }
