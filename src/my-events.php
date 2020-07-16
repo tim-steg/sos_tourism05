@@ -8,7 +8,7 @@
     if (isset($_SESSION['authuser'])) {
         $dbcon = new dbConnect();
         $dbcon->connectToDB();
-
+        $userid = $_SESSION['userid'];
         $events = $dbcon->getUserEvents($userid);
     } else {
         header("Location: ./login.php");
