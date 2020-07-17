@@ -62,6 +62,8 @@
             <?php 
                 if (count($events) > 0) {
                     foreach ($events as $ev) {
+                        $start = explode(" ", $ev['sdate']);
+                        $end = explode(" ", $ev['edate']);
                         echo "<div class='event-info'>
                                 <div>
                                     <i class='fas fa-exclamation-circle'></i>
@@ -69,7 +71,7 @@
                                 </div>
                                 <div>
                                     <i class='far fa-calendar-alt'></i>
-                                    <div class='event-labels' id='date-info'>Date: ".$ev['sdate']." - ".$ev['edate']."</div>
+                                    <div class='event-labels' id='date-info'>Date: ".$start[0]." - ".$end[0]."</div>
                                 </div>
                                 <div>
                                     <i class='fas fa-user-alt'></i>
