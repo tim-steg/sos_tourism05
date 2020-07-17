@@ -60,7 +60,15 @@
         <div class="event-wrapper">
             <div class="event-info">
                 <div class="event-labels" id="name-info">Event Name: <?php echo $evdata['eventname']; ?></div>
-                <div class="event-labels" id="date-info"><div style="font-style: bolder;">Date: <div class="event-text"></div><?php echo $evdata['startdate']." - ".$evdata['enddate']; ?></div></div>
+                <div class="event-labels" id="date-info">
+                    <div style="font-style: bolder;">Date: <div class="event-text"></div>
+                    <?php 
+                        $s = explode(" ",$evdata['startdate']);
+                        $e = explode(" ",$evdata['enddate']);
+                        echo date("m-d-Y", strtotime($s[0]))." - ".date("m-d-Y", strtotime($e[0])); 
+                    ?>
+                    </div>
+                </div>
                 <div class="event-labels" id="organizer-info">Event Organizer: <div class="event-text"><?php echo $evdata['organizer']; ?></div></div>
                 <div class="event-labels" id="location-info">Location: <div class="event-text"><?php echo $evdata['location']; ?></div></div>
                 <div class="event-labels" id="contact-info">
