@@ -39,7 +39,7 @@
                 <br>
                 <div class="create create-ev" id="create-icon">
                     <i class="fas fa-plus" id="plus"></i>
-                    Create
+                    Create Event
                 </div>
             </li>
         </ul>
