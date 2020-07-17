@@ -62,9 +62,7 @@
             <?php 
                 if (count($events) > 0) {
                     foreach ($events as $ev) {
-                        date("m-d-Y", strtotime($orgDate));
-                        $start = explode(" ", $ev['sdate']);
-                        $end = explode(" ", $ev['edate']);
+                        $start = explode(" ", $ev['sdate']); $end = explode(" ", $ev['edate']);
                         echo "<div class='event-info'>
                                 <div>
                                     <i class='fas fa-exclamation-circle'></i>
