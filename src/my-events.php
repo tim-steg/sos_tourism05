@@ -64,7 +64,7 @@
                     foreach ($events as $ev) {
                         echo "<div class='event-info'>
                                 <div>
-                                    <i class='fas fa-exclamation-circle'><i>
+                                    <i class='fas fa-exclamation-circle'></i>
                                     <div class='event-labels' id='name-info'>Event Name: ".$ev['name']."</div>
                                 </div>
                                 <div>
@@ -78,7 +78,7 @@
                                 <div>
                                     <a href='event-overview.php?eventid=".$ev['id']."' class='link'><i class='fas fa-edit'></i>Click to edit this event</a>
                                 </div>
-                             </div>";
+                            </div>";
                     }
                 } else {
                     echo "<div><a href='create-event.php?userid=".$_SESSION['userid']."'>Click here to create an event.</a></div>";
