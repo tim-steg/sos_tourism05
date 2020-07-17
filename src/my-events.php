@@ -64,7 +64,7 @@
                     foreach ($events as $ev) {
                         echo "<div class='event-info'>
                                 <div>
-                                    <i class='fas fa-exclamantion-circle'><i>
+                                    <i class='fas fa-exclamation-circle'><i>
                                     <div class='event-labels' id='name-info'>Event Name: ".$ev['name'].
                              "  </div>
                                 <div>
@@ -72,8 +72,8 @@
                                     <div class='event-labels' id='date-info'>Date: ".$ev['sdate']." - ".$ev['edate']."</div>
                                 </div>
                                 <div>
-                                    <i class='far fa-calendar-alt'></i>
-                                    <div class='event-labels' id='date-info'>Organizer: ".$ev['org']."</div>
+                                    <i class='fas fa-user-alt'></i>
+                                    <div class='event-labels' id='organizer-info'>Organizer: ".$ev['org']."</div>
                                 </div>
                                 <div>
                                     <a href='event-overview.php?eventid=".$ev['id']."' class='link'><i class='fas fa-edit'>Click to edit this event</a>
