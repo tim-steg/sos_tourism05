@@ -63,8 +63,7 @@
                 <div class="event-labels" id="date-info">
                     <div style="font-style: bolder;">Date: <div class="event-text"></div>
                     <?php 
-                        $s = explode(" ",$evdata['startdate']);
-                        $e = explode(" ",$evdata['enddate']);
+                        $s = explode(" ",$evdata['startdate']); $e = explode(" ",$evdata['enddate']);
                         echo date("m-d-Y", strtotime($s[0]))." - ".date("m-d-Y", strtotime($e[0])); 
                     ?>
                     </div>
