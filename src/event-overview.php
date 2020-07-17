@@ -71,9 +71,9 @@
                 <div class="event-labels" id="organizer-info">Event Organizer: <div class="event-text"><?php echo $evdata['organizer']; ?></div></div>
                 <div class="event-labels" id="location-info">Location: <div class="event-text"><?php echo $evdata['location']; ?></div></div>
                 <div class="event-labels" id="contact-info">
-                    Telephone: <div id="tel"></div>
-                    Email: <div id="email"></div>
-                    Website: <div id="web"></div>
+                    Telephone: <div id="tel"><?php if ($evdata['telephone'] != "") { echo $evdata['telephone']; } else { echo "N/A"; } ?></div>
+                    Email: <div id="email"><?php if ($evdata['email'] != "") { echo $evdata['email']; } else { echo "N/A"; } ?></div>
+                    Website: <div id="web"><?php if ($evdata['website'] != "") { echo $evdata['website']; } else { echo "N/A"; } ?></div>
                 </div>
                 <div class="event-labels" id="safety-features">Recommended Safety Features:</div>
                 <div class="event-labels" id="event-requirements">
