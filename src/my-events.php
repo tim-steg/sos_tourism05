@@ -65,8 +65,8 @@
                         echo "<div class='event-info'>
                                 <div>
                                     <i class='fas fa-exclamation-circle'><i>
-                                    <div class='event-labels' id='name-info'>Event Name: ".$ev['name'].
-                             "  </div>
+                                    <div class='event-labels' id='name-info'>Event Name: ".$ev['name']."</div>
+                                </div>
                                 <div>
                                     <i class='far fa-calendar-alt'></i>
                                     <div class='event-labels' id='date-info'>Date: ".$ev['sdate']." - ".$ev['edate']."</div>
@@ -76,7 +76,7 @@
                                     <div class='event-labels' id='organizer-info'>Organizer: ".$ev['org']."</div>
                                 </div>
                                 <div>
-                                    <a href='event-overview.php?eventid=".$ev['id']."' class='link'><i class='fas fa-edit'>Click to edit this event</a>
+                                    <a href='event-overview.php?eventid=".$ev['id']."' class='link'><i class='fas fa-edit'></i>Click to edit this event</a>
                                 </div>
                              </div>";
                     }
