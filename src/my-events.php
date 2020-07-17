@@ -37,7 +37,7 @@
                     Search
                 </div>
                 <br>
-                <div class="create-ev" id="create-icon">
+                <div class="create create-ev" id="create-icon">
                     <i class="fas fa-plus" id="plus"></i>
                     Create
                 </div>
