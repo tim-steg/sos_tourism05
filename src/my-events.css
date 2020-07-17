@@ -1,9 +1,3 @@
-.create {
-    background-color: #b0b0b0;
-    text-align: center;
-    padding-top: 10px ;
-}
-
 .search {
     background-color: #1db76e;
     margin-top:20px;
@@ -11,6 +5,13 @@
     text-align: center;
     padding-top: 10px;
 }
+
+.create {
+    background-color: #b0b0b0;
+    text-align: center;
+    padding-top: 10px ;
+}
+
 i.fa-plus {
     position: relative;
     left: 0;
