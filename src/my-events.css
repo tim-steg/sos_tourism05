@@ -20,7 +20,11 @@ i.fa-plus {
 }
 
 .search:hover {
-    background-color: #4fe39e ;
+    background-color: #4fe39e;
+}
+
+.create-ev:hover {
+    background-color: #b0b0b0;
 }
 
 
