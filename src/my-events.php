@@ -36,6 +36,8 @@
                     <!--<i class="fas fa-search"></i>-->
                     <p style="margin-bottom: 4px;"><img style="height: 10%; width: 10%; margin-right: 10px;" src="../res/searchicon.png">Search</p>
                 </div>
+            </li>
+            <li>
                 <br>
                 <a href="./create-event.php" style="text-decoration: none;"><div class="create-ev" id="create-icon">
                     <i class="fas fa-plus" id="plus"></i>
