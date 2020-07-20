@@ -34,7 +34,7 @@
                 <div><form action="searchevents.php" method="POST"><input class="form-control input-lg" style="border-radius: 5px;" type="text" id="search-input" placeholder="Search for an event here!"></form></div>
                 <div class="search">
                     <!--<i class="fas fa-search"></i>-->
-                    <p style="margin-bottom: 4px;"><img style="height: 10%; width: 10%; margin-right: 10px;" src="../res/searchicon.png">Search</p>
+                    <p style="margin-bottom: 4px; text-align: center;"><img style="height: 10%; width: 10%; margin-right: 10px;" src="../res/searchicon.png">Search</p>
                 </div>
                 <br>
                 <a href="./create-event.php" style="text-decoration: none;"><div class="create-ev" id="create-icon">
