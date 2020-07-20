@@ -34,7 +34,7 @@
                 <div><form action="searchevents.php" method="POST"><input class="form-control input-lg" style="border-radius: 5px;" type="text" id="search-input" placeholder="Search for an event here!"></form></div>
                 <div class="search">
                     <i class="fas fa-search"></i>
-                    Search<
+                    Search
                 </div>
                 <br>
                 <a href="./create-event.php" style="text-decoration: none;"><div class="create-ev" id="create-icon">
@@ -52,7 +52,7 @@
             <a class="navlink" href="">About</a>
             <a class="navlink" href="">Safety</a>
             <a class="navlink" href="">My Events</a>
-            <a class="navlink" href=""><span></span>Log Out</a>
+            <a class="navlink" href="./logout.php"><span></span>Log Out</a>
         </div>
 
         <hr>
