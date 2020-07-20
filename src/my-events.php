@@ -51,7 +51,7 @@
             <a class="navlink" href="index.html" id="home">Home</a>
             <a class="navlink" href="">About</a>
             <a class="navlink" href="">Safety</a>
-            <a class="navlink" href="">My Events</a>
+            <?php echo "<a class='navlink' href='./my-events.php?id=".$_SESSION['userid']."'>My Events</a>"; ?>
             <a class="navlink" href="./logout.php"><span></span>Log Out</a>
         </div>
 
