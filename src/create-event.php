@@ -65,10 +65,10 @@
                     </button>
                 </li>
                 <li>
-                    <div type="button" onclick="deleteEvent();" class="delete">
+                    <?php echo "<a href='./my-events.php?id=".$_SESSION["userid"]."' style='text-decoration: none;'>"; ?><div type="button" onclick="deleteEvent();" class="delete">
                         <p>Delete</p>
                         <i class="fa fa-minus" aria-hidden="true"></i>
-                    </div>
+                    </div></a>
                 </li>
             </ul>
             
