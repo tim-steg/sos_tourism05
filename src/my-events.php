@@ -37,10 +37,10 @@
                     Search
                 </div>
                 <br>
-                <div class="create-ev" id="create-icon">
+                <a href="./create-event.php" style="text-decoration: none;"><div class="create-ev" id="create-icon">
                     <i class="fas fa-plus" id="plus"></i>
                     Create Event
-                </div>
+                </div></a>
             </li>
         </ul>
         
