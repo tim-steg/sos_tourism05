@@ -74,7 +74,8 @@ i.fa-plus {
 }
 
 
-@media(max-width:400px){
+@media(max-width:1200px){
+
     .top-menu {   
         grid-template-columns: 10px 1fr 1fr 1fr 1fr 1fr 10px;
         margin-left: 0;
@@ -98,41 +99,51 @@ i.fa-plus {
     .event-labels {
         font-size: 20px;
     }
-
+   
+    nav {
+        width: 100%;
+        visibility: hidden;
+    }
     nav ul {
         margin-top: 0;
+        visibility: visible ;
+        width: 100%;
+    }
+    nav ul li div {
+        padding: 5px;
+        margin: 0;
     }
 
     nav ul li {
-        display: inline;
+        height: 50px;
+        width: 100%;
     }
 
-    .search {
+    .search, .create-ev {
         width: 45px;
         height: 45px;
+        overflow: hidden;
     }
-
-    #search-icon {
-        right: -250px;
-        top: -22px;
+    .search {
+       left: 65%;
+        top: -30px;
     }
 
     #create-icon {
-        position: absolute;
-        top: 28px;
-        right: -360px;
+        top: -125px;
+        left: 73%;
     }
 
     #plus {
-        font-size: 25px;
-        padding: 0;
+        font-size: 27px;
+        margin-top: -1px;
         display: block;
-        overflow: hidden;
+       
     }
 
     .fa-search {
-        font-size: 25px;
-        
+        font-size: 27px;
+        margin-top: -2px;
         left: 100px;
         color: white;
         overflow: hidden;
@@ -148,8 +159,12 @@ i.fa-plus {
     .link {
         font-size: 20px;
     }
-
-
-
     
+}
+
+@media(max-width:400px){
+    #create-icon {
+        top: -125px;
+        left: 78%;
+    }
 }

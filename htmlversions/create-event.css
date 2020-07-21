@@ -353,7 +353,7 @@ i.fa-trash-alt:hover{
 
 /*========================================================================================*/
 
-@media(max-width:400px) {
+@media(max-width:1200px) {
 
     nav {
         width: 0;
@@ -439,7 +439,7 @@ i.fa-trash-alt:hover{
         grid-column: 2/3;
     }
     .top-menu * {
-        font-size: 12px;
+        font-size: 15px;
     }
     span {
         display: none;
@@ -458,18 +458,18 @@ i.fa-trash-alt:hover{
         padding: 0 10px;
     }
     #event-name-input {
-        font-size: 18px;
+        font-size: 25px;
         margin-bottom: 10px;
     }
 
     #event-name-input input{
         height: 20px;
         width: 50%;
-        font-size: 15px; 
+        font-size: 0.8em; 
     }
     
     #event-date-input {
-        font-size: 15px;
+        font-size: 20px;
         font-weight: 600;
         margin-bottom: 5px;
     }
@@ -478,53 +478,53 @@ i.fa-trash-alt:hover{
         height: 25px;
         width: 30%;
         margin-bottom: 0 5px;
+        font-size: 0.8em;
     }
     
     #event-organizer-input {
-        font-size: 15px;
+        font-size: 20px;
     }
     
     #event-organizer-input input {
         width: 50%;
-        font-size: 15px;
+        font-size: 0.8em;
         margin-bottom: 5px;
     }
 
     #event-location-input {
-        font-size: 15px;
+        font-size: 20px;
     }
 
     #event-location-input input {
-        font-size: 15px;
+        font-size: 0.8em;
     }
 
     #event-contact-input {
-        font-size: 15px;
+        font-size: 20px;
     }
     #event-contact-input input {
-        font-size: 15px;
+        font-size: 0.8em;
         width: 100px;
         margin-left: 5px;
         margin-bottom: 10px;
     }
     #safety {
-        font-size: 18px;
+        font-size: 20px;
     }
 
     #event-requirements {
-        font-size: 12px;
+        font-size: 0.8em;
         margin-bottom: 0;
 
     }
-
     
     #event-description-input h1{
-        font-size:15px;
+        font-size:20px;
     }
     
     #event-description-input textarea {
         height: 200px;
-        font-size: 15px;
+        font-size: 0.8em;
     }
 
     .collapsible {
@@ -564,6 +564,21 @@ i.fa-trash-alt:hover{
         height: 30px;
         font-size: 15px;
     }
+
+    .form-control {
+        font-size: 0.8em;
+    }
+}
+@media(max-width:400px) {
+    #event-name-input {
+        font-size: 20px;
+    }
+    #event-date-input, #event-organizer-input, #event-location-input, #event-contact-input, #safety, #event-requirements{
+        font-size: 15px;
+    }
+
+
+
 }
 
 #submitbutton {
