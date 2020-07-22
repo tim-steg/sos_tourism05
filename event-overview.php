@@ -50,7 +50,7 @@
     <div class="content">
         <div class="top-menu">
                 <a class="navlink" href="index.php" id="home">Home</a>
-                <a class="navlink" href="about.html">About</a>
+                <a class="navlink" href="about.php">About</a>
                 <?php 
                     if (isset($_SESSION['authuser'])) {
                         echo "<a class='navlink' href='./my-events.php?id=".$_SESSION['userid']."'>My Events</a>"; 

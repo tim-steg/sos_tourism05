@@ -32,7 +32,7 @@
                 </label>
                 
                 <ul>
-                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./about.php">About</a></li>
                     <?php 
                         if (isset($_SESSION['authuser'])) {
                             echo "<li id='login'><a class='navlink' href='./my-events.php?id=".$_SESSION['userid']."'>My Events</a></li>&nbsp;&nbsp;&nbsp;&nbsp; |";

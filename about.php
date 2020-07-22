@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,10 +27,22 @@
                 </label>
                 
                 <ul>
-                    <li><a href="#">Events</a></li>
+                    <?php 
+                        if (isset($_SESSION['authuser'])) {
+                            echo "<li id='login'><a class='navlink' href='./my-events.php?id=".$_SESSION['userid']."'>My Events</a></li>&nbsp;&nbsp;&nbsp;&nbsp; |";
+                            echo "<li><a href='about.php'>About</a></li>";
+                            echo "<li id='login'><a class='navlink' href='./logout.php'><span></span>Log Out</a></li>";
+                        } else {
+                            echo "<li><a href='./search-results.php'>Events</a></li>";
+                            echo "<li><a href='about.php'>About</a></li>";
+                            echo "<li id='login' class='aba'><a href='./sign-up.php'>Sign Up</a></li>&nbsp;&nbsp;&nbsp;&nbsp; |";
+                            echo "<li id='login' class='bab'><a href='./login.php'>Login</a></li>";
+                        }
+                    ?>
+                    <!--<li><a href="#">Events</a></li>
                     <li><a href="about.html">About</a></li>
                     <li id="login" class="aba"><a href="#">Sign up</a></li>&nbsp;&nbsp;&nbsp;&nbsp; |
-                    <li id="login" class="bab"><a href="login.html">Log in</a></li>
+                    <li id="login" class="bab"><a href="login.html">Log in</a></li>-->
                 </ul>
             </nav>
         </header>
@@ -99,8 +114,8 @@
         <ul>
             <li><a href="search-results.php?search=">Events</a></li>
             <li><a href="#">Terms</a></li>
-            <li id="login"><a href="#">Sign up</a></li>&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp
-            <li id="login" class="ada"><a href="login.html">Log in</a></li>
+            <li id="login"><a href="sign-up.php">Sign up</a></li>&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp
+            <li id="login" class="ada"><a href="login.php">Log in</a></li>
         </ul>
         <!--(&nbsp;&nbsp;) adds a space between words.-->
         <a href="index.php"><img src="./res/logo.png" alt="Logo of Logo Name Company."></a>
