@@ -11,7 +11,7 @@
         $userid = $_SESSION['userid'];
 
         $search = $_GET['search'];
-        $results = $dbcon->searchSearchResults($search);
+        $results = $dbcon->getSearchResults($search);
     } else {
         header("Location: ./login.php");
     }
