@@ -41,13 +41,13 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id dictum velit, non rutrum tortor. Phasellus hendrerit erat dignissim lectus euismod dictum.</p>
 
             <div class="search-box">
-                <form action="">
+                <form action="./search-results.php" method="GET">
                 <label for="search events"></label>
-                <input type="text" name="search events" id="search events" value="What event are you looking for?" size="20"
+                <input type="text" name="search events" name="search" id="search events" value="What event are you looking for?" size="20"
                 onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
                 
 
-                <input type="button" value="Search" id="find-button">
+                <input type="submit" value="Search" id="find-button">
                 </form>
             </div>
         </div>
