@@ -78,6 +78,7 @@
                                 </div>
                                 <div>
                                     <a href='event-overview.php?eventid=".$ev['id']."' class='link'><i class='fas fa-edit'></i>Click to edit this event</a>
+                                    <a style='margin-left: 10px;' href='javascript:void()' onclick='deleteEvent(".$ev['id'].")'><i class fa fa-trash></i>Delete Event</a>
                                 </div>
                             </div>";
                     }
@@ -138,6 +139,11 @@
             .then(res => res.text())
             .then(res => console.log(res))
             .catch(error => console.log("Error: " + error));
+        }
+
+        function deleteEvent(id) {
+            let answer = confirm("Are you sure you want to delete this event? This cannot be undone.");
+            window.location.href = "https://sostourism05.herokuapp.com/deleteevent.php?id="+id+"&confirm="+answer;
         }
     </script>
 </body>
