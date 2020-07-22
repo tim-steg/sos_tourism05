@@ -29,8 +29,8 @@
                 <ul>
                     <?php 
                         if (isset($_SESSION['authuser'])) {
-                            echo "<li id='login'><a class='navlink' href='./my-events.php?id=".$_SESSION['userid']."'>My Events</a></li>&nbsp;&nbsp;&nbsp;&nbsp; |";
-                            echo "<li><a href='about.php'>About</a></li>";
+                            echo "<li id='login'><a class='navlink' href='./my-events.php?id=".$_SESSION['userid']."'>My Events</a></li>";
+                            echo "<li><a href='about.php'>About</a></li>&nbsp;&nbsp;&nbsp;&nbsp; |";
                             echo "<li id='login'><a class='navlink' href='./logout.php'><span></span>Log Out</a></li>";
                         } else {
                             echo "<li><a href='./search-results.php'>Events</a></li>";
