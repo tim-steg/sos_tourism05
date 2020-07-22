@@ -1,3 +1,4 @@
+<?php ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,10 +27,17 @@
                 </label>
                 
                 <ul>
-                    <li><a href="./search-results.php">Events</a></li>
                     <li><a href="./about.html">About</a></li>
-                    <li id="login" class="aba"><a href="./sign-up.pgp">Sign up</a></li>&nbsp;&nbsp;&nbsp;&nbsp; |
-                    <li id="login" class="bab"><a href="./login.php">Login</a></li>
+                    <?php 
+                        if (isset($_SESSION['authuser'])) {
+                            echo "<li id='login'><a class='navlink' href='./my-events.php?id=".$_SESSION['userid']."'>My Events</a></li>&nbsp;&nbsp;&nbsp;&nbsp; |";
+                            echo "<li id='login'><a class='navlink' href='./logout.php'><span></span>Log Out</a></li>";
+                        } else {
+                            echo "<li><a href='./search-results.php'>Events</a></li>";
+                            echo "<li id='login' class='aba'><a href='./sign-up.php'>Sign Up</a></li>&nbsp;&nbsp;&nbsp;&nbsp; |";
+                            echo "<li id='login' class='bab'><a href='./login.php'>Login</a></li>";
+                        }
+                    ?>
                 </ul>
             </nav>
 
