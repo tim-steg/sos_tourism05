@@ -77,9 +77,8 @@ i.fa-plus {
 @media(max-width:400px){
     .top-menu {   
         grid-template-columns: 10px 1fr 1fr 1fr 1fr 1fr 10px;
-        margin-top: 5px;
         margin-left: 0;
-        height: 55px;
+        height: 50px;
         width: 100%;
         align-items: center;
         padding-bottom: 0;
