@@ -42,8 +42,8 @@
 
             <div class="search-box">
                 <form action="./search-results.php" id="searchform" method="GET">
-                <label for="search events"></label>
-                <input type="text" name="search events" name="search" id="search events" value="What event are you looking for?" size="20"
+                <label for="search"></label>
+                <input type="text" name="search" id="search events" value="What event are you looking for?" size="20"
                 onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
                 
 
