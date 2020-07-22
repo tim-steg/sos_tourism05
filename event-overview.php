@@ -3,6 +3,7 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
     require("db.php");
+    session_start();
 
     $db = new dbConnect();
     $db->connectToDB();
@@ -56,7 +57,7 @@
                         echo "<a class='navlink' href='./logout.php'><span></span>Log Out</a>";
                     } else {
                         echo "<a class='navlink' href='./search-results.php'>Events</a>";
-                        echo "<a class='navlink' href='./sign-up.php'>Sign Up</a> |";
+                        echo "<a class='navlink' id='signup' href='./sign-up.php'>Sign Up</a>";
                         echo "<a class='navlink' href='./login.php'>Login</a>";
                     }
                 ?>
