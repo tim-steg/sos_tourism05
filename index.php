@@ -26,9 +26,8 @@
                 </label>
                 
                 <ul>
-                    <li><a href="#">Events</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Safety</a></li>
+                    <li><a href="./search-results.php">Events</a></li>
+                    <li><a href="./about.html">About</a></li>
                     <li id="login" class="aba"><a href="./sign-up.pgp">Sign up</a></li>&nbsp;&nbsp;&nbsp;&nbsp; |
                     <li id="login" class="bab"><a href="./login.php">Login</a></li>
                 </ul>

@@ -77,9 +77,8 @@
         <div class="mobile-toggle"><i class="fas fa-bars"></i></div>
         <div class="content">
         <div class="top-menu">
-                <a href="index.php" id="home">Home</a>
-                <a href="">About</a>
-                <a href="">Safety</a>
+                <a href="./index.php" id="home">Home</a>
+                <a href="./about.html">About</a>
                 <a href="./my-events.php">My Events</a>
                 <a href="./logout.php"><span></span>Log Out</a>
         </div>
