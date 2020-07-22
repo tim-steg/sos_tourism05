@@ -7,7 +7,7 @@
 
     $msg = "";
 
-    if (isset($_SESSION['userauth'])) {
+    if (isset($_SESSION['authuser'])) {
         // if user is logged in already, redirect them.
         header('Location: ./create-event.php');
     }
