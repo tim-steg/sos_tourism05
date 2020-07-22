@@ -49,10 +49,17 @@
     <div class="content">
         <div class="top-menu">
                 <a class="navlink" href="index.php" id="home">Home</a>
-                <a class="navlink" href="">About</a>
-                <a class="navlink" href="">Safety</a>
-                <a class="navlink" href="">My Events</a>
-                <a class="navlink" href="./logout.php"><span></span>Log Out</a>
+                <a class="navlink" href="about.html">About</a>
+                <?php 
+                    if (isset($_SESSION['authuser'])) {
+                        echo "<a class='navlink' href='./my-events.php?id=".$_SESSION['userid']."'>My Events</a>"; 
+                        echo "<a class='navlink' href='./logout.php'><span></span>Log Out</a>";
+                    } else {
+                        echo "<li><a href='./search-results.php'>Events</a></li>";
+                        echo "<li id='login' class='aba'><a href='./sign-up.php'>Sign Up</a></li>&nbsp;&nbsp;&nbsp;&nbsp; |";
+                        echo "<li id='login' class='bab'><a href='./login.php'>Login</a></li>";
+                    }
+                ?>
         </div>
 
         <hr>
