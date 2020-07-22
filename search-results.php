@@ -5,16 +5,13 @@
     require_once("db.php");
     session_start();
 
-    if (isset($_SESSION['authuser'])) {
-        $dbcon = new dbConnect();
-        $dbcon->connectToDB();
-        $userid = $_SESSION['userid'];
+    $dbcon = new dbConnect();
+    $dbcon->connectToDB();
+    $userid = $_SESSION['userid'];
 
-        $search = $_GET['search'];
-        $results = $dbcon->getSearchResults($search);
-    } else {
-        header("Location: ./login.php");
-    }
+    // grabs the appropriate search results
+    $search = $_GET['search'];
+    $results = $dbcon->getSearchResults($search);
 ?>
 <!DOCTYPE html>
 <html lang="en">
