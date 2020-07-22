@@ -78,7 +78,7 @@
                                 </div>
                                 <div>
                                     <a href='event-overview.php?eventid=".$ev['id']."' class='link'><i class='fas fa-edit'></i>Click to edit this event</a>
-                                    <a style='margin-left: 10px;' href='javascript:void()' class='link' onclick='deleteEvent(".$ev['id'].")'><i class='fa fa-trash'></i>Delete Event</a>
+                                    <a style='margin-left: 20px;' href='javascript:void()' class='link' onclick='deleteEvent(".$ev['id'].")'><i class='fa fa-trash'></i>Delete Event</a>
                                 </div>
                             </div>";
                     }
