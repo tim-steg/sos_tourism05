@@ -183,7 +183,7 @@
         }
 
         function getSearchResults($search) {
-            $stmt = $this->conn->prepare("SELECT `eventid`, `eventname`, `organizer`, `startdate`, `enddate` FROM events WHERE `eventname` LIKE %?%");
+            $stmt = $this->conn->prepare("SELECT `eventid`, `eventname`, `organizer`, `startdate`, `enddate` FROM events WHERE `eventname` LIKE concat('%', ?, '%')");
             $stmt->bind_param("s", $search);
             $stmt->execute();
             $stmt->store_result();
