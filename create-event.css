@@ -93,12 +93,12 @@ i.fa-minus {
 .top-menu {
    
     display: grid;
-    grid-template-columns: 60% 1fr 1fr 1fr 1fr 1fr 60px;
+    grid-template-columns: 50% 1fr 1fr 1fr 1fr 1fr 50px;
     height: 50px;
     width: 100%;
     background-color: white;
     align-content: center;
-    padding-bottom: 0px;
+    padding-bottom: 10px;
     
 }
 
