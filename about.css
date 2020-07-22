@@ -66,7 +66,7 @@ header{
 /*Adding width: 100% to images helps make it responsive.*/
 
 .big-about{
-    background: url(../res/about.jpg);
+    background: url(./res/about.jpg);
     background-position: 35% 27%;
     height: 34em;
     color: white;
@@ -137,7 +137,7 @@ header{
 
 
 .contact{
-    background: url(../res/contact.jpg);
+    background: url(./res/contact.jpg);
     background-position: 36% 34%;
     height: 36.6em;
     margin-top: 4em;

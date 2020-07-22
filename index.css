@@ -6,7 +6,7 @@ body{
 }
 
 .home-bg{
-    background: url(../res/background.jpg);
+    background: url(./res/background.jpg);
     background-position: 42% 27%;
     color: white;
     height: 40em;
@@ -210,7 +210,7 @@ input[value="What event are you looking for?"]{
 
 .start-bg{
     padding: 3em;
-    background: url(../res/smile.jpg);
+    background: url(./res/smile.jpg);
     background-position: 44% 20%;
     text-align: center;
     color: white;

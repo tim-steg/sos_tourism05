@@ -53,7 +53,7 @@
     <form method="POST">
         <nav>
             
-            <img src="../res/logo.png" alt="" class="logo">
+            <img src="./res/logo.png" alt="" class="logo">
         
             <ul>
                 <li>

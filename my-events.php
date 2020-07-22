@@ -9,9 +9,7 @@
         $dbcon = new dbConnect();
         $dbcon->connectToDB();
         $userid = $_SESSION['userid'];
-
-        $search = $_GET['search'];
-        $results = $dbcon->getSearchResults($search);
+        $events = $dbcon->getUserEvents($userid);
     } else {
         header("Location: ./login.php");
     }
@@ -30,14 +28,19 @@
 </head>
 <body>
     <nav>
-        <img src="../res/logo.png" alt="" class="logo">
+        <img src="./res/logo.png" alt="" class="logo">
         <ul>
             <li>
-                <div><form action="searchevents.php" method="POST"><input class="form-control input-lg" style="border-radius: 5px;" type="text" id="search-input" placeholder="Search for an event here!"></form></div>
-                <div class="search" id="search-icon">
+                <div><form action="search-results.php" id="searchform" method="GET"><input class="form-control input-lg" style="border-radius: 5px;" name="search" type="text" id="search-input" placeholder="Search for an event here!"></form></div>
+                <a href="javascript:void()" style="text-decoration: none;" onclick="document.getElementById('searchform').submit();"><div class="search">
                     <i class="fas fa-search"></i>
                     Search
-                </div>
+                </div></a>
+                <br>
+                <a href="./create-event.php" style="text-decoration: none;"><div class="create-ev" id="create-icon">
+                    <i class="fas fa-plus" id="plus"></i>
+                    Create Event
+                </div></a>
             </li>
         </ul>
         
@@ -48,28 +51,40 @@
             <a class="navlink" href="index.html" id="home">Home</a>
             <a class="navlink" href="">About</a>
             <a class="navlink" href="">Safety</a>
-            <a class="navlink" href="">My Events</a>
-            <a class="navlink" href=""><span></span>Log Out</a>
+            <?php echo "<a class='navlink' href='./my-events.php?id=".$_SESSION['userid']."'>My Events</a>"; ?>
+            <a class="navlink" href="./logout.php"><span></span>Log Out</a>
         </div>
 
         <hr>
 
         <div class="event-wrapper">
-            <h2><i class="fas fa-bookmark"></i> Search Results:</h2>
+            <h2><i class="fas fa-bookmark"></i> My Events:</h2>
             <?php 
-                if (count($results) > 0) {
-                    echo "<div><ul style='margin-left: 20px;'>";
-                    foreach ($results as $res) {
-                        $start = explode(" ", $res['start']); $end = explode(" ", $res['end']);
-                        echo "<li class='searchitem'>Event Name: <a href='./event-overview.php?eventid=".$res['eventid']."'>".$res['name']."</a><br>";
-                        echo "Organizer: ".$res['org']."<br>";
-                        echo "Start Date: ".$start[0]." - ".$end[0];
-                        echo "</li>";
+                if (count($events) > 0) {
+                    foreach ($events as $ev) {
+                        $start = explode(" ", $ev['sdate']); $end = explode(" ", $ev['edate']);
+                        echo "<div class='event-info'>
+                                <div>
+                                    <i class='fas fa-exclamation-circle'></i>
+                                    <div class='event-labels' id='name-info'>Event Name: ".$ev['name']."</div>
+                                </div>
+                                <div>
+                                    <i class='far fa-calendar-alt'></i>
+                                    <div class='event-labels' id='date-info'>Date: ".date("m-d-Y", strtotime($start[0]))." - ".date("m-d-Y", strtotime($end[0]))."</div>
+                                </div>
+                                <div>
+                                    <i class='fas fa-user-alt'></i>
+                                    <div class='event-labels' id='organizer-info'>Organizer: ".$ev['org']."</div>
+                                </div>
+                                <div>
+                                    <a href='event-overview.php?eventid=".$ev['id']."' class='link'><i class='fas fa-edit'></i>Click to edit this event</a>
+                                </div>
+                            </div>";
                     }
-                    echo "</ul></div>";
                 } else {
-                    echo "<div>No search results found. Try searching for something else!</div>";
+                    echo "<div><a href='create-event.php?userid=".$_SESSION['userid']."'>Click here to create an event.</a></div>";
                 }
+                
             ?>
 
         <!--<div class="event-info">
@@ -125,10 +140,5 @@
             .catch(error => console.log("Error: " + error));
         }
     </script>
-    <style>
-        .searchitem {
-            font-size: 20px;
-        }
-    </style>
 </body>
 </html>
