@@ -28,6 +28,7 @@
                 ];
                 $dbcon->insertReqs($eventid, $reqs, $_POST['attend1'], $_POST['attend2']);
             }
+            
             $dbcon->insertSessions($eventid, $sess);
 
             $dbcon->closeConn();
@@ -50,7 +51,7 @@
     <title>Create A New Event</title>
 </head>
 <body>
-    <form method="POST">
+    <form action="./create-event.php" method="POST">
         <nav>
             
             <img src="./res/logo.png" alt="" class="logo">
