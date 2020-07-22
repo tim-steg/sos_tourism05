@@ -55,9 +55,9 @@
                         echo "<a class='navlink' href='./my-events.php?id=".$_SESSION['userid']."'>My Events</a>"; 
                         echo "<a class='navlink' href='./logout.php'><span></span>Log Out</a>";
                     } else {
-                        echo "<li><a href='./search-results.php'>Events</a></li>";
-                        echo "<li id='login' class='aba'><a href='./sign-up.php'>Sign Up</a></li>&nbsp;&nbsp;&nbsp;&nbsp; |";
-                        echo "<li id='login' class='bab'><a href='./login.php'>Login</a></li>";
+                        echo "<a href='./search-results.php'>Events</a>";
+                        echo "<a href='./sign-up.php'>Sign Up</a>&nbsp; |";
+                        echo "<a href='./login.php'>Login</a>";
                     }
                 ?>
         </div>
