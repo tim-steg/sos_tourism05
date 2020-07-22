@@ -17,7 +17,7 @@
 <body>
     <section class="home-bg">
         <header>
-            <a href="index.html"><img src="./res/logo.png" alt="Logo of Logo Name Company."></a>
+            <a href="index.php"><img src="./res/logo.png" alt="Logo of Logo Name Company."></a>
 
             <nav>
                 <input type="checkbox" id="check">

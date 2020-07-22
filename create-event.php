@@ -33,10 +33,10 @@
             $dbcon->closeConn();
             header("Location: ./my-events.php?id=".$userid);
         } else if (isset($_POST['delete_submission'])) {
-            header("Location: ./index.html");
+            header("Location: ./index.php");
         }
     } else {
-        header("Location: ./index.html");
+        header("Location: ./index.php");
     }
 ?>
 <!DOCTYPE html>
@@ -77,7 +77,7 @@
         <div class="mobile-toggle"><i class="fas fa-bars"></i></div>
         <div class="content">
         <div class="top-menu">
-                <a href="index.html" id="home">Home</a>
+                <a href="index.php" id="home">Home</a>
                 <a href="">About</a>
                 <a href="">Safety</a>
                 <a href="./my-events.php">My Events</a>
