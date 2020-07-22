@@ -6,23 +6,23 @@
     session_start();
     $msg = "";
 
+    if (isset($_SESSION['authuser'])) {
+        header("Location: ./my-events.php?id=".$_SESSION['userid']);
+    }
+
     if (isset($_POST['loginattempt'])) {
-        if (!isset($_SESSION['authuser'])) {
-            $dbcon = new dbConnect();
-            $dbcon->connectToDB();
+        $dbcon = new dbConnect();
+        $dbcon->connectToDB();
 
-            
-            if (isset($_POST['username']) && isset($_POST['password']) &&
-                $dbcon->checkLogin($_POST['username'], $_POST['password']) == true) {
+        
+        if (isset($_POST['username']) && isset($_POST['password']) &&
+            $dbcon->checkLogin($_POST['username'], $_POST['password']) == true) {
 
-                $_SESSION['userid'] = $dbcon->getUserID($_POST['username']);
-                $_SESSION['authuser'] = true;
-                header("Location: ./my-events.php?id=".$_SESSION['userid']);
-            } else {
-                $msg = "Error: Invalid Login Credentials.";
-            }
-        } else {
+            $_SESSION['userid'] = $dbcon->getUserID($_POST['username']);
+            $_SESSION['authuser'] = true;
             header("Location: ./my-events.php?id=".$_SESSION['userid']);
+        } else {
+            $msg = "Error: Invalid Login Credentials.";
         }
     }
 ?>
