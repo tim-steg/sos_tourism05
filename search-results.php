@@ -7,7 +7,7 @@
 
     $dbcon = new dbConnect();
     $dbcon->connectToDB();
-    $userid = $_SESSION['userid'];
+    //$userid = $_SESSION['userid'];
 
     // grabs the appropriate search results
     if (isset($_GET['search'])) {
