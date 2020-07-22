@@ -94,7 +94,7 @@ i.fa-minus {
    
     display: grid;
     grid-template-columns: 50% 1fr 1fr 1fr 1fr 1fr 50px;
-    height: 50px;
+    height: 55px;
     width: 100%;
     background-color: white;
     align-content: center;
