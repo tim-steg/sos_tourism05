@@ -43,7 +43,8 @@
             <div class="search-box">
                 <form action="./search-results.php" id="searchform" method="GET">
                 <label for="search"></label>
-                <input type="text" name="search" id="search events" placeholder="What event are you looking for?" size="20">
+                <input type="text" name="search" id="search events" placeholder="What event are you looking for?" style="font-size: 20px;" size="20"
+                onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">
 
                 <input type="button" onclick="document.getElementById('searchform').submit();" value="Search" id="find-button">
                 </form>
