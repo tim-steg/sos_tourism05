@@ -46,8 +46,8 @@
         <div class="top-menu">
             <a class="navlink" href="index.php" id="home">Home</a>
             <a class="navlink" href="./about.html">About</a>
-            <a class="navlink" href="./my-events.php">My Events</a>
-            <a class="navlink" href="./logout.php"><span></span>Log Out</a>
+            <a class="navlink" href="./my-events.php">My Events</a>&nbsp;&nbsp;|
+            <a class="navlink" href="./logout.php">Log Out</a>
         </div>
 
         <hr>
