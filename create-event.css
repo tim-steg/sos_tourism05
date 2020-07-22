@@ -93,7 +93,7 @@ i.fa-minus {
 .top-menu {
    
     display: grid;
-    grid-template-columns: fit-content(60%);
+    grid-template-columns: fit-content(10%);
     height: 50px;
     width: 100%;
     background-color: white;
