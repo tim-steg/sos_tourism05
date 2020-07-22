@@ -66,7 +66,7 @@
                         echo "<div class='event-info'>
                                 <div>
                                     <i class='fas fa-exclamation-circle'></i>
-                                    <div class='event-labels' id='name-info'>Event Name: ".$ev['name']."</div>
+                                    <div class='event-labels' id='name-info'>Event Name: <a href='./event-overview.php?eventid=".$ev['id']."'>".$ev['name']."</a></div>
                                 </div>
                                 <div>
                                     <i class='far fa-calendar-alt'></i>
