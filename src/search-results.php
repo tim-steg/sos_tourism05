@@ -58,7 +58,7 @@
             <h2><i class="fas fa-bookmark"></i> Search Results:</h2>
             <?php 
                 if (count($results) > 0) {
-                    echo "<div><ul style='margin-left: 15px;'>";
+                    echo "<div><ul style='margin-left: 20px;'>";
                     foreach ($results as $res) {
                         $start = explode(" ", $res['start']); $end = explode(" ", $res['end']);
                         echo "<li class='searchitem'>Event Name: <a href='./event-overview.php?eventid=".$res['eventid']."'>".$res['name']."</a><br>";
@@ -127,7 +127,7 @@
     </script>
     <style>
         .searchitem {
-            font-size: 22px;
+            font-size: 20px;
         }
     </style>
 </body>
