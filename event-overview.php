@@ -53,11 +53,11 @@
                 <a class="navlink" href="about.html">About</a>
                 <?php 
                     if (isset($_SESSION['authuser'])) {
-                        echo "<a class='navlink' href='./my-events.php?id=".$_SESSION['userid']."'>My Events</a>|"; 
+                        echo "<a class='navlink' href='./my-events.php?id=".$_SESSION['userid']."'>My Events</a>"; 
                         echo "<a class='navlink' href='./logout.php'><span></span>Log Out</a>";
                     } else {
                         echo "<a class='navlink' href='./search-results.php'>Events</a>";
-                        echo "<a class='navlink' id='signup' href='./sign-up.php'>Sign Up</a>|";
+                        echo "<a class='navlink' id='signup' href='./sign-up.php'>Sign Up</a>";
                         echo "<a class='navlink' href='./login.php'>Login</a>";
                     }
                 ?>
