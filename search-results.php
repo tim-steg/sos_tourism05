@@ -32,7 +32,7 @@
         <img src="./res/logo.png" alt="" class="logo">
         <ul>
             <li>
-                <div><form action="search-results.php" id="searchform" method="GET"><input class="form-control input-lg" style="border-radius: 5px;" type="text" id="search-input" placeholder="Search for an event here!"></form></div>
+                <div><form action="search-results.php" id="searchform" method="GET"><input class="form-control input-lg" style="border-radius: 5px;" type="text" name="search" id="search-input" placeholder="Search for an event here!"></form></div>
                 <a href="javascript:void()" style="text-decoration: none;" onclick="document.getElementById('searchform').submit();"><div class="search" id="search-icon">
                     <i class="fas fa-search"></i>
                     Search
