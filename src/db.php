@@ -185,7 +185,7 @@
         function getSearchResults($search) {
             $stmt = $this->conn->prepare("SELECT `eventid`, `eventname`, `organizer`, `startdate`, `enddate` FROM events WHERE eventname=?");
             $stmt->bind_param("s", $search);
-            $stmt->exeute();
+            $stmt->execute();
             $stmt->store_result();
             $stmt->bind_result($id, $name, $org, $start, $end);
             
