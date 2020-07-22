@@ -198,5 +198,20 @@
 
             return $results;
         }
+
+        // deletes the specified event from all event-related databases.
+        function deleteEvent($eventid) {
+            $stmt = $this->conn->prepare("DELETE * FROM events WHERE eventid=?");
+            $stmt->bind_param("i", $eventid);
+            $stmt->execute();
+
+            $stmt = $this->conn->prepare("DELETE * FROM reqs WHERE eventid=?");
+            $stmt->bind_param("i", $eventid);
+            $stmt->execute();
+
+            $stmt = $this->conn->prepare("DELETE * FROM `sessions` WHERE eventid=?");
+            $stmt->bind_param("i", $eventid);
+            $stmt->execute();
+        }
     }
 ?>
