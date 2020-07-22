@@ -63,11 +63,11 @@
             <h2><i class="fas fa-bookmark"></i> Search Results:</h2>
             <?php 
                 if (count($results) > 0) {
-                    echo "<div><ul>";
+                    echo "<div><ul style='margin-left: 10px;'>";
                     foreach ($results as $res) {
                         $start = explode(" ", $res['start']); $end = explode(" ", $res['end']);
                         echo "<li>Event Name: <a href='./event-overview.php?eventid=".$res['eventid']."'>".$res['name']."</a><br>";
-                        echo "Organizer: ".$res['org'];
+                        echo "Organizer: ".$res['org']."<br>";
                         echo "Start Date: ".$start[0]." - ".$end[0];
                         echo "</li>";
                     }
