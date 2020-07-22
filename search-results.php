@@ -10,8 +10,10 @@
     $userid = $_SESSION['userid'];
 
     // grabs the appropriate search results
-    $search = $_GET['search'];
-    $results = $dbcon->getSearchResults($search);
+    if (isset($_GET['search'])) {
+        $search = $_GET['search'];
+        $results = $dbcon->getSearchResults($search);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,7 +55,7 @@
         <div class="event-wrapper">
             <h2><i class="fas fa-bookmark"></i> Search Results:</h2>
             <?php 
-                if (count($results) > 0) {
+                if (isset($results) && count($results) > 0) {
                     echo "<div><ul style='margin-left: 20px;'>";
                     foreach ($results as $res) {
                         $start = explode(" ", $res['start']); $end = explode(" ", $res['end']);
@@ -64,7 +66,7 @@
                     }
                     echo "</ul></div>";
                 } else {
-                    echo "<div>No search results found. Try searching for something else!</div>";
+                    echo "<div>No search results found. Try searching for something else on the left!</div>";
                 }
             ?>
 
