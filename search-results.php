@@ -11,8 +11,10 @@
 
     // grabs the appropriate search results
     if (isset($_GET['search'])) {
-        $search = $_GET['search'];
-        $results = $dbcon->getSearchResults($search);
+        if ($_GET['search'] != '') {
+            $search = $_GET['search'];
+            $results = $dbcon->getSearchResults($search);
+        }
     }
 ?>
 <!DOCTYPE html>
@@ -46,7 +48,7 @@
         <div class="top-menu">
             <a class="navlink" href="index.php" id="home">Home</a>
             <a class="navlink" href="./about.html">About</a>
-            <a class="navlink" href="./my-events.php">My Events</a>&nbsp;&nbsp;|
+            <a class="navlink" href="./my-events.php">My Events</a>
             <a class="navlink" href="./logout.php">Log Out</a>
         </div>
 
