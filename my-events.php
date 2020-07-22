@@ -143,7 +143,9 @@
 
         function deleteEvent(id) {
             let answer = confirm("Are you sure you want to delete this event? This cannot be undone.");
-            window.location.href = "https://sostourism05.herokuapp.com/deleteevent.php?id="+id+"&confirm="+answer;
+            if (answer == true) {
+                window.location.href = "https://sostourism05.herokuapp.com/deleteevent.php?id="+id+"&confirm="+answer;
+            }
         }
     </script>
 </body>
