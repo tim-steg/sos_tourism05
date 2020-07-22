@@ -5,6 +5,7 @@
     require_once("db.php");
     session_start();
 
+    // checks if the user is logged in, then delete's their event.
     if (isset($_SESSION['authuser'])) {
         if ($_GET['confirm'] == true) {
             $dbcon = new dbConnect();
