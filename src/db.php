@@ -181,5 +181,22 @@
 
             return $events;
         }
+
+        function getSearchResults($search) {
+            $stmt = $this->conn->prepare("SELECT `eventid`, `eventname`, `organizer`, `startdate`, `enddate` FROM events WHERE eventname=?");
+            $stmt->bind_param("s", $search);
+            $stmt->exeute();
+            $stmt->store_result();
+            $stmt->bind_result($id, $name, $org, $start, $end);
+            
+            $results = [];
+            if ($stmt && ($stmt->num_rows >= 1)) {
+                while ($stmt->fetch()) {
+                    $results[] = ["eventid" => $id, "name" => $name, "org" => $org, "start" => $start, "end" => $end];
+                }
+            }
+
+            return $results;
+        }
     }
 ?>
