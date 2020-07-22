@@ -66,7 +66,7 @@
                     echo "<div><ul style='margin-left: 15px;'>";
                     foreach ($results as $res) {
                         $start = explode(" ", $res['start']); $end = explode(" ", $res['end']);
-                        echo "<li>Event Name: <a href='./event-overview.php?eventid=".$res['eventid']."'>".$res['name']."</a><br>";
+                        echo "<li class='searchitem'>Event Name: <a href='./event-overview.php?eventid=".$res['eventid']."'>".$res['name']."</a><br>";
                         echo "Organizer: ".$res['org']."<br>";
                         echo "Start Date: ".$start[0]." - ".$end[0];
                         echo "</li>";
@@ -130,5 +130,10 @@
             .catch(error => console.log("Error: " + error));
         }
     </script>
+    <style>
+        .searchitem {
+            font-size: 22px;
+        }
+    </style>
 </body>
 </html>
