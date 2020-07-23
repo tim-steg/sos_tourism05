@@ -37,9 +37,14 @@
         
         function insertReqs($eventid, $reqs, $attnd1, $attnd2) {
             // inserts the recommended precautions into its own table.
-            $stmt = $this->conn->prepare("INSERT INTO `reqs` VALUES (?, ?, ?, ?, ?, ?, ?)");
-            $stmt->bind_param("isssisi", $eventid, $reqs[0], $reqs[1], $reqs[2], $attnd1, $reqs[3], $attnd2);
-            $stmt->execute();
+            $result = $this->conn->query("INSERT INTO `reqs` VALUES ('$eventid', '$reqs[0]', '$reqs[1]', '$reqs[2]', '$attnd1', '$reqs[3]', '$attnd2')");
+            if ($result) {
+                // return true on success.
+                return true;
+            } else {
+                // return false on error.
+                return false;
+            }
         }
 
         // inserts all the various session data into a cross-reference table.
@@ -182,6 +187,7 @@
             return $events;
         }
 
+        // gets the appropriate search results from the events table, based on the parameter
         function getSearchResults($search) {
             $stmt = $this->conn->prepare("SELECT `eventid`, `eventname`, `organizer`, `startdate`, `enddate` FROM events WHERE `eventname` LIKE CONCAT('%',?,'%')");
             $stmt->bind_param("s", $search);
