@@ -73,6 +73,59 @@ i.fa-plus {
    
 }
 
+/* drop down style */
+
+.mainmenubtn {
+    background-color: #3b0f7e;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    padding:20px;
+    margin-top:20px;
+    width: 100%;
+    
+}
+.mainmenubtn:hover {
+    background-color: #713ebd;
+    border-radius: 5px 5px 0 0;
+}
+.fa-bell {
+    margin-right: 10px;
+}
+.drop {
+    position: absolute;
+    display: inline-block;
+    right: 5%;
+    width: 15%;
+    color: white;
+    font-size: 1.2vw;
+}
+.drop-child {
+    height: 100px;
+    border-radius: 0 0 5px 5px;
+    padding: 10px;
+    display: none;
+    background-color: #3b0f7e;
+    font-size: 0.8em;
+}
+
+.drop:hover .drop-child {
+    display: block;
+    background-color: #713ebd;
+    width: 100%;
+    cursor: pointer;
+
+}
+
+
+
+
+
+
+
+/* drop-down style */
+
 
 @media(max-width:400px){
     .top-menu {   
