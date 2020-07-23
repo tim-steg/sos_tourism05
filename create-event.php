@@ -51,7 +51,7 @@
     <title>Create A New Event</title>
 </head>
 <body>
-    <form action="./create-event.php" method="POST">
+    <form enctype="multipart/form-data" action="./create-event.php" method="POST">
         <nav>
             
             <img src="./res/logo.png" alt="" class="logo">
@@ -109,17 +109,17 @@
                     <p id="safety">Safety Features:</p>
                     <div id="event-requirements">
                         <div id="face-mask">
-                            <input type="checkbox" value="yes" name="reqs[]" id="mask">
+                            <input type="checkbox" name="reqs[0]" id="mask">
                             <label for="mask">Require Face Masks On</label>
                         </div>
                         
                         <div>
-                            <input type="checkbox" value="yes" name="reqs[]" id="sanitizer">
+                            <input type="checkbox" name="reqs[1]" id="sanitizer">
                             <label for="sanitizer">Hand Sanitizer Stations</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" value="yes" name="reqs[]" id="temp">
+                            <input type="checkbox" name="reqs[2]" id="temp">
                             <label for="temp">Body Temperature Check</label>
                         </div>
 
@@ -134,7 +134,7 @@
                         </div>
 
                         <div>
-                            <input type="checkbox" value="yes" name="reqs[]" id="age">
+                            <input type="checkbox" name="reqs[3]" id="age">
                             <label for="age">Not Recommended For Age &gt 65</label>
                         </div>
 
