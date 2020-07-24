@@ -64,7 +64,7 @@
                         echo "<li class='searchitem'>Event Name: <a href='./event-overview.php?eventid=".$res['eventid']."'>".$res['name']."</a><br>";
                         echo "Organizer: ".$res['org']."<br>";
                         echo "Start Date: ".$start[0]." - ".$end[0];
-                        echo "<div style='display: inline-block;'>";
+                        echo "<div style='display: inline-block;'><br>";
                         if ($res['reqs']['facemasks'] == "true") {
                             echo "<img style='width: 35px; height: 35px;' src='./res/emoji_mask.png' title='Face masks recommended' alt='Face masks recommended'>";
                         }
