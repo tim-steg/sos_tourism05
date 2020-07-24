@@ -50,12 +50,12 @@
             <a class="navlink" href="./about.php">About</a>
             <?php 
                 if (isset($_SESSION['authuser'])) {
-                    echo "<li id='login'><a class='navlink' href='./my-events.php?id=".$_SESSION['userid']."'>My Events</a></li>&nbsp;&nbsp;&nbsp;&nbsp; |";
-                    echo "<li id='login'><a class='navlink' href='./logout.php'><span></span>Log Out</a></li>";
+                    echo "<a class='navlink' href='./my-events.php?id=".$_SESSION['userid']."'>My Events</a>&nbsp;&nbsp;&nbsp;&nbsp; |";
+                    echo "<a class='navlink' href='./logout.php'><span></span>Log Out</a>";
                 } else {
-                    echo "<li><a href='./search-results.php'>Events</a></li>";
-                    echo "<li id='login' class='aba'><a href='./sign-up.php'>Sign Up</a></li>&nbsp;&nbsp;&nbsp;&nbsp; |";
-                    echo "<li id='login' class='bab'><a href='./login.php'>Login</a></li>";
+                    echo "<a class='navlink' href='./search-results.php'>Events</a>";
+                    echo "<a class='navlink' href='./sign-up.php'>Sign Up</a>&nbsp;&nbsp;&nbsp;&nbsp; |";
+                    echo "<a class='navlink' href='./login.php'>Login</a>";
                 }
             ?>
         </div>
