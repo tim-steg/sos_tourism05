@@ -21,7 +21,7 @@
                 $msg = "Error: An account already exists with that email and/or username.";
             } else if ($dbcon->accAlExists($_POST['email'], $_POST['username']) == false) {
                 $dbcon->createUser($_POST['email'], $_POST['username'], $_POST['password']);
-                header("Location: ./login.html");
+                header("Location: ./login.php");
             }
         } else {
             $msg = "Password fields do not match. Please reenter your password.";
