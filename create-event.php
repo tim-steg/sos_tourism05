@@ -58,7 +58,7 @@
     <form enctype="multipart/form-data" action="./create-event.php" method="POST">
         <nav>
             
-            <img src="./res/logo.png" alt="" class="logo">
+            <img src="./res/Logo.png" alt="" class="logo">
         
             <ul>
                 <li>

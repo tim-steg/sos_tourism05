@@ -23,7 +23,7 @@
 <body>
     <section class="home-bg">
         <header>
-            <a href="index.php"><img src="./res/logo.png" alt="Logo of Logo Name Company."></a>
+            <a href="index.php"><img src="./res/Logo.png" alt="Logo of Logo Name Company."></a>
 
             <nav>
                 <input type="checkbox" id="check">
@@ -112,7 +112,7 @@
             <li id="login" class="ada"><a href="#">Log in</a></li>
         </ul>
         <!--(&nbsp;&nbsp;) adds a space between words.-->
-        <a href="index.php"><img src="./res/logo.png" alt="Logo of Logo Name Company."></a>
+        <a href="index.php"><img src="./res/Logo.png" alt="Logo of Logo Name Company."></a>
     </footer>
 </body>
 </html>

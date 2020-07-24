@@ -55,7 +55,7 @@
         </form>
     </div>
     <div class="right">
-        <img src="./res/logo.png" alt="" srcset="">
+        <img src="./res/Logo.png" alt="" srcset="">
         <h1>Sign up!</h1>
         <p>Sign up for an account now and start planning your event safely!</p>
     </div>

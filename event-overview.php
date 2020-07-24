@@ -36,7 +36,7 @@
 </head>
 <body>
     <nav>
-        <img src="./res/logo.png" alt="" class="logo">
+        <img src="./res/Logo.png" alt="" class="logo">
         <ul>
             <li>
                 <div><form action="searchevents.php" method="POST"><input class="form-control input-lg" style="border-radius: 5px;" type="text" id="search-input" placeholder="Search for an event here!"></form></div>

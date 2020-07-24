@@ -52,7 +52,7 @@
         </form>
     </div>
     <div class="left">
-        <img src="./res/logo.png" alt="" srcset="">
+        <img src="./res/Logo.png" alt="" srcset="">
         <h1>Log in!</h1>
         <p>Login to your account now and start planning your event safely!</p>
     </div>
