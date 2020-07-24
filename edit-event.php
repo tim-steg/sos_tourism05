@@ -7,6 +7,7 @@
 
     $dbcon = new dbConnect();
     $dbcon->connectToDB();
+    $eventid = $_GET['eventid'];
     $eventdata = $dbcon->grabEventData($eventid);
     $sessdata = $dbcon->grabSessData($eventid);
     $reqdata = $dbcon->grabReqData($eventid);
@@ -15,7 +16,6 @@
         if (isset($_POST['event_submission'])) {
             $sess = $_POST['sessions'];
             $sdesc = $_POST['sessdesc'];
-            $eventid = $_GET['eventid'];
 
             $result = $dbcon->updateEvent($eventid, $_POST['eventname'], $_POST['organizer'], 
                                         $_POST['startdate'], $_POST['enddate'], $_POST['location'], 
