@@ -114,33 +114,34 @@
                         Email: <input type="text" name="email" <?php echo "value='".$eventdata['email']."'"; ?> placeholder="Add email here">
                         Website: <input type="text" name="site" <?php echo "value='".$eventdata['website']."'"; ?> placeholder="Add your website">
                     </div>
-                    <p id="safety">Safety Features:</p>
+                    <p id="safety" style="font-size: 24px; font-weight: bold;">Safety Features:</p>
+                    <p class="reqdisc" style="font-size: 16px;">Please remember to additionally consult with your local health authorities, if needed.</p>
                     <div id="event-requirements">
                         <div id="face-mask">
                             <?php
-                            if ($reqdata['facemasks'] != null) { echo '<input type="checkbox" name="reqs[0]" id="mask" checked>'; } else {
-                                echo '<input type="checkbox" name="reqs[0]" id="mask">';
+                            if ($reqdata['facemasks'] != null) { echo '<input type="checkbox" class="reqcheck" name="reqs[0]" id="mask" checked>'; } else {
+                                echo '<input type="checkbox" class="reqcheck" name="reqs[0]" id="mask">';
                             } 
                             ?>
-                            <label for="mask">Require Face Masks On</label>
+                            <label class="reqlabel" for="mask">Require Face Masks On</label>
                         </div>
                         
                         <div>
                             <?php
-                            if ($reqdata['sanitizer'] != "false") { echo '<input type="checkbox" name="reqs[1]" id="sanitizer" checked>'; } else {
-                                echo '<input type="checkbox" name="reqs[1]" id="sanitizer">';
+                            if ($reqdata['sanitizer'] != "false") { echo '<input type="checkbox" class="reqcheck" name="reqs[1]" id="sanitizer" checked>'; } else {
+                                echo '<input type="checkbox" class="reqcheck" name="reqs[1]" id="sanitizer">';
                             } 
                             ?>
-                            <label for="sanitizer">Hand Sanitizer Stations</label>
+                            <label for="sanitizer" class="reqlabel">Hand Sanitizer Stations</label>
                         </div>
 
                         <div>
                             <?php
-                            if ($reqdata['tempcheck'] != "false") { echo '<input type="checkbox" name="reqs[2]" id="temp" checked>'; } else {
-                                echo '<input type="checkbox" name="reqs[2]" id="temp">';
+                            if ($reqdata['tempcheck'] != "false") { echo '<input type="checkbox" class="reqcheck" name="reqs[2]" id="temp" checked>'; } else {
+                                echo '<input type="checkbox" class="reqcheck"name="reqs[2]" id="temp">';
                             } 
                             ?>
-                            <label for="temp">Body Temperature Check</label>
+                            <label for="temp" class="reqlabel">Body Temperature Check</label>
                         </div>
 
 
@@ -167,11 +168,11 @@
 
                         <div>
                             <?php 
-                            if ($reqdata['notrecage'] != "false") { echo '<input type="checkbox" name="reqs[3]" id="age" checked>'; } else {
-                                echo '<input type="checkbox" name="reqs[3]" id="age">';
+                            if ($reqdata['notrecage'] != "false") { echo '<input type="checkbox" class="reqcheck" name="reqs[3]" id="age" checked>'; } else {
+                                echo '<input type="checkbox" class="reqcheck" name="reqs[3]" id="age">';
                             } 
                             ?>
-                            <label for="age">Not Recommended For Age &gt 65</label>
+                            <label for="age" class="reqlabel">Not Recommended For Age &gt 65</label>
                         </div>
 
                         <div>
