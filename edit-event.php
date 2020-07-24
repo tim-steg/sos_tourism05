@@ -100,12 +100,12 @@
                     <div id="event-date-input" class="col-xs-2">Date: <input type="date" class="date-input" name="startdate" id="date1" placeholder="mm-dd-yyyy" <?php echo "value='".date('Y-m-d',strtotime($eventdata['startdate']))."'"; ?> required> - <input type="date" class="date-input" name="enddate" id="date2" placeholder="mm-dd-yyyy" <?php echo "value='".date('Y-m-d',strtotime($eventdata['enddate']))."'"; ?> required></div>
                     <div id="event-date-input" class="col-xs-2">Timezone: 
                     <select class="form-control" style="width: auto; display: inline-block;" name="timezone" id="">
-                        <option value="AST">AST (Atlantic Standard Time)</option>
-                        <option value="EST">EST (Eastern Standard Time)</option>
-                        <option value="CST">CST (Central Standard Time)</option>
-                        <option value="MST">MST (Mountain Standard Time)</option>
-                        <option value="PST">PST (Pacific Standard Time)</option>
-                        <option value="AKST">AKST (Alaska Time)</option>
+                        <option value="AST" <?php if ($eventdata['timezone'] == "AST") { echo "selected"; } ?> >AST (Atlantic Standard Time)</option>
+                        <option value="EST" <?php if ($eventdata['timezone'] == "EST") { echo "selected"; } ?> >EST (Eastern Standard Time)</option>
+                        <option value="CST" <?php if ($eventdata['timezone'] == "CST") { echo "selected"; } ?> >CST (Central Standard Time)</option>
+                        <option value="MST" <?php if ($eventdata['timezone'] == "MST") { echo "selected"; } ?> >MST (Mountain Standard Time)</option>
+                        <option value="PST" <?php if ($eventdata['timezone'] == "PST") { echo "selected"; } ?> >PST (Pacific Standard Time)</option>
+                        <option value="AKST" <?php if ($eventdata['timezone'] == "AKST") { echo "selected"; } ?> >AKST (Alaska Time)</option>
                     </select></div>
                     <div id="event-organizer-input">Event Organizer: <input type="text" name="organizer" placeholder="Add organizer name here" <?php echo "value='".$eventdata['organizer']."'"; ?> required></div>
                     <div id="event-location-input">Location: <input type="text" name="location" placeholder="Add location here" <?php echo "value='".$eventdata['location']."'"; ?> required></div>
