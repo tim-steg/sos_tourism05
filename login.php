@@ -53,8 +53,8 @@
     </div>
     <div class="left">
         <img src="./res/logo.png" alt="" srcset="">
-        <h1>Lorem ipsum dolor sit amet</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, minus animi aliquam voluptate aspernatur do</p>
+        <h1>Log in!</h1>
+        <p>Login to your account now and start planning your event safely!</p>
     </div>
 </body>
 </html>
