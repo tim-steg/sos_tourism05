@@ -54,7 +54,7 @@
                     echo "<a class='navlink' href='./logout.php'><span></span>Log Out</a>";
                 } else {
                     echo "<a class='navlink' href='./search-results.php'>Events</a>";
-                    echo "<a class='navlink' href='./sign-up.php'>Sign Up</a>&nbsp;&nbsp;&nbsp;&nbsp; |";
+                    echo "<a class='navlink' href='./sign-up.php'>Sign Up</a> |";
                     echo "<a class='navlink' href='./login.php'>Login</a>";
                 }
             ?>
