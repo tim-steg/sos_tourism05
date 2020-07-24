@@ -111,7 +111,7 @@
                         Website: <input type="text" name="site" placeholder="Add your website">
                     </div>
                     <p id="safety" style="font-size: 24px; font-weight: bold;">Safety Features:</p>
-                    <p class="reqdisc">Please remember to additionally consult with your local health authorities, if needed.</p>
+                    <p class="reqdisc" style="font-size: 16px;">Please remember to additionally consult with your local health authorities, if needed.</p>
                     <div id="event-requirements">
                         <div id="face-mask">
                             <input type="checkbox" class="reqcheck" name="reqs[0]" value="true" id="mask">
