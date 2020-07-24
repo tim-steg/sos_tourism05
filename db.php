@@ -243,7 +243,7 @@
             $results = [];
             if ($stmt && ($stmt->num_rows >= 1)) {
                 while ($stmt->fetch()) {
-                    $results[] = ["eventid" => $id, "name" => $name, "org" => $org, "start" => $start, "end" => $end, "reqs" => $db->grabReqData($id)];
+                    $results[] = ["eventid" => $id, "name" => $name, "org" => $org, "start" => $start, "end" => $end, "reqs" => $this->grabReqData($id)];
                 }
             }
 
