@@ -176,35 +176,26 @@
 
                         <div>
                             <?php 
+                                echo '<label for="capacity">Capacity Limit:</label>';
                                 if ($reqdata['caplimit'] == "lrg") {
-                                    echo '<label for="capacity">Capacity Limit:</label>
-                                    <select class="form-control"name="attend2" style="width: auto; display: inline-block;" id="capacity" required>
+                                    echo '<select class="form-control"name="attend2" style="width: auto; display: inline-block;" id="capacity" required>
                                         <option value="sml">&lt50</option>
                                         <option value="med">50-100</option>
                                         <option value="lrg" selected>&gt100</option>
                                     </select>';
                                 } else if ($reqdata['caplimit'] == "med") {
-                                    echo '<label for="capacity">Capacity Limit:</label>
-                                    <select class="form-control"name="attend2" style="width: auto; display: inline-block;" id="capacity" required>
+                                    echo '<select class="form-control"name="attend2" style="width: auto; display: inline-block;" id="capacity" required>
                                         <option value="sml">&lt50</option>
                                         <option value="med" selected>50-100</option>
                                         <option value="lrg">&gt100</option>
                                     </select>';
                                 } else if ($reqdata['caplimit'] == "sml") {
-                                    echo '<label for="capacity">Capacity Limit:</label>
-                                    <select class="form-control"name="attend2" style="width: auto; display: inline-block;" id="capacity" required>
+                                    echo '<select class="form-control"name="attend2" style="width: auto; display: inline-block;" id="capacity" required>
                                         <option value="sml" selected>&lt50</option>
                                         <option value="med">50-100</option>
                                         <option value="lrg">&gt100</option>
                                     </select>';
                                 }
-
-                                echo '<label for="capacity">Capacity Limit:</label>
-                                <select class="form-control"name="attend2" style="width: auto; display: inline-block;" id="capacity" required>
-                                    <option value="sml">&lt50</option>
-                                    <option value="med">50-100</option>
-                                    <option value="lrg">&gt100</option>
-                                </select>';
                             ?>
                         </div>
 
