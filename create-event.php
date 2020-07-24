@@ -131,9 +131,9 @@
                         <div>
                             <label for="door">Indoor/Outdoor:</label>
                             <select class="form-control" name="attend1" style="width: auto; display: inline-block;" id="door">
-                                <option value="indoor" value="0">Indoor</option>
-                                <option value="outdoor" value="1">Outdoor</option>
-                                <option value="mixed" value="2">Mixed</option>
+                                <option value="ind" value="0">Indoor</option>
+                                <option value="out" value="1">Outdoor</option>
+                                <option value="mix" value="2">Mixed</option>
                             </select>
                         </div>
 
@@ -145,9 +145,9 @@
                         <div>
                             <label for="capacity">Capacity Limit:</label>
                             <select class="form-control"name="attend2" style="width: auto; display: inline-block;" id="capacity" required>
-                                <option value="small" value="0">&lt50</option>
-                                <option value="mediem" value="1">50-100</option>
-                                <option value="large" value="2">&gt100</option>
+                                <option value="sml" value="0">&lt50</option>
+                                <option value="med" value="1">50-100</option>
+                                <option value="lrg" value="2">&gt100</option>
                             </select>
                         </div>
 
