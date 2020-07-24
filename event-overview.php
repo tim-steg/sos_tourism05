@@ -86,6 +86,7 @@
                     Website: <div id="web" style="display: inline;"><?php if ($evdata['website'] != "") { echo $evdata['website']; } else { echo "N/A"; } ?></div><br>
                 </div>
                 <div class="event-labels" id="safety-features" style="font-style: bold; font-size: 22px;">Recommended Safety Features:</div>
+                <p style="color: red; font-style: italic;">Remember to also consult with your local health organizations for additional guidelines.</p>
                 <div class="event-labels" id="event-requirements">
                     <table class="requirement-table" style="table-layout: auto; border-collapse: collapse; width: 100%;">
                         <?php
