@@ -232,13 +232,13 @@ hr {
 }
 
 #event-requirements {
-    width: 103%;
+    width: 110%;
     height: 180spx;
     display: grid;
     grid-template-columns: 30% 30%;
     grid-row: 150px;
     align-content: center;
-    grid-gap: 20px;
+    grid-gap: 10px;
     margin-bottom: 10px;
 }
 
