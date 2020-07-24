@@ -226,8 +226,25 @@
             $results = [];
             if ($stmt && ($stmt->num_rows >= 1)) {
                 while ($stmt->fetch()) {
-                    $results[] = ["eventid" => $id, "name" => $name, "org" => $org, "start" => $start, "end" => $end];
+                    $results[] = ["eventid" => $id, "name" => $name, "org" => $org, "start" => $start, "end" => $end, "req" => $this->getSearchReqData($id)];
                 }
+            }
+
+            return $results;
+        }
+
+        function getSearchReqData($eventid) {
+            $stmt = $this->conn->prepare("SELECT `facemasks`, `sanitizer`, `tempcheck`, `inoroutdoor`, `notrecage`, `caplimit` FROM reqs WHERE `eventid`=?");
+            $stmt->bind_param("i", $eventid);
+            $stmt->execute();
+            $stmt->store_result();
+            $stmt->bind_result($fm, $sa, $tc, $in, $no,$ca);
+            
+            $results = [];
+            if ($stmt && ($stmt->num_rows == 1)) {
+                $results["fm"]=$fm; $results["sa"]=$sa; 
+                $results["tc"]=$tc; $results["in"]=$in; 
+                $results["no"]=$no; $results["ca"]=$ca;
             }
 
             return $results;

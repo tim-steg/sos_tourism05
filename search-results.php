@@ -64,6 +64,34 @@
                         echo "<li class='searchitem'>Event Name: <a href='./event-overview.php?eventid=".$res['eventid']."'>".$res['name']."</a><br>";
                         echo "Organizer: ".$res['org']."<br>";
                         echo "Start Date: ".$start[0]." - ".$end[0];
+                        echo "<div style='display: inline-block;'>";
+                        if ($res['reqs']['fm'] == "true") {
+                            echo "<img src='./res/emoji_mask.png' title='Face masks recommended' alt='Face masks recommended'>";
+                        }
+                        if ($res['reqs']['sa'] == "true") {
+                            echo "<img class='icon' src='./res/hand_santizer.png' title='Hand sanitizer stations present' alt='Hand sanitizer stations present'>";
+                        } 
+                        if ($res['reqs']['tc'] == "true") {
+                            echo "<img class='icon' src='./res/temperature_check.png' title='Temperature checks conducted' alt='Temperature checks conducted'>";
+                        } 
+                        if ($res['reqs']['in'] == "in") {
+                            echo "<img class='icon' src='./res/inside.png' title='Inside event' alt='Inside event'>";
+                        } else if ($res['reqs']['in'] == "out") {
+                            echo "<img src='./res/outdoor.png' title='Outdoor event' alt='Outdoor event'>";
+                        } else if ($res['reqs']['in'] == "mix") {
+                            echo "<img class='icon' src='./res/mixed.png' title='Both indoor & outdoor event' alt='Both indoor & outdoor event'>";
+                        } 
+                        if ($res['reqs']['no'] == "false") {
+                            echo "<img class='icon' src='./res/old_man.png' title='Recommended for age 65+' alt='Recommended for age 65+'>";
+                        } 
+                        if ($res['reqs']['ca'] == "lrg") {
+                            echo "<img class='icon' src='./res/over100.png' title='Estimated attendance over 100' alt='Estimated attendance over 100'>";
+                        } else if ($res['reqs']['ca'] == "med") {
+                            echo "<img class='icon' src='./res/50-100.png' title='Estimated attendance between 50-100' alt='Estimated attendance between 50-100'>";
+                        } else if ($res['reqs']['ca'] == "sml") {
+                            echo "<img class='icon' src='./res/less50.png' title='Estimated attendance up to 50' alt='Estimated attendance up to 50'>";
+                        }
+                        echo "</div>";
                         echo "</li>";
                     }
                     echo "</ul></div>";
