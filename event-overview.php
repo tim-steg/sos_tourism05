@@ -87,7 +87,7 @@
                 </div>
                 <div class="event-labels" id="safety-features">Recommended Safety Features:</div>
                 <div class="event-labels" id="event-requirements">
-                    <table class="requirement-table">
+                    <table class="requirement-table" style="table-layout: auto; border-collapse: collapse; width: 100%;">
                         <?php
                             echo "<tr>";
                             if ($reqdata['facemasks']) {

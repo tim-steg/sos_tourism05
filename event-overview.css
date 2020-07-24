@@ -21,9 +21,12 @@
 
 .requirement-table {
     border-collapse: collapse;
-    border: 1px solid black;
 }
 
 #event-description-text {
     font-size: 18px;
+}
+
+td {
+    border: 1px solid black;
 }
