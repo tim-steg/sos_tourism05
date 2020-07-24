@@ -269,7 +269,7 @@
 
         function updateEvent($userid, $eventid, $name, $org, $start, $end, $loc, $descr, $time, $site, $tel, $email, $reqs) {
             // updates events table.
-            $stmt = $this->conn->prepare("UPDATE events SET userid=?, eventname=?, organizer=?, startdate=?, enddate=?, `location`=?, descr=?, timezone=?, website=?, telephone=?, email=? WHERE eventid=?");
+            $stmt = $this->conn->prepare("UPDATE events SET `userid` = ?, `eventname` = ?, `organizer` = ?, `startdate` = ?, `enddate` = ?, `location` = ?, `descr` = ?, `timezone` = ?, `website` = ?, `telephone` = ?, `email` = ? WHERE `eventid` = ?");
             $stmt->bind_param("issssssssssi", $userid, $name, $org, $start, $end, $loc, $descr, $time, $site, $tel, $email, $eventid);
             $stmt->execute();
             
