@@ -50,7 +50,7 @@
         // inserts all the various session data into a cross-reference table.
         function insertSessions($eventid, $sessions, $sessdesc) {
             try {
-                $i = 0;
+                $i = 0; 
                 $sql = "";
                 foreach ($sessions as $name) {
                     $desc = $sessdesc[$i];
