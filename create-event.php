@@ -110,7 +110,7 @@
                         Email: <input type="text" name="email" placeholder="Add email here">
                         Website: <input type="text" name="site" placeholder="Add your website">
                     </div>
-                    <p id="safety">Safety Features:</p>
+                    <p id="safety" style="font-size: 24px; font-weight: bold;">Safety Features:</p>
                     <p class="reqdisc">Please remember to additionally consult with your local health authorities, if needed.</p>
                     <div id="event-requirements">
                         <div id="face-mask">
