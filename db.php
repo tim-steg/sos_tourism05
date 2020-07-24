@@ -226,7 +226,7 @@
             $results = [];
             if ($stmt && ($stmt->num_rows >= 1)) {
                 while ($stmt->fetch()) {
-                    $results[] = ["eventid" => $id, "name" => $name, "org" => $org, "start" => $start, "end" => $end, "req" => $this->getSearchReqData($id)];
+                    $results[] = ["eventid" => $id, "name" => $name, "org" => $org, "start" => $start, "end" => $end, "reqs" => $this->getSearchReqData($id)];
                 }
             }
 
