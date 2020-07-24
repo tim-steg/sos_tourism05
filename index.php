@@ -51,7 +51,7 @@
         <div class="event-bg">
             <h1>Plan or find your next event, even in a pandemic. </h1>
 
-            <p>Even during a pandemic we know you have places to be. But its hard keeping track of every new update that comes in. That's why we provide events catered to your needs. Find events that meet the health guidelines while priortizing your safety.</p>
+            <p>Even during a pandemic we know you have places to be. But it's hard keeping track of every new update that comes in. That's why we provide events catered to your needs. Find events that meet health guidelines while prioritizing your safety.</p>
 
             <div class="search-box">
                 <form action="./search-results.php" id="searchform" method="GET">
