@@ -48,15 +48,17 @@
         }
 
         // inserts all the various session data into a cross-reference table.
-        function insertSessions($eventid, $sessions) {
+        function insertSessions($eventid, $sessions, $sessdesc) {
             try {
                 $i = 0;
-                $stmt = $this->conn->prepare("INSERT INTO `sessions` VALUES (?, ?, ?)");
-                for ($i = 0; $i < count($sessions[1]); $i+=2) {
-                    $sess1 = $sessions[$i]; $sess2 = $sessions[$i+1];
-                    $stmt->bind_param("iss", $eventid, $sess1, $sess2);
-                    $stmt->execute();
+                $sql = "";
+                foreach ($sessions as $name) {
+                    $desc = $sessdesc[$i];
+                    $sql .= "INSERT INTO `sessions` VALUES ($eventid, $name, $desc);";
+                    $i++;
                 }
+                $this->conn->query($sql);
+
             } catch (Exception $e) {
                 die("Exception Error: ".$e->getMessage()."\n");
             }
@@ -203,6 +205,10 @@
             }
 
             return $results;
+        }
+
+        function updateEvent($eventid, $name) {
+
         }
 
         // deletes the specified event from all event-related databases.

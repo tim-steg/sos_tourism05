@@ -66,7 +66,7 @@
                     </button>
                 </li>
                 <li>
-                    <?php echo "<a href='./my-events.php?id=".$_SESSION["userid"]."' style='text-decoration: none;'>"; ?><div type="button" onclick="deleteEvent();" class="delete">
+                    <?php echo "<a href='./my-events.php?id=".$_SESSION["userid"]."' style='text-decoration: none;'>"; ?><div type="button" class="delete">
                         <p>Delete</p>
                         <i class="fa fa-minus" aria-hidden="true"></i>
                     </div></a>
@@ -164,7 +164,7 @@
                         <i class="far fa-trash-alt"></i>
                     </div>
                     <div class="session-content">
-                        <textarea type="text" name="sessions[]" placeholder="Enter session info" class="session-info" required></textarea>
+                        <textarea type="text" name="sessdesc[]" placeholder="Enter session info" class="session-info" required></textarea>
                     </div>
             </div>
             
@@ -177,10 +177,5 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>  
     <script src="create-event.js"></script>
-    <script>
-        function deleteEvent() {
-            console.log("delete button clicked.");
-        }
-    </script>
 </body>
 </html>
