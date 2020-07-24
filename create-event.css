@@ -351,7 +351,7 @@ i.fa-trash-alt:hover{
 }
 
 .reqlabel {
-    font-size: 36px;
+    font-size: 28px;
 }
 
 .reqcheck {
@@ -360,7 +360,7 @@ i.fa-trash-alt:hover{
 }
 
 .reqdisc {
-    font-size: 24px;
+    font-size: 20px;
     font-style: italic;
     color: red;
 }
