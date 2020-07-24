@@ -66,30 +66,30 @@
                         echo "Start Date: ".$start[0]." - ".$end[0];
                         echo "<div style='display: inline-block;'>";
                         if ($res['reqs']['facemasks'] == "true") {
-                            echo "<img src='./res/emoji_mask.png' title='Face masks recommended' alt='Face masks recommended'>";
+                            echo "<img style='width: 30px; height: 30px;' src='./res/emoji_mask.png' title='Face masks recommended' alt='Face masks recommended'>";
                         }
                         if ($res['reqs']['sanitizer'] == "true") {
-                            echo "<img class='icon' src='./res/hand_santizer.png' title='Hand sanitizer stations present' alt='Hand sanitizer stations present'>";
+                            echo "<img style='width: 30px; height: 30px;' class='icon' src='./res/hand_santizer.png' title='Hand sanitizer stations present' alt='Hand sanitizer stations present'>";
                         } 
                         if ($res['reqs']['tempcheck'] == "true") {
-                            echo "<img class='icon' src='./res/temperature_check.png' title='Temperature checks conducted' alt='Temperature checks conducted'>";
+                            echo "<img style='width: 30px; height: 30px;' class='icon' src='./res/temperature_check.png' title='Temperature checks conducted' alt='Temperature checks conducted'>";
                         } 
                         if ($res['reqs']['inoroutdoor'] == "ind") {
-                            echo "<img class='icon' src='./res/inside.png' title='Inside event' alt='Inside event'>";
+                            echo "<img style='width: 30px; height: 30px;' class='icon' src='./res/inside.png' title='Inside event' alt='Inside event'>";
                         } else if ($res['reqs']['inoroutdoor'] == "out") {
-                            echo "<img src='./res/outdoor.png' title='Outdoor event' alt='Outdoor event'>";
+                            echo "<img style='width: 30px; height: 30px;' src='./res/outdoor.png' title='Outdoor event' alt='Outdoor event'>";
                         } else if ($res['reqs']['inoroutdoor'] == "mix") {
-                            echo "<img class='icon' src='./res/mixed.png' title='Both indoor & outdoor event' alt='Both indoor & outdoor event'>";
+                            echo "<img style='width: 30px; height: 30px;' class='icon' src='./res/mixed.png' title='Both indoor & outdoor event' alt='Both indoor & outdoor event'>";
                         } 
                         if ($res['reqs']['notrecage'] == "false") {
-                            echo "<img class='icon' src='./res/old_man.png' title='Recommended for age 65+' alt='Recommended for age 65+'>";
+                            echo "<img style='width: 30px; height: 30px;' class='icon' src='./res/old_man.png' title='Recommended for age 65+' alt='Recommended for age 65+'>";
                         } 
                         if ($res['reqs']['caplimit'] == "lrg") {
-                            echo "<img class='icon' src='./res/over100.png' title='Estimated attendance over 100' alt='Estimated attendance over 100'>";
+                            echo "<img style='width: 30px; height: 30px;' class='icon' src='./res/over100.png' title='Estimated attendance over 100' alt='Estimated attendance over 100'>";
                         } else if ($res['reqs']['caplimit'] == "med") {
-                            echo "<img class='icon' src='./res/50-100.png' title='Estimated attendance between 50-100' alt='Estimated attendance between 50-100'>";
+                            echo "<img style='width: 30px; height: 30px;' class='icon' src='./res/50-100.png' title='Estimated attendance between 50-100' alt='Estimated attendance between 50-100'>";
                         } else if ($res['reqs']['caplimit'] == "sml") {
-                            echo "<img class='icon' src='./res/less50.png' title='Estimated attendance up to 50' alt='Estimated attendance up to 50'>";
+                            echo "<img style='width: 30px; height: 30px;' class='icon' src='./res/less50.png' title='Estimated attendance up to 50' alt='Estimated attendance up to 50'>";
                         }
                         echo "</div>";
                         echo "</li>";
