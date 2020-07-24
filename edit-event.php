@@ -97,7 +97,7 @@
         <div class="event-wrapper">
             <div class="event-info">
                     <div id="event-name-input">Event Name: <input type="text" name="eventname" placeholder="Add event name here" <?php echo "value='".$eventdata['eventname']."'"; ?> required></div>
-                    <div id="event-date-input" class="col-xs-2">Date: <input type="date" class="date-input" name="startdate" id="date1" placeholder="mm-dd-yyyy" <?php echo "value='".date_format($eventdata['startdate'],'Y-m-d')."'"; ?> required> - <input type="date" class="date-input" name="enddate" id="date2" placeholder="mm-dd-yyyy" <?php echo "value='".date_format($eventdata['enddate'],'Y-m-d')."'"; ?> required></div>
+                    <div id="event-date-input" class="col-xs-2">Date: <input type="date" class="date-input" name="startdate" id="date1" placeholder="mm-dd-yyyy" <?php echo "value='".date_format(strtotime($eventdata['startdate']),'Y-m-d')."'"; ?> required> - <input type="date" class="date-input" name="enddate" id="date2" placeholder="mm-dd-yyyy" <?php echo "value='".date_format(strtotime($eventdata['enddate']),'Y-m-d')."'"; ?> required></div>
                     <div id="event-date-input" class="col-xs-2">Timezone: 
                     <select class="form-control" style="width: auto; display: inline-block;" name="timezone" id="">
                         <option value="AST">AST (Atlantic Standard Time)</option>
