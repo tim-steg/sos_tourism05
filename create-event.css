@@ -232,7 +232,7 @@ hr {
 }
 
 #event-requirements {
-    width: 100%;
+    width: 103%;
     height: 180spx;
     display: grid;
     grid-template-columns: 30% 30%;
@@ -355,7 +355,7 @@ i.fa-trash-alt:hover{
 }
 
 .reqlabel {
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .reqcheck {
