@@ -131,7 +131,7 @@
                 </div>
 
                 <div id="event-description-input">
-                    <h1>Description:</h1>
+                    <h1>Event Description:</h1>
                     <p id="event-description-text"><?php echo $evdata['descr']; ?></p>
                 </div>
                 <div>
