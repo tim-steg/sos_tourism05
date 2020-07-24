@@ -234,7 +234,7 @@
                         $i++; $j++;
                     }
                 } else {
-                    echo    `<div class="event-session" id="session1">
+                    echo `<div class="event-session" id="session1">
                             <div class="collapsible">
                                 <input type="text" class="editable" name="sessions[]" contenteditable placeholder="Add Session Name" required>
                                 <i class="fa fa-caret-down" aria-hidden="true"></i>
