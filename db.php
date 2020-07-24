@@ -154,11 +154,12 @@
             $stmt->execute();
 
             $list = []; $i = 0;
-            while ($row = $stmt->fetch_assoc()) {
-                $list[$i] = $row;
-                $i++;
+            if ($stmt->num_rows >= 1) {
+                while ($row = $stmt->fetch_assoc()) {
+                    $list[$i] = $row;
+                    $i++;
+                }
             }
-
             return $list;
         }
 
