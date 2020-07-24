@@ -132,9 +132,9 @@
                         <div>
                             <label for="door" class="reqlabel">Indoor/Outdoor:</label>
                             <select class="form-control" name="attend1" style="width: auto; display: inline-block;" id="door">
-                                <option value="ind" value="0">Indoor</option>
-                                <option value="out" value="1">Outdoor</option>
-                                <option value="mix" value="2">Mixed</option>
+                                <option value="ind">Indoor</option>
+                                <option value="out">Outdoor</option>
+                                <option value="mix">Mixed</option>
                             </select>
                         </div>
 

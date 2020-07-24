@@ -12,6 +12,8 @@
 
     // Grabs the event info that pertains to the eventid in the url.
     $evdata = $db->grabEventData($eventid);
+    $reqdata = $db->grabReqData($eventid);
+    $sessdata = $db->grabSessData($eventid);
     if ($evdata == false) {
         die("404: Page Not Found.");
     }
@@ -86,13 +88,59 @@
                 <div class="event-labels" id="safety-features">Recommended Safety Features:</div>
                 <div class="event-labels" id="event-requirements">
                     <table class="requirement-table">
-                        <?php echo $event_reqs; ?>
+                        <?php
+                            echo "<tr>";
+                            if ($reqdata['facemasks']) {
+                                echo "<td>Face masks required.";
+                            }
+                            if ($reqdata['sanitizer']) {
+                                echo "<td>Hand sanitizer stations provided.";
+                            }
+                            echo "</tr>";
+                            echo "<tr>";
+                            if ($reqdata['inoroutdoor'] == "in") {
+                                echo "<td>Indoor event.";
+                            } else if ($reqdata['inoroutdoor'] == "out") {
+                                echo "<td>Outdoor event.";
+                            } else if ($reqdata['inoroutdoor'] == "mix") {
+                                echo "<td>Indoor & Outdoor event.";
+                            }
+                            if ($reqdata['tempcheck'] == "true") {
+                                echo "<td>Temperature checks conducted.";
+                            } else {
+                                echo "<td>No temperature checks conducted.";
+                            }
+                            "</tr>";
+                            echo "<tr>";
+                            if ($reqdata['notrecage'] == "true") {
+                                echo "<td>Not recommended for age >65.";
+                            } else {
+                                echo "<td>Recommended for age >65.";
+                            }
+                            if ($reqdata['caplimit'] == "lrg") {
+                                echo "<td>Large event (100+).";
+                            } else if ($reqdata['caplimit'] == "med") {
+                                echo "<td>Medium-sized (50-100)";
+                            } else if ($reqdata['caplimit'] == "sml") {
+                                echo "<td>Small event (<50).";
+                            }
+                            echo"</tr>";
+                        ?>
                     </table>
                 </div>
 
                 <div id="event-description-input">
                     <h1>Description:</h1>
                     <p id="event-description-text"><?php echo $evdata['descr']; ?></p>
+                </div>
+                <div>
+                    <ul>
+                    <?php 
+                        foreach ($sessdata as $session) {
+                            echo "<li>Session Name: ".$session['sessname']."<br>"."Session Description: ".$session['sessdesc']."</li>";
+                        }
+                    ?>
+                    </ul>
                 </div>
             </div>
             
