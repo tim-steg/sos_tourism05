@@ -18,10 +18,10 @@
             $sdesc = $_POST['sessdesc'];
 
             //$dbcon->deleteEvent($eventid);
-            $result = $dbcon->updateEvent($_SESSION['userid'], $eventid, $_POST['eventname'], $_POST['organizer'], 
+            /*$result = $dbcon->updateEvent($_SESSION['userid'], $eventid, $_POST['eventname'], $_POST['organizer'], 
                                         $_POST['startdate'], $_POST['enddate'], $_POST['location'], 
                                         $_POST['descr'], $_POST['timezone'], $_POST['site'], 
-                                        $_POST['tele'], $_POST['email']);
+                                        $_POST['tele'], $_POST['email']);*/
             
             if (isset($_POST['reqs'])) {
                 $reqs = $_POST['reqs'];
