@@ -15,7 +15,7 @@
 
     <link rel="icon" href="./res/favicon.ico" type="image/x-icon">
 
-    <title>Logo Name Company</title>
+    <title>Safebook</title>
     <link rel="stylesheet" href="index.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
@@ -49,9 +49,9 @@
         </header>
 
         <div class="event-bg">
-            <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h1>
+            <h1>Find your next event, even in a pandemic. </h1>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id dictum velit, non rutrum tortor. Phasellus hendrerit erat dignissim lectus euismod dictum.</p>
+            <p>Even during a pandemic we know you have places to be. But its hard keeping track of every new update that comes in. That's why we provide events catered to your needs. Find events that meet the health guidelines while priortizing your safety.</p>
 
             <div class="search-box">
                 <form action="./search-results.php" id="searchform" method="GET">
@@ -69,7 +69,7 @@
         <div class="circle-1"> 
             <div class="circle-text1">
             <h2>Plan your event.</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id dictum velit, non rutrum tortor.Integer pellentesque augue nec tempor euismod. Praesent congue hendrerit urna ac ultricies. </p>
+            <p>Organize your event, and let your attendees know what health guidelines you're adhering to.</p>
             </div>
 
             <div><img src="./res/laptop.png" alt="Image of a laptop"></div>
@@ -80,7 +80,7 @@
         <div class="circle-2"> 
             <div class="circle-text2">
             <h2>Stay safe at a distance.</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id dictum velit, non rutrum tortor. Integer pellentesque augue nec tempor euismod. Praesent congue hendrerit urna ac ultricies. </p>
+            <p>We provide simple and helpful ways to at a glance know what type of COVID-19 restrictions an event has in place. </p>
             </div>
 
             <div><img src="./res/talk.png" alt="Image of a person and a speech bubble."></div>
@@ -89,7 +89,7 @@
         <div class="circle-3"> 
             <div class="circle-text3"> 
             <h2>Have a good time.</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id dictum velit, non rutrum tortor. Integer pellentesque augue nec tempor euismod. Praesent congue hendrerit urna ac ultricies.</p>
+            <p>Don't worry about how to stay safe at your event, we have the tools to let you know!</p>
             </div>
 
             <div><img src="./res/headphones.png" alt="Image of a pair of headphones."></div>
@@ -98,7 +98,7 @@
 
     <div class="start-bg">
         <h1>Start planning now.</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id dictum velit, non rutrum tortor. Integer pellentesque augue nec tempor euismod. Praesent congue hendrerit urna ac ultricies.</p>
+        <p>Sign up for an account today! Totally free!</p>
 
         <input type="button" value="Get Started" id="start-button">
     </div>
