@@ -238,7 +238,7 @@ hr {
     grid-template-columns: 30% 30%;
     grid-row: 150px;
     align-content: center;
-    grid-gap: 10px;
+    grid-gap: 30px;
     margin-bottom: 10px;
 }
 
