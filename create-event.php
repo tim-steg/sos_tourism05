@@ -20,12 +20,16 @@
             
             if (isset($_POST['reqs'])) {
                 $reqs = $_POST['reqs'];
+
+                foreach ($reqs as &$r) {
+                    if ($r == '') {
+                        $r == "false";
+                    }
+                }
+
                 $dbcon->insertReqs($eventid, $reqs, $_POST['attend1'], $_POST['attend2']);
             } else {
-                $reqs = [
-                    ["off", "off"],
-                    ["off", "off"],
-                ];
+                $reqs = ["false","false","false","false"];
                 $dbcon->insertReqs($eventid, $reqs, $_POST['attend1'], $_POST['attend2']);
             }
             
@@ -109,17 +113,17 @@
                     <p id="safety">Safety Features:</p>
                     <div id="event-requirements">
                         <div id="face-mask">
-                            <input type="checkbox" name="reqs[0]" id="mask">
+                            <input type="checkbox" name="reqs[0]" value="true" id="mask">
                             <label for="mask">Require Face Masks On</label>
                         </div>
                         
                         <div>
-                            <input type="checkbox" name="reqs[1]" id="sanitizer">
+                            <input type="checkbox" name="reqs[1]" value="true" id="sanitizer">
                             <label for="sanitizer">Hand Sanitizer Stations</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" name="reqs[2]" id="temp">
+                            <input type="checkbox" name="reqs[2]" value="true" id="temp">
                             <label for="temp">Body Temperature Check</label>
                         </div>
 
@@ -134,7 +138,7 @@
                         </div>
 
                         <div>
-                            <input type="checkbox" name="reqs[3]" id="age">
+                            <input type="checkbox" name="reqs[3]" value="true" id="age">
                             <label for="age">Not Recommended For Age &gt 65</label>
                         </div>
 
