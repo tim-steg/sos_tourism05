@@ -62,13 +62,20 @@
             <div class="drop-child">
                 <?php 
                     $notif = $dbcon->checkNotifications($userid);
-                    if (count($notif) >= 1) {
+                    /*if (count($notif) >= 1) {
                         $i = 0;
                         echo "<ul>";
                         foreach ($notif as $n) {
                             echo "<li>".$n[$i]."<li>";
                             $i++;
                         }
+                        echo "</ul>";
+                    } else {
+                        echo "<p>No notifications right now!</p>";
+                    }*/
+                    if ($_SESSION['userid'] == 21) {
+                        echo "<ul>";
+                        echo "<li>NOTICE: This is a reminder to check your local health website for changing regulations.<br>Start with coronavirus.in.gov!</li>";
                         echo "</ul>";
                     } else {
                         echo "<p>No notifications right now!</p>";
