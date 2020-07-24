@@ -1,7 +1,28 @@
 
 
 (function() {
-    var number=1;
+
+    var new_session=`<div class="event-session">
+                        <div class="collapsible">
+                            <input type="text" class="editable" name="sessions[]" contenteditable placeholder="Add Session Name" required>
+                            <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            <i class="fa fa-caret-up" aria-hidden="true"></i>
+                            <i class="far fa-trash-alt"></i>
+                        </div>
+                        <div class="session-content">
+                            <textarea type="text" name="sessdesc[]" placeholder="Enter session info" class="session-info" required></textarea>
+                        </div>
+                    </div>`   
+                    
+    //Toggle side bar button
+    $(".mobile-toggle").on('click', function(){
+        $(this).toggleClass("mobile-toggle-active")
+        $("nav").toggleClass("nav-active");
+        $(".top-menu").toggleClass("top-menu-active")
+        $(".content").toggleClass("content-active");
+        $(".create,.delete").toggleClass("button-active");
+        $("i.fa-plus, i.fa-minus").toggleClass("icon-active");
+    })
 
     //Event listener that listens to dynamically addded sessions
     $(document).delegate('.fa-caret-down,.fa-caret-up', 'click', function(){
@@ -45,7 +66,7 @@
        
    });
 
-    //Add session event handler
+   //Add session event handler
    $(document).on('click', '.add-session', function(){
        
     var pre_session=$('.add-session').prev();
@@ -53,39 +74,14 @@
     pre_session.after(new_session);
     //traverse and assign number
     //console.log("adding");
+    var number=1;
     $('.event-session').each(function(){
         //console.log(number);
         $(this).attr('id', 'session'+number);
-        $(this+".collapsible").find('.sname').attr('id', 'sname'+number);
-        $(this+".collapsible").find('.sdesc').attr('id', 'sdesc'+number);
-        document.getElementById('sname'+number).tagName = "sessions["+number+"]";
-        document.getElementById('sdesc'+number).tagName = "sessdesc["+number+"]";
         number++;
         
     });
    })
-
-    var new_session=`<div class="event-session">
-                        <div class="collapsible">
-                            <input type="text" class="editable sname" contenteditable placeholder="Add Session Name" required>
-                            <i class="fa fa-caret-down" aria-hidden="true"></i>
-                            <i class="fa fa-caret-up" aria-hidden="true"></i>
-                            <i class="far fa-trash-alt"></i>
-                        </div>
-                        <div class="session-content">
-                            <textarea type="text" class="sdesc" placeholder="Enter session info" class="session-info" required></textarea>
-                        </div>
-                    </div>`   
-                    
-    //Toggle side bar button
-    $(".mobile-toggle").on('click', function(){
-        $(this).toggleClass("mobile-toggle-active")
-        $("nav").toggleClass("nav-active");
-        $(".top-menu").toggleClass("top-menu-active")
-        $(".content").toggleClass("content-active");
-        $(".create,.delete").toggleClass("button-active");
-        $("i.fa-plus, i.fa-minus").toggleClass("icon-active");
-    })
    
 })();
 
