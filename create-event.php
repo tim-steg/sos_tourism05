@@ -145,9 +145,9 @@
                         <div>
                             <label for="capacity">Capacity Limit:</label>
                             <select class="form-control"name="attend2" style="width: auto; display: inline-block;" id="capacity" required>
-                                <option value="sml" value="0">&lt50</option>
-                                <option value="med" value="1">50-100</option>
-                                <option value="lrg" value="2">&gt100</option>
+                                <option value="sml">&lt50</option>
+                                <option value="med">50-100</option>
+                                <option value="lrg">&gt100</option>
                             </select>
                         </div>
 

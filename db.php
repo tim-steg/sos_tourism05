@@ -34,6 +34,28 @@
                 return false;
             }
         }
+
+        // grabs session data based on the event id.
+        function grabSessData($eventid) {
+            $res = $this->conn->query("SELECT * FROM `sessions` WHERE eventid=$eventid");
+            if ($res) {
+                return $res->fetch_array(MYSQLI_ASSOC);
+            } else {
+                // return false on error.
+                return false;
+            }
+        }
+
+        // grabs requirement data based on the event id.
+        function grabReqData($eventid) {
+            $res = $this->conn->query("SELECT * FROM `reqs` WHERE eventid=$eventid");
+            if ($res) {
+                return $res->fetch_array(MYSQLI_ASSOC);
+            } else {
+                // return false on error.
+                return false;
+            }
+        }
         
         function insertReqs($eventid, $reqs, $attnd1, $attnd2) {
             // inserts the recommended precautions into its own table.
@@ -207,8 +229,19 @@
             return $results;
         }
 
-        function updateEvent($eventid, $name) {
-
+        function updateEvent($eventid, $name, $org, $start, $end, $loc, $descr, $time, $site, $tel, $email, $reqs, $sessions, $sdesc) {
+            // updates events table.
+            $stmt = $this->conn->prepare("UPDATE events SET eventname=?, organizer=?, startdate=?, enddate=?, `location`=?, descr=?, timezone=?, website=?, telephone=?, email=? WHERE eventid=?");
+            $stmt->bind_param("ssssssssssi", $name, $org, $start, $end, $loc, $descr, $time, $site, $tel, $email, $eventid);
+            $stmt->execute();
+            
+            // delete session and requirement records to be able to submit the new ones.
+            $stmt = $this->conn->prepare("DELETE FROM `sessions` WHERE eventid=?");
+            $stmt->bind_param("i", $eventid);
+            $stmt->execute();
+            $stmt = $this->conn->prepare("DELETE FROM `reqs` WHERE eventid=?");
+            $stmt->bind_param("i", $eventid);
+            $stmt->execute();
         }
 
         // deletes the specified event from all event-related databases.
