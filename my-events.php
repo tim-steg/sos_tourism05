@@ -56,6 +56,27 @@
 
         <hr>
 
+        <!-- drop down notification -->
+        <div class="drop">
+            <button class="mainmenubtn"><i class="fas fa-bell"></i>Notifications</button>
+            <div class="drop-child">
+                <?php 
+                    $notif = $dbcon->checkNotifications($_SESSION['userid']);
+                    if (count($notif) >= 1) {
+                        $i = 0;
+                        echo "<ul>";
+                        foreach ($notif as $n) {
+                            echo "<li>".$n[$i]."<li>";
+                            $i++;
+                        }
+                        echo "</ul>";
+                    } else {
+                        echo "<p>No notification right now.</p>";
+                    }
+                ?>
+            </div>
+        </div>
+
         <div class="event-wrapper">
             <h2><i class="fas fa-bookmark"></i> My Events:</h2>
             <?php 

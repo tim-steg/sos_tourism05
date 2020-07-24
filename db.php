@@ -146,6 +146,22 @@
             }
         }
 
+        // Checks notification database for important info.
+        // NOTICE: (THIS IS WIP, actual notification api to check web scrape health websites not setup yet).
+        function checkNotifications($eventid) {
+            $stmt = $this->conn->prepare("SELECT `notification` FROM notif WHERE userid=?");
+            $stmt->bind_param("i", $eventid);
+            $stmt->execute();
+
+            $list = []; $i = 0;
+            while ($row = $stmt->fetch_assoc()) {
+                $list[$i] = $row;
+                $i++;
+            }
+
+            return $list;
+        }
+
         // creates a new user entry on the database.
         function createUser($email, $username, $password) {
             try {
@@ -238,7 +254,7 @@
             $stmt->bind_param("i", $eventid);
             $stmt->execute();
             $stmt->store_result();
-            $stmt->bind_result($fm, $sa, $tc, $in, $no,$ca);
+            $stmt->bind_result($fm, $sa, $tc, $in, $no, $ca);
             
             $results = [];
             if ($stmt && ($stmt->num_rows == 1)) {
