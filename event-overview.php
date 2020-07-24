@@ -85,7 +85,7 @@
                     Email: <div id="email" style="display: inline;"><?php if ($evdata['email'] != "") { echo $evdata['email']; } else { echo "N/A"; } ?></div><br>
                     Website: <div id="web" style="display: inline;"><?php if ($evdata['website'] != "") { echo $evdata['website']; } else { echo "N/A"; } ?></div><br>
                 </div>
-                <div class="event-labels" id="safety-features">Recommended Safety Features:</div>
+                <div class="event-labels" id="safety-features" style="font-style: bold; font-size: 22px;">Recommended Safety Features:</div>
                 <div class="event-labels" id="event-requirements">
                     <table class="requirement-table" style="table-layout: auto; border-collapse: collapse; width: 100%;">
                         <?php
