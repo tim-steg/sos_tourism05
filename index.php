@@ -49,7 +49,7 @@
         </header>
 
         <div class="event-bg">
-            <h1>Find your next event, even in a pandemic. </h1>
+            <h1>Plan or find your next event, even in a pandemic. </h1>
 
             <p>Even during a pandemic we know you have places to be. But its hard keeping track of every new update that comes in. That's why we provide events catered to your needs. Find events that meet the health guidelines while priortizing your safety.</p>
 
