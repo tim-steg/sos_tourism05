@@ -243,14 +243,14 @@
             $results = [];
             if ($stmt && ($stmt->num_rows >= 1)) {
                 while ($stmt->fetch()) {
-                    $results[] = ["eventid" => $id, "name" => $name, "org" => $org, "start" => $start, "end" => $end, "reqs" => $this->getSearchReqData($id)];
+                    $results[] = ["eventid" => $id, "name" => $name, "org" => $org, "start" => $start, "end" => $end, "reqs" => $db->grabReqData($id)];
                 }
             }
 
             return $results;
         }
 
-        function getSearchReqData($eventid) {
+        /*function getSearchReqData($eventid) {
             $stmt = $this->conn->prepare("SELECT `facemasks`, `sanitizer`, `tempcheck`, `inoroutdoor`, `notrecage`, `caplimit` FROM reqs WHERE `eventid`=?");
             $stmt->bind_param("i", $eventid);
             $stmt->execute();
@@ -265,7 +265,7 @@
             }
 
             return $results;
-        }
+        }*/
 
         function updateEvent($userid, $eventid, $name, $org, $start, $end, $loc, $descr, $time, $site, $tel, $email, $reqs) {
             // updates events table.
