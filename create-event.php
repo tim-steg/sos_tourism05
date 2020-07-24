@@ -163,13 +163,13 @@
 
             <div class="event-session" id="session1">
                     <div class="collapsible">
-                        <input type="text" class="editable" name="sessions[]" contenteditable placeholder="Add Session Name" required>
+                        <input type="text" class="editable" name="sessions[0]" contenteditable placeholder="Add Session Name" required>
                         <i class="fa fa-caret-down" aria-hidden="true"></i>
                         <i class="fa fa-caret-up" aria-hidden="true"></i>
                         <i class="far fa-trash-alt"></i>
                     </div>
                     <div class="session-content">
-                        <textarea type="text" name="sessdesc[]" placeholder="Enter session info" class="session-info" required></textarea>
+                        <textarea type="text" name="sessdesc[0]" placeholder="Enter session info" class="session-info" required></textarea>
                     </div>
             </div>
             
