@@ -98,7 +98,7 @@
                             }
                             echo "</tr>";
                             echo "<tr>";
-                            if ($reqdata['inoroutdoor'] == "in") {
+                            if ($reqdata['inoroutdoor'] == "ind") {
                                 echo "<td>Indoor event.";
                             } else if ($reqdata['inoroutdoor'] == "out") {
                                 echo "<td>Outdoor event.";
