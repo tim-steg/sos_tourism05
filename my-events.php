@@ -75,7 +75,7 @@
                     }*/
                     if ($_SESSION['userid'] == 21) {
                         echo "<ul>";
-                        echo "<li>NOTICE: This is a reminder to check your local health website for changing regulations. Start with <a href='#' style='color: white; text-decoration: underline;'>coronavirus.in.gov</a>!</li>";
+                        echo "<li>NOTICE: Your event may need to be edited, due to an Indiana statewide mask mandate. For more info refer to: <a href='#' style='color: white; text-decoration: underline;'>coronavirus.in.gov</a>!</li>";
                         echo "</ul>";
                     } else {
                         echo "<p>No notifications right now!</p>";
