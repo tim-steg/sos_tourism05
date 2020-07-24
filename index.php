@@ -16,7 +16,7 @@
     <link rel="icon" href="./res/favicon.ico" type="image/x-icon">
 
     <title>Safebook</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./css/index.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 

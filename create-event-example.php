@@ -1,1 +1,0 @@
-<?php header("Location: ./src/create-event-example.html"); ?>

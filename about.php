@@ -12,7 +12,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
     <title>Logo Name Company</title>
-    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="./css/about.css">
 </head>
 
 <body>
