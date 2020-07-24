@@ -127,7 +127,7 @@
                         
                         <div>
                             <?php
-                            if ($reqdata['sanitizer'] != null) { echo '<input type="checkbox" name="reqs[1]" id="sanitizer" checked>'; } else {
+                            if ($reqdata['sanitizer'] != "false") { echo '<input type="checkbox" name="reqs[1]" id="sanitizer" checked>'; } else {
                                 echo '<input type="checkbox" name="reqs[1]" id="sanitizer">';
                             } 
                             ?>
@@ -136,7 +136,7 @@
 
                         <div>
                             <?php
-                            if ($reqdata['tempcheck'] != null) { echo '<input type="checkbox" name="reqs[2]" id="temp" checked>'; } else {
+                            if ($reqdata['tempcheck'] != "false") { echo '<input type="checkbox" name="reqs[2]" id="temp" checked>'; } else {
                                 echo '<input type="checkbox" name="reqs[2]" id="temp">';
                             } 
                             ?>
@@ -167,7 +167,7 @@
 
                         <div>
                             <?php 
-                            if ($reqdata['notrecage'] != null) { echo '<input type="checkbox" name="reqs[3]" id="age" checked>'; } else {
+                            if ($reqdata['notrecage'] != "false") { echo '<input type="checkbox" name="reqs[3]" id="age" checked>'; } else {
                                 echo '<input type="checkbox" name="reqs[3]" id="age">';
                             } 
                             ?>
@@ -218,17 +218,33 @@
             </div>
 
             <?php 
-                foreach ($sessdata as $sess) {
-                    echo `<div class="event-session" id="session1">
-                    <div class="collapsible">
-                        <input type="text" class="editable" name="sessions[]" value='`.$sess['sessname'].`' contenteditable placeholder="Add Session Name" required>
-                        <i class="fa fa-caret-down" aria-hidden="true"></i>
-                        <i class="fa fa-caret-up" aria-hidden="true"></i>
-                        <i class="far fa-trash-alt"></i>
-                    </div>
-                    <div class="session-content">
-                        <textarea type="text" name="sessdesc[]" placeholder="Enter session info" class="session-info" required>`.$sess['sessdesc'].`</textarea>
-                    </div></div>`;
+                if (count($sessdata) >= 1) {
+                    $i = 1;
+                    foreach ($sessdata as $sess) {
+                        echo `<div class="event-session" id="session`.$i.`">
+                        <div class="collapsible">
+                            <input type="text" class="editable" name="sessions[]" value='`.$sess['sessname'].`' contenteditable placeholder="Add Session Name" required>
+                            <i class="fa fa-caret-down" aria-hidden="true"></i>
+                            <i class="fa fa-caret-up" aria-hidden="true"></i>
+                            <i class="far fa-trash-alt"></i>
+                        </div>
+                        <div class="session-content">
+                            <textarea type="text" name="sessdesc[]" placeholder="Enter session info" class="session-info" required>`.$sess['sessdesc'].`</textarea>
+                        </div></div>`;
+                        $i++;
+                    }
+                } else {
+                    echo    `<div class="event-session" id="session1">
+                            <div class="collapsible">
+                                <input type="text" class="editable" name="sessions[]" contenteditable placeholder="Add Session Name" required>
+                                <i class="fa fa-caret-down" aria-hidden="true"></i>
+                                <i class="fa fa-caret-up" aria-hidden="true"></i>
+                                <i class="far fa-trash-alt"></i>
+                            </div>
+                            <div class="session-content">
+                                <textarea type="text" name="sessdesc[]" placeholder="Enter session info" class="session-info" required></textarea>
+                            </div>
+                            </div>`;
                 }
             ?>
             
