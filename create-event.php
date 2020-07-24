@@ -140,7 +140,7 @@
 
                         <div>
                             <input type="checkbox" class="reqcheck" name="reqs[3]" value="true" id="age">
-                            <label for="age" class="reqlabel">Not Recommended For Age &gt 65</label>
+                            <label for="age" class="reqlabel">Not Recommended For Age &gt65</label>
                         </div>
 
                         <div>
