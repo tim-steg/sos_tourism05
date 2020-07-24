@@ -22,7 +22,7 @@
                 $reqs = $_POST['reqs'];
 
                 foreach ($reqs as &$r) {
-                    if ($r == '') {
+                    if ($r == '' || $r == false) {
                         $r == "false";
                     }
                 }
