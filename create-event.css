@@ -134,7 +134,7 @@ hr {
 }
 
 #event-name-input {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 600;
     margin-bottom: 20px;
 }
@@ -145,7 +145,7 @@ hr {
     border: none;
     outline: none;
     border-bottom: 1px solid lightgray;
-    font-size: 40px;
+    font-size: 30px;
     
 }
 
@@ -172,7 +172,7 @@ hr {
     border: none;
     outline: none;
     border-bottom: 1px solid lightgray;
-    font-size: 30px;
+    font-size: 28px;
     margin-bottom: 20px;
 }
 
@@ -348,6 +348,21 @@ i.fa-trash-alt:hover{
 
 .add-session:hover {
     background-color: #3ac6df;
+}
+
+.reqlabel {
+    font-size: 36px;
+}
+
+.reqcheck {
+    width: 40px;
+    height: 40px;
+}
+
+.reqdisc {
+    font-size: 24px;
+    font-style: italic;
+    color: red;
 }
 
 

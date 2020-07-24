@@ -111,25 +111,26 @@
                         Website: <input type="text" name="site" placeholder="Add your website">
                     </div>
                     <p id="safety">Safety Features:</p>
+                    <p class="reqdisc">Please remember to additionally consult with your local health authorities, if needed.</p>
                     <div id="event-requirements">
                         <div id="face-mask">
-                            <input type="checkbox" name="reqs[0]" value="true" id="mask">
-                            <label for="mask">Require Face Masks On</label>
+                            <input type="checkbox" class="reqcheck" name="reqs[0]" value="true" id="mask">
+                            <label for="mask" class="reqlabel">Require Face Masks On</label>
                         </div>
                         
                         <div>
-                            <input type="checkbox" name="reqs[1]" value="true" id="sanitizer">
-                            <label for="sanitizer">Hand Sanitizer Stations</label>
+                            <input type="checkbox" class="reqcheck" name="reqs[1]" value="true" id="sanitizer">
+                            <label for="sanitizer" class="reqlabel">Hand Sanitizer Stations</label>
                         </div>
 
                         <div>
-                            <input type="checkbox" name="reqs[2]" value="true" id="temp">
-                            <label for="temp">Body Temperature Check</label>
+                            <input type="checkbox" class="reqcheck" name="reqs[2]" value="true" id="temp">
+                            <label for="temp" class="reqlabel">Body Temperature Check</label>
                         </div>
 
 
                         <div>
-                            <label for="door">Indoor/Outdoor:</label>
+                            <label for="door" class="reqlabel">Indoor/Outdoor:</label>
                             <select class="form-control" name="attend1" style="width: auto; display: inline-block;" id="door">
                                 <option value="ind" value="0">Indoor</option>
                                 <option value="out" value="1">Outdoor</option>
@@ -138,12 +139,12 @@
                         </div>
 
                         <div>
-                            <input type="checkbox" name="reqs[3]" value="true" id="age">
-                            <label for="age">Not Recommended For Age &gt 65</label>
+                            <input type="checkbox" class="reqcheck" name="reqs[3]" value="true" id="age">
+                            <label for="age" class="reqlabel">Not Recommended For Age &gt 65</label>
                         </div>
 
                         <div>
-                            <label for="capacity">Capacity Limit:</label>
+                            <label class="reqlabel" for="capacity">Capacity Limit: </label>
                             <select class="form-control"name="attend2" style="width: auto; display: inline-block;" id="capacity" required>
                                 <option value="sml">&lt50</option>
                                 <option value="med">50-100</option>
