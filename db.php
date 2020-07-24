@@ -149,14 +149,14 @@
         // Checks notification database for important info.
         // NOTICE: (THIS IS WIP, actual notification api to check web scrape health websites not setup yet).
         function checkNotifications($userid) {
-            $stmt = $this->conn->prepare("SELECT `notification` FROM notif WHERE userid=?");
+            $stmt = $this->conn->prepare("SELECT * FROM notif WHERE userid=?");
             $stmt->bind_param("i", $userid);
             $stmt->execute();
 
             $list = []; $i = 0;
             if ($stmt->num_rows >= 1) {
                 while ($row = $stmt->fetch_assoc()) {
-                    $list[$i] = $row;
+                    $list[$i] = $row['notification'];
                     $i++;
                 }
             }
