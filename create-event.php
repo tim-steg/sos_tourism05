@@ -157,7 +157,7 @@
 
                     <div id="event-description-input">
                         <h1>Description: </h1>
-                        <textarea type="text" name="descr" placeholder="Add description here" required></textarea>
+                        <textarea type="text" name="descr" placeholder="Add your description here (extra health recommendations, travel directions, etc)" required></textarea>
                     </div>
             </div>
 
