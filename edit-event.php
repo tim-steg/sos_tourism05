@@ -204,7 +204,7 @@
 
                     <div id="event-description-input">
                         <h1>Description: </h1>
-                        <textarea type="text" name="descr" placeholder="Add description here" required><?php echo $eventdata['organizer']; ?></textarea>
+                        <textarea type="text" name="descr" placeholder="Add description here" required><?php echo $eventdata['descr']; ?></textarea>
                     </div>
             </div>
 
