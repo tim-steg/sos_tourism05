@@ -38,8 +38,12 @@
         // grabs session data based on the event id.
         function grabSessData($eventid) {
             $res = $this->conn->query("SELECT * FROM `sessions` WHERE eventid=$eventid");
+            $arr = [];
             if ($res) {
-                return $res->fetch_array(MYSQLI_ASSOC);
+                while ($row = $res->fetch_assoc()) {
+                    $arr[] = $row;
+                }
+                return $arr;
             } else {
                 // return false on error.
                 return false;
