@@ -12,7 +12,7 @@
 
             //$attnd = $_POST['attendance'];
             $sess = $_POST['sessions'];
-            //$sDesc = $_POST['sessdesc'];
+            $sdesc = $_POST['sessdesc'];
             $userid = $_SESSION['userid'];
 
             $eventid = $dbcon->insertNewEvent($userid, $_POST['eventname'], $_POST['organizer'], $_POST['startdate'], $_POST['enddate'], $_POST['location'], 
@@ -33,7 +33,7 @@
                 $dbcon->insertReqs($eventid, $reqs, $_POST['attend1'], $_POST['attend2']);
             }
             
-            $dbcon->insertSessions($eventid, $sess);
+            $dbcon->insertSessions($eventid, $sess, $sdesc);
 
             $dbcon->closeConn();
             header("Location: ./my-events.php?id=".$userid);
