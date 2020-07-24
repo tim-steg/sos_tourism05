@@ -74,7 +74,7 @@
 
             <div><img src="./res/laptop.png" alt="Image of a laptop"></div>
 
-           <div><input type="button" value="Get Started" id="get-button"></div>
+           <div><a href="./sign-up.php" style='text-decoration: none;'><input type="button" value="Get Started" id="get-button"></a></div>
         </div>
 
         <div class="circle-2"> 
@@ -100,7 +100,7 @@
         <h1>Start planning now.</h1>
         <p>Sign up for an account today! Totally free!</p>
 
-        <input type="button" value="Get Started" id="start-button">
+        <a href="./sign-up.php" style='text-decoration: none;'><input type="button" value="Get Started" id="start-button"></a>
     </div>
 
     <footer>
