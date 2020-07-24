@@ -267,10 +267,10 @@
             return $results;
         }
 
-        function updateEvent($eventid, $name, $org, $start, $end, $loc, $descr, $time, $site, $tel, $email, $reqs, $sessions, $sdesc) {
+        function updateEvent($userid, $eventid, $name, $org, $start, $end, $loc, $descr, $time, $site, $tel, $email, $reqs) {
             // updates events table.
-            $stmt = $this->conn->prepare("UPDATE events SET eventname=?, organizer=?, startdate=?, enddate=?, `location`=?, descr=?, timezone=?, website=?, telephone=?, email=? WHERE eventid=?");
-            $stmt->bind_param("ssssssssssi", $name, $org, $start, $end, $loc, $descr, $time, $site, $tel, $email, $eventid);
+            $stmt = $this->conn->prepare("UPDATE events SET userid=?, eventname=?, organizer=?, startdate=?, enddate=?, `location`=?, descr=?, timezone=?, website=?, telephone=?, email=? WHERE eventid=?");
+            $stmt->bind_param("issssssssssi", $userid, $name, $org, $start, $end, $loc, $descr, $time, $site, $tel, $email, $eventid);
             $stmt->execute();
             
             // delete session and requirement records to be able to submit the new ones.
