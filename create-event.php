@@ -21,9 +21,9 @@
             if (isset($_POST['reqs'])) {
                 $reqs = $_POST['reqs'];
 
-                foreach ($reqs as &$r) {
-                    if ($r == '' || $r == false) {
-                        $r == "false";
+                for ($i = 0; $i < count($reqs); $i++) {
+                    if (array_key_exists($i, $reqs) == false) {
+                        $reqs[$i] = "false";
                     }
                 }
 
