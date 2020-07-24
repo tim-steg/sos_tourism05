@@ -71,7 +71,7 @@
                         }
                         echo "</ul>";
                     } else {
-                        echo "<p>No notification right now.</p>";
+                        echo "<p>No notifications right now!</p>";
                     }
                 ?>
             </div>
