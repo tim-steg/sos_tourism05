@@ -61,7 +61,7 @@
             <button class="mainmenubtn"><i class="fas fa-bell"></i>Notifications</button>
             <div class="drop-child">
                 <?php 
-                    $notif = $dbcon->checkNotifications($_SESSION['userid']);
+                    $notif = $dbcon->checkNotifications($userid);
                     if (count($notif) >= 1) {
                         $i = 0;
                         echo "<ul>";
