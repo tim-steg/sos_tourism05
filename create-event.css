@@ -53,6 +53,10 @@ nav ul li div p{
     top: 25%;
 }
 
+div {
+    font-size: 18px;
+}
+
 .create {
     background-color: #1db76e;
 }
