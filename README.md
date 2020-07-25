@@ -1,7 +1,6 @@
 <p align="center">
   <img src="./res/logo-pink.png" alt="SafeBook Logo" title="SafeBook Logo">
   <h3 align="center">SafeBook</h3>
-
   <p align="center">
     Plan your events safely!
     <br>
