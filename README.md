@@ -1,5 +1,5 @@
 <p align="center">
-  ![SafeBook Logo](/res/Logo.png)
+  [SafeBook Logo](/res/Logo.png)
   <h3 align="center">SafeBook</h3>
 
   <p align="center">
