@@ -41,8 +41,7 @@ Additional resources:
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps. Please put all CSS files in the css folder, JS files in the js folder, and images/icons in the res folder
+To get a copy up and running follow these simple example steps. Please put all CSS files in the css folder, JS files in the js folder, and images/icons in the res folder
 
 ### Prerequisites to work on the project
 
