@@ -59,10 +59,6 @@ TODO (maybe):
 3. Add more security on the server-side.
 4. Add monetization.
 
-## Contact
-
-Feel free to contact the maintainer, tim-steg, via [timstegallcs@gmail.com](timstegallcs@gmail.com)
-
 ## Acknowledgements
 * Thank you to our friends and family, who supported us throughout this project. :)
 
