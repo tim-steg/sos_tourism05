@@ -5,9 +5,6 @@
     Plan your events safely!
     <br>
     <br>
-    <a href="https://sostourism05.herokuapp.com">View Site</a>
-    ·
-    <a href="https://github.com/tim-steg/sos_tourism05/issues">Report A Bug</a>
   </p>
 </p>
 
@@ -37,30 +34,3 @@ The major frameworks, libraries, and resources that we're using throughout the p
 
 Additional resources:
 * [Font Awesome](https://fontawesome.com)
-
-
-## Getting Started
-
-To get a copy up and running follow these simple example steps. Please put all CSS files in the css folder, JS files in the js folder, and images/icons in the res folder
-
-### Prerequisites to work on the project
-
-Must have:
-1. Git installed, 
-2. a web browser (Firefox or Chrome), and 
-3. a text editor. 
-
-
-## Roadmap
-
-TODO (maybe):
-1. Finish notification system.
-2. Create more consist mobile styling.
-3. Add more security on the server-side.
-4. Add monetization.
-
-## Acknowledgements
-* Thank you to our friends and family, who supported us throughout this project. :)
-
-
-
